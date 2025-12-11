@@ -20,6 +20,7 @@ Building a payment platform without understanding the ecosystem is like building
 | [topics.md](./topics.md)       | Detailed breakdown of research topics |
 | [questions.md](./questions.md) | Self-assessment questions             |
 | [resources.md](./resources.md) | Reading materials and sources         |
+| [notes/](./notes/)             | Personal study notes and answers      |
 
 ## Key Concepts to Master
 
