@@ -40,6 +40,10 @@ Each module contains:
 - Familiarity with API design and integration patterns
 - Basic knowledge of financial terminology
 
+## Reference
+
+- **[Glossary](./GLOSSARY.md)** - 100+ payment industry terms and definitions
+
 ## Note
 
 This guide focuses on **what to learn** rather than teaching the content directly. The goal is to provide a clear research roadmap for self-directed learning.
