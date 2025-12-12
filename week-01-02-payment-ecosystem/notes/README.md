@@ -10,25 +10,28 @@ Personal study notes for the Payment Ecosystem Foundation module.
 |---|-------|--------|
 | 01 | [The Four-Party Model](./01-four-party-model.md) | Complete |
 | 02 | [Card Network Role](./02-card-network-role.md) | Complete |
-| 03 | [Transaction Lifecycle Basics](./03-transaction-lifecycle.md) | Pending |
+| 03 | [Transaction Lifecycle Basics](./03-transaction-lifecycle.md) | Complete |
+| 04 | [Debit Networks & Routing](./04-debit-networks-routing.md) | Pending |
 
 ### Week 2: Industry Players & PayFac Model
 
 | # | Topic | Status |
 |---|-------|--------|
-| 04 | [Payment Processors](./04-payment-processors.md) | Pending |
-| 05 | [Payment Gateways](./05-payment-gateways.md) | Pending |
-| 06 | [Acquiring Banks](./06-acquiring-banks.md) | Pending |
-| 07 | [ISOs (Independent Sales Organizations)](./07-isos.md) | Pending |
-| 08 | [ISVs (Independent Software Vendors)](./08-isvs.md) | Pending |
-| 09 | [The Payment Facilitator Model](./09-payfac-model.md) | Pending |
-| 10 | [Comparing Models](./10-comparing-models.md) | Pending |
+| 05 | [Payment Processors](./05-payment-processors.md) | Pending |
+| 06 | [Payment Gateways](./06-payment-gateways.md) | Pending |
+| 07 | [Acquiring Banks](./07-acquiring-banks.md) | Pending |
+| 08 | [ISOs (Independent Sales Organizations)](./08-isos.md) | Pending |
+| 09 | [ISVs (Independent Software Vendors)](./09-isvs.md) | Pending |
+| 10 | [The Payment Facilitator Model](./10-payfac-model.md) | Pending |
+| 11 | [Comparing Models](./11-comparing-models.md) | Pending |
+| 12 | [Alternative Payment Methods](./12-alternative-payment-methods.md) | Pending |
 
 ## Progress Tracker
 
 - [x] Four-Party Model
 - [x] Card Network Role
-- [ ] Transaction Lifecycle Basics
+- [x] Transaction Lifecycle Basics
+- [ ] Debit Networks & Routing
 - [ ] Payment Processors
 - [ ] Payment Gateways
 - [ ] Acquiring Banks
@@ -36,6 +39,7 @@ Personal study notes for the Payment Ecosystem Foundation module.
 - [ ] ISVs
 - [ ] PayFac Model
 - [ ] Comparing Models
+- [ ] Alternative Payment Methods
 
 ## Quick Reference
 
