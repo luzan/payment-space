@@ -251,3 +251,46 @@
 - Refund impact on funding
 - Chargeback impact on funding
 - Reconciling bank deposits to transactions
+
+### 8.8 Batch Processing & File Formats
+
+**Research Focus:**
+
+- Settlement file formats (CSV, XML, EDI, fixed-width)
+- Batch submission processes and timing
+- File parsing and validation
+- Error handling in batch processing
+- Batch reconciliation workflows
+- File delivery mechanisms (SFTP, API, email)
+- Batch processing schedules and timing
+- File format standards and specifications
+
+**Key Terms to Define:**
+
+- Settlement file
+- Batch file
+- File format
+- SFTP (Secure File Transfer Protocol)
+- EDI (Electronic Data Interchange)
+
+### 8.9 Error Handling & Retry Logic
+
+**Research Focus:**
+
+- Error categorization (transient vs permanent)
+- Retry strategies and backoff algorithms
+- Idempotency in retry scenarios
+- Circuit breaker patterns
+- Timeout handling and configuration
+- Partial failure scenarios
+- Error logging and monitoring
+- Error recovery procedures
+
+**Key Terms to Define:**
+
+- Transient error
+- Permanent error
+- Retry strategy
+- Exponential backoff
+- Circuit breaker
+- Idempotency

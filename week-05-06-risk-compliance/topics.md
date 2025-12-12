@@ -109,6 +109,29 @@
 - Rules-based vs. ML-based detection
 - Balancing fraud prevention with conversion rates
 
+### 5.7 Merchant Monitoring & Alerting Systems
+
+**Research Focus:**
+
+- Real-time transaction monitoring dashboards
+- Alert thresholds and escalation paths
+- Chargeback ratio monitoring and alerts
+- Fraud rate monitoring and thresholds
+- Velocity and pattern detection
+- Merchant health scoring systems
+- Automated action triggers (suspension, reserve increases, account holds)
+- Alert investigation workflows
+- False positive management
+
+**Key Terms to Define:**
+
+- Merchant health score
+- Alert threshold
+- Escalation path
+- Automated action
+- Velocity monitoring
+- Pattern detection
+
 ---
 
 ## Week 6: PCI-DSS & AML/BSA
@@ -228,3 +251,47 @@
 - Velocity anomalies
 - Round-dollar transactions
 - Structured transactions
+
+### 6.7 Reserve Management
+
+**Research Focus:**
+
+- Types of reserves (rolling, fixed, capped, percentage-based)
+- Reserve calculation methodologies
+- Reserve release schedules and criteria
+- Reserve account funding and management
+- Reserve disputes and merchant communication
+- Regulatory requirements for reserve holding
+- Reserve impact on merchant cash flow
+- When to increase or decrease reserves
+- Reserve vs. chargeback liability
+
+**Key Terms to Define:**
+
+- Rolling reserve
+- Fixed reserve
+- Capped reserve
+- Reserve percentage
+- Reserve release schedule
+- Reserve account
+
+### 6.8 Incident Response & Breach Notification
+
+**Research Focus:**
+
+- PCI-DSS incident response requirements
+- Breach notification timelines (state, federal, card networks)
+- Incident response team structure and roles
+- Forensics and investigation procedures
+- Communication protocols (merchants, regulators, card networks)
+- Post-incident remediation and prevention
+- Incident classification and severity levels
+- Regulatory reporting requirements
+
+**Key Terms to Define:**
+
+- Incident response
+- Breach notification
+- Forensics
+- Remediation
+- Incident classification

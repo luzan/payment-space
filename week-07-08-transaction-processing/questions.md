@@ -89,3 +89,29 @@ Answer these questions to validate understanding of transaction processing.
 29. **Scenario:** Monthly reconciliation shows 10,000 authorized transactions but only 9,850 settled transactions. What are the possible reasons for this discrepancy?
 
 30. **Scenario:** Design an API for a payment gateway that handles: authorization, capture, void, refund, and sale (auth + capture). What endpoints would exist, what would the request/response structures include, and how would idempotency be handled?
+
+---
+
+## Batch Processing & File Formats
+
+31. A settlement file arrives in CSV format. What validation steps should be performed before processing?
+
+32. A batch file contains 10,000 transactions but 5 have formatting errors. How should this be handled?
+
+33. What are the typical file formats used for settlement files, and what are the tradeoffs?
+
+34. **Scenario:** A settlement file is expected daily at 2am but hasn't arrived by 3am. What should happen?
+
+---
+
+## Error Handling & Retry Logic
+
+35. A payment processor returns a "timeout" error. Should this be retried? How many times, and with what backoff strategy?
+
+36. What is the difference between a transient error and a permanent error? Give examples of each.
+
+37. How does a circuit breaker pattern help in payment processing?
+
+38. A transaction fails with "insufficient funds" (hard decline). Should this be retried? Why or why not?
+
+39. **Scenario:** Design a retry strategy for payment API calls. Consider: which errors to retry, retry count, backoff algorithm, and idempotency.

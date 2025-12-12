@@ -61,3 +61,27 @@ Answer these questions to validate understanding of the payment ecosystem.
 19. **Scenario:** A transaction is authorized but the merchant never captures it. What happens? Who is affected?
 
 20. **Scenario:** Draw the complete flow of a $50 online purchase, from the customer clicking "Pay" to the merchant seeing funds in their bank account. Include all parties involved and approximate timing.
+
+---
+
+## Debit Networks & Routing
+
+21. What is the difference between PIN debit and signature debit? How does routing differ?
+
+22. What is the Durbin Amendment, and how does it affect debit card processing?
+
+23. A customer uses a debit card. How does the system decide whether to route it as PIN debit or signature debit?
+
+24. Why might a merchant prefer PIN debit over signature debit, or vice versa?
+
+---
+
+## Alternative Payment Methods
+
+25. When would a merchant want to accept ACH payments instead of (or in addition to) credit cards?
+
+26. What are the key differences between ACH and real-time payment rails (RTP, FedNow)?
+
+27. A merchant wants to accept Apple Pay. What technical and business considerations are involved?
+
+28. What is Buy Now Pay Later (BNPL), and how does it differ from traditional credit card processing?

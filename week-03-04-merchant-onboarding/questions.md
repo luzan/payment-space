@@ -79,3 +79,17 @@ Answer these questions to validate understanding of merchant onboarding and unde
 26. **Scenario:** Design a tiered onboarding process that allows instant approval for low-risk merchants while flagging high-risk merchants for manual review. What criteria would define each tier?
 
 27. **Scenario:** A merchant's beneficial owner is a citizen of a country under U.S. sanctions, but the business is U.S.-based and the owner is a U.S. permanent resident. Can they be onboarded?
+
+---
+
+## Ongoing Monitoring & Re-verification
+
+28. How often should KYC/KYB information be re-verified? What triggers a re-verification?
+
+29. A merchant changes their business address. What steps should be taken?
+
+30. A merchant's chargeback ratio increases significantly. Should they be re-underwritten? What's the process?
+
+31. What is Enhanced Due Diligence (EDD), and when is it triggered?
+
+32. **Scenario:** A merchant was approved 2 years ago. Their business model has changed (from retail to online services), and their processing volume has increased 10x. What monitoring and re-verification steps should be taken?

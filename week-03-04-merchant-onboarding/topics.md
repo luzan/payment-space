@@ -186,3 +186,25 @@
 - Rolling reserve vs. fixed reserve
 - MATCH list (Member Alert to Control High-risk Merchants)
 - TMF (Terminated Merchant File)
+
+### 4.7 Ongoing Monitoring & Re-verification
+
+**Research Focus:**
+
+- Periodic KYC/KYB refresh requirements and schedules
+- Business change detection (address, ownership, MCC changes)
+- Transaction pattern monitoring for onboarding validation
+- Enhanced due diligence (EDD) triggers
+- Re-underwriting criteria and processes
+- Merchant lifecycle management (status changes)
+- Automated vs manual re-verification workflows
+- Regulatory requirements for ongoing monitoring
+
+**Key Terms to Define:**
+
+- Periodic review
+- Enhanced due diligence (EDD)
+- Re-underwriting
+- Business change monitoring
+- Merchant lifecycle
+- Ongoing monitoring

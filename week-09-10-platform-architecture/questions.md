@@ -99,3 +99,51 @@ Answer these questions to validate understanding of platform architecture.
 34. **Scenario:** A bug caused 100 transactions to be settled incorrectly (wrong amounts). Design a process to identify, correct, and reconcile these transactions while maintaining audit integrity.
 
 35. **Scenario:** The platform needs to support both USD and EUR transactions with settlements in the merchant's local currency. Design the data model and fee calculation approach.
+
+---
+
+## Security Architecture Beyond PCI
+
+36. How should API keys be managed and rotated in a payment platform?
+
+37. What is role-based access control (RBAC), and how should it be implemented for a payment platform?
+
+38. A developer needs to access production data for debugging. What security controls should be in place?
+
+39. **Scenario:** Design an authentication and authorization system for a payment platform API. Consider: API keys, OAuth, roles, and permissions.
+
+---
+
+## Operational Monitoring & Observability
+
+40. What are the key metrics to monitor for a payment platform? What are acceptable thresholds?
+
+41. A payment platform processes 1,000 TPS. How would you monitor performance and detect issues?
+
+42. What is distributed tracing, and why is it important for payment systems?
+
+43. **Scenario:** Design a monitoring dashboard for a payment platform. What metrics, alerts, and visualizations would you include?
+
+---
+
+## Testing Strategies for Payment Systems
+
+44. What test card numbers should be used for different scenarios (approval, decline, fraud)?
+
+45. How would you test a chargeback workflow without actually creating real chargebacks?
+
+46. A payment integration needs to be tested. What's the difference between using a sandbox vs. mocks?
+
+47. **Scenario:** Design a testing strategy for a payment platform. Include: unit tests, integration tests, end-to-end tests, and load tests.
+
+---
+
+## Scaling & Performance Architecture
+
+48. A payment platform needs to handle 10,000 TPS. What scaling strategies would you recommend?
+
+49. How would you design a database schema that can scale to billions of transactions?
+
+50. What is the difference between horizontal and vertical scaling? Which is better for payment systems?
+
+51. **Scenario:** A payment platform is experiencing slow query performance on the transactions table. What optimization strategies would you consider?

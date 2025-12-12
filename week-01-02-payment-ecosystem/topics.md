@@ -54,6 +54,27 @@
 - Include all fees deducted at each step
 - Show timing for each phase
 
+### 1.4 Debit Networks & Routing
+
+**Research Focus:**
+
+- PIN debit networks (PULSE, STAR, NYCE, Accel, Interlink)
+- Signature debit vs PIN debit routing
+- Durbin Amendment implications and debit interchange caps
+- Debit network fees vs credit interchange rates
+- Routing optimization for debit transactions
+- When debit routing decisions are made
+- Debit network selection criteria
+
+**Key Terms to Define:**
+
+- PIN debit
+- Signature debit
+- Durbin Amendment
+- Debit network
+- Routing optimization
+- Network selection
+
 ---
 
 ## Week 2: Industry Players & PayFac Model
@@ -137,4 +158,26 @@
 | Risk liability | | | |
 | Onboarding speed | | | |
 | Revenue model | | | |
-| Regulatory burden | | | |
+| Regulatory burden | | |
+
+### 2.8 Alternative Payment Methods
+
+**Research Focus:**
+
+- ACH processing and NACHA rules
+- Digital wallets (Apple Pay, Google Pay, PayPal, Venmo)
+- Buy Now Pay Later (BNPL) integration models
+- Real-time payment rails (RTP, FedNow, SEPA Instant)
+- Cryptocurrency payment acceptance
+- When to support alternative payment methods
+- Integration complexity and cost considerations
+
+**Key Terms to Define:**
+
+- ACH (Automated Clearing House)
+- NACHA
+- Digital wallet
+- BNPL (Buy Now Pay Later)
+- Real-time payments
+- RTP (Real-Time Payments)
+- FedNow |

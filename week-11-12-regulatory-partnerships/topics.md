@@ -246,3 +246,47 @@
 - Cross-border payment complexities
 - Currency and settlement considerations
 - International partnership models
+
+### 12.9 Vendor Management & Third-Party Risk
+
+**Research Focus:**
+
+- Vendor selection criteria and evaluation
+- Vendor risk assessment methodologies
+- Service level agreements (SLAs) and monitoring
+- Vendor due diligence requirements
+- Contract negotiation points
+- Vendor monitoring and oversight
+- Vendor incident response procedures
+- Critical vendor identification
+- Vendor dependency management
+
+**Key Terms to Define:**
+
+- Vendor risk assessment
+- SLA (Service Level Agreement)
+- Vendor due diligence
+- Critical vendor
+- Vendor dependency
+
+### 12.10 Business Continuity & Disaster Recovery
+
+**Research Focus:**
+
+- BCP/DR planning requirements for payment systems
+- Redundancy and failover strategies
+- Data backup and recovery procedures
+- RTO (Recovery Time Objective) and RPO (Recovery Point Objective) requirements
+- Geographic redundancy
+- Communication plans during outages
+- Testing and validation of DR plans
+- Regulatory requirements for BCP/DR
+
+**Key Terms to Define:**
+
+- BCP (Business Continuity Planning)
+- DR (Disaster Recovery)
+- RTO (Recovery Time Objective)
+- RPO (Recovery Point Objective)
+- Failover
+- Geographic redundancy

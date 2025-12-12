@@ -99,3 +99,27 @@ Answer these questions to validate understanding of regulatory and partnership r
 34. **Scenario:** A PayFac discovers a sub-merchant may be engaged in money laundering. What immediate steps must be taken, and what are the reporting obligations?
 
 35. **Scenario:** Create a 24-month roadmap for a company to go from using Stripe Connect to becoming a registered PayFac. Include milestones, dependencies, and estimated costs.
+
+---
+
+## Vendor Management & Third-Party Risk
+
+36. What criteria should be used to evaluate payment processor vendors?
+
+37. A critical vendor (payment processor) experiences an outage. What's the vendor management response?
+
+38. What should be included in a vendor service level agreement (SLA) for a payment processor?
+
+39. **Scenario:** A PayFac uses 5 different vendors (processor, KYC provider, fraud tool, etc.). How should vendor risk be managed?
+
+---
+
+## Business Continuity & Disaster Recovery
+
+40. What is the difference between RTO and RPO? What are reasonable targets for a payment platform?
+
+41. A payment platform's primary data center goes offline. What should happen?
+
+42. How often should disaster recovery plans be tested?
+
+43. **Scenario:** Design a disaster recovery plan for a payment platform. Include: redundancy strategies, failover procedures, and testing requirements.

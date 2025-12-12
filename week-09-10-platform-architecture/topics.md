@@ -112,6 +112,29 @@
 - Audit trail for document access
 - Integration with verification providers
 
+### 9.7 Security Architecture Beyond PCI
+
+**Research Focus:**
+
+- API authentication and authorization (OAuth, API keys, JWT)
+- Role-based access control (RBAC)
+- Encryption at rest and in transit
+- Secrets management and key rotation
+- Security headers and best practices
+- DDoS protection strategies
+- Rate limiting for security
+- Security audit and penetration testing
+- Vulnerability management
+
+**Key Terms to Define:**
+
+- OAuth
+- RBAC (Role-Based Access Control)
+- JWT (JSON Web Token)
+- Secrets management
+- DDoS (Distributed Denial of Service)
+- Rate limiting
+
 ---
 
 ## Week 10: Event Systems & Money Movement
@@ -245,3 +268,70 @@
 - State machine transitions via API
 - Long-running operation handling
 - Bulk operations
+
+### 10.8 Operational Monitoring & Observability
+
+**Research Focus:**
+
+- Key metrics for payment platforms (TPS, latency, error rates)
+- Distributed tracing for payment flows
+- Log aggregation and analysis
+- Alerting strategies and on-call procedures
+- Performance monitoring and SLAs
+- Business metrics (authorization rates, chargeback ratios)
+- Dashboard design for operations teams
+- Metrics collection and storage
+
+**Key Terms to Define:**
+
+- TPS (Transactions Per Second)
+- Distributed tracing
+- Observability
+- SLA (Service Level Agreement)
+- Metrics
+- Logging
+
+### 10.9 Testing Strategies for Payment Systems
+
+**Research Focus:**
+
+- Test card numbers and scenarios
+- Sandbox environment design
+- Mock payment processor integration
+- Integration testing patterns
+- End-to-end transaction testing
+- Load testing for payment systems
+- Fraud scenario testing
+- Chargeback simulation
+- Test data management
+
+**Key Terms to Define:**
+
+- Test card
+- Sandbox
+- Mock
+- Integration testing
+- Load testing
+- E2E testing
+
+### 10.10 Scaling & Performance Architecture
+
+**Research Focus:**
+
+- Database scaling strategies (sharding, partitioning)
+- Caching strategies for payment data
+- Read replicas and write optimization
+- Queue-based processing for high volume
+- Rate limiting and throttling
+- Horizontal scaling patterns
+- Performance optimization techniques
+- Capacity planning
+
+**Key Terms to Define:**
+
+- Sharding
+- Partitioning
+- Read replica
+- Horizontal scaling
+- Vertical scaling
+- Capacity planning
