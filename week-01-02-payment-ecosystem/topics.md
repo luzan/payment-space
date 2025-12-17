@@ -28,7 +28,8 @@
 - Network rules and why they matter
 - How authorization routing works
 - The difference between open-loop and closed-loop networks
-- Network fees and how they're structured
+- Network fees and how they're structured (including passthrough fees like APF, NABU)
+- Evolution of open/closed loop models (Amex OptBlue, co-branded cards)
 
 **Key Terms to Define:**
 
@@ -37,6 +38,44 @@
 - Network assessment
 - BIN (Bank Identification Number)
 - Card-present vs card-not-present
+- APF (Acquirer Processing Fee)
+- NABU (Network Access & Brand Usage)
+
+### 1.2.1 BIN/IIN Evolution and Structure
+
+**Research Focus:**
+
+- BIN (Bank Identification Number) structure and meaning
+- Transition from 6-digit to 8-digit BINs (IIN - Issuer Identification Number)
+- Why BIN exhaustion occurred
+- Impact on payment system development
+- Network prefix identifiers (4=Visa, 5=MC, 3=Amex, 6=Discover)
+- International networks (JCB, UnionPay)
+
+**Key Terms to Define:**
+
+- BIN (Bank Identification Number)
+- IIN (Issuer Identification Number)
+- BIN exhaustion
+- ISO/IEC 7812 standard
+
+### 1.2.2 Network Tokenization (Introduction)
+
+**Research Focus:**
+
+- What network tokenization is (Visa Token Service, Mastercard MDES)
+- Difference between network tokens and merchant/gateway tokens
+- How network tokens enable card-on-file and digital wallets
+- Benefits: fraud reduction, automatic card updates, lower interchange
+- When to use network tokenization vs gateway tokenization
+
+**Key Terms to Define:**
+
+- Network token
+- Visa Token Service (VTS)
+- Mastercard Digital Enablement Service (MDES)
+- Token requestor
+- Device PAN vs. Token PAN
 
 ### 1.3 Transaction Lifecycle Basics
 

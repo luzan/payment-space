@@ -101,13 +101,44 @@
 
 **Research Focus:**
 
-- 3D Secure (3DS2): what it is, liability shift
 - AVS (Address Verification Service)
 - CVV/CVC verification
 - Device fingerprinting
 - Machine learning fraud scoring
 - Rules-based vs. ML-based detection
 - Balancing fraud prevention with conversion rates
+
+### 5.6.1 3D Secure 2.0 Deep Dive
+
+**Research Focus:**
+
+- What 3D Secure is and how it evolved (3DS1 vs 3DS2)
+- Technical flow of 3DS2 authentication
+- Frictionless vs. challenge flows
+- Liability shift implications (who bears fraud loss)
+- Impact on authorization rates and conversion
+- PSD2 and Strong Customer Authentication (SCA) requirements in Europe
+- When to implement 3DS (transaction thresholds, risk-based triggers)
+- Integration approaches (redirect vs. embedded)
+
+**Key Terms to Define:**
+
+- 3D Secure / 3DS2
+- Verified by Visa / Mastercard SecureCode / Mastercard Identity Check
+- Frictionless authentication
+- Challenge flow
+- Liability shift
+- SCA (Strong Customer Authentication)
+- PSD2 (Payment Services Directive 2)
+- ACS (Access Control Server)
+- DS (Directory Server)
+
+**Implementation Considerations:**
+
+- Impact on checkout conversion (5-20 second delay)
+- Exemptions and exclusions (low-value, recurring, trusted beneficiaries)
+- Transaction Risk Analysis (TRA) exemption
+- Testing 3DS integration in sandbox environments
 
 ### 5.7 Merchant Monitoring & Alerting Systems
 

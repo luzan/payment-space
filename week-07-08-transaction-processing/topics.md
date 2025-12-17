@@ -13,6 +13,8 @@
 - Pre-authorization vs. final authorization
 - Address Verification (AVS) during authorization
 - CVV verification during authorization
+- Partial authorizations (when card has insufficient funds)
+- Incremental authorizations (extending existing holds)
 
 **Key Terms to Define:**
 
@@ -22,8 +24,28 @@
 - Pre-auth / Pre-authorization
 - Zero-dollar authorization
 - Incremental authorization
+- Partial authorization
 - AVS response codes
 - CVV response codes
+
+### 7.1.1 Partial and Incremental Authorizations
+
+**Research Focus:**
+
+- What partial authorization is and when issuers use it
+- Industries that commonly use partial auth (gas stations, prepaid, gift cards)
+- Split-tender transactions
+- What incremental authorization is
+- Use cases: hotels, car rentals, restaurants (tip adjust)
+- Network rules for incremental auths
+- How to handle partial auth responses in checkout flows
+
+**Key Terms to Define:**
+
+- Partial authorization
+- Incremental authorization
+- Split-tender
+- Auth amount vs. capture amount
 
 ### 7.2 Capture Phase
 
@@ -83,6 +105,25 @@
 - Refund / Credit
 - Reversal
 - Original Credit Transaction (OCT)
+
+### 7.4.1 Authorization Reversals
+
+**Research Focus:**
+
+- What an authorization reversal is (releasing holds early)
+- Difference between void and auth reversal
+- When to send auth reversals (order cancellation, duplicates, corrections)
+- Timing requirements (within 24 hours, some networks require 30 minutes)
+- Benefits: better customer experience, no "pending charge" complaints
+- Processor support for auth reversals
+- Impact on interchange and fees
+
+**Key Terms to Define:**
+
+- Authorization reversal
+- Auth release
+- Hold release
+- Reversal timeframe
 
 ### 7.5 ISO 8583 Message Format
 
