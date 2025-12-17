@@ -11,7 +11,7 @@ Personal study notes for the Payment Ecosystem Foundation module.
 | 01 | [The Four-Party Model](./01-four-party-model.md) | Complete |
 | 02 | [Card Network Role](./02-card-network-role.md) | Complete |
 | 03 | [Transaction Lifecycle Basics](./03-transaction-lifecycle.md) | Complete |
-| 04 | [Debit Networks & Routing](./04-debit-networks-routing.md) | Pending |
+| 04 | [Debit Networks & Routing](./04-debit-networks-routing.md) | Complete |
 
 ### Week 2: Industry Players & PayFac Model
 
@@ -31,7 +31,7 @@ Personal study notes for the Payment Ecosystem Foundation module.
 - [x] Four-Party Model
 - [x] Card Network Role
 - [x] Transaction Lifecycle Basics
-- [ ] Debit Networks & Routing
+- [x] Debit Networks & Routing
 - [ ] Payment Processors
 - [ ] Payment Gateways
 - [ ] Acquiring Banks
