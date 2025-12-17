@@ -235,6 +235,109 @@ When the issuer responds, they send a response code:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+### Partial and Incremental Authorizations
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│           PARTIAL AND INCREMENTAL AUTHORIZATIONS                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  PARTIAL AUTHORIZATION                                                      │
+│  ─────────────────────                                                      │
+│  Used when cardholder has insufficient funds for full amount.               │
+│                                                                             │
+│  Example - Gas Station:                                                     │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ Pump requests $100 authorization                                    │   │
+│  │ Card only has $45 available                                         │   │
+│  │ Issuer responds: "Approved for $45"                                 │   │
+│  │ Pump dispenses up to $45 in gas                                     │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  Industries using partial auth:                                             │
+│  • Gas stations                                                             │
+│  • Prepaid cards                                                            │
+│  • Gift cards                                                               │
+│  • Split-tender transactions                                                │
+│                                                                             │
+│                                                                             │
+│  INCREMENTAL AUTHORIZATION                                                  │
+│  ─────────────────────────                                                  │
+│  Extending an existing authorization when final amount increases.           │
+│                                                                             │
+│  Example - Hotel:                                                           │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │ Day 1: Pre-auth $500 (3 nights estimated)                           │   │
+│  │ Day 2: Guest extends stay - incremental auth +$150                  │   │
+│  │ Checkout: Final auth total $650, capture $620                       │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│  Requirements:                                                              │
+│  • Must reference original authorization                                    │
+│  • Must occur before original auth expires                                  │
+│  • Common in: Hospitality, car rental, restaurants (tip adjust)             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Authorization Reversals
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      AUTHORIZATION REVERSALS                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  WHAT IT IS:                                                                │
+│  ───────────                                                                │
+│  A message sent to CANCEL a previous authorization and release the hold.    │
+│                                                                             │
+│  WHEN TO USE:                                                               │
+│  ────────────                                                               │
+│  • Customer cancels order before shipment                                   │
+│  • Duplicate authorization created                                          │
+│  • Incorrect amount authorized                                              │
+│  • Transaction voided before capture                                        │
+│                                                                             │
+│  HOW IT WORKS:                                                              │
+│  ─────────────                                                              │
+│                                                                             │
+│  Normal Flow (without reversal):                                            │
+│  • Authorization creates hold                                               │
+│  • Hold remains until capture OR expiration (7 days)                        │
+│  • Customer funds tied up even if order cancelled                           │
+│                                                                             │
+│  With Reversal:                                                             │
+│  • Authorization creates hold                                               │
+│  • Reversal sent within minutes/hours                                       │
+│  • Hold drops within 24 hours (often immediately)                           │
+│                                                                             │
+│  BENEFITS:                                                                  │
+│  ─────────                                                                  │
+│  • Better customer experience (funds available immediately)                 │
+│  • Prevents "pending charge" customer service calls                         │
+│  • No interchange charged                                                   │
+│  • No settlement issues                                                     │
+│                                                                             │
+│  REQUIREMENTS:                                                              │
+│  ─────────────                                                              │
+│  • Must include original authorization code                                 │
+│  • Should be sent within 24 hours (some networks require 30 minutes)        │
+│  • Not all processors support reversals                                     │
+│                                                                             │
+│  REAL-WORLD EXAMPLE:                                                        │
+│  ───────────────────                                                        │
+│                                                                             │
+│  With Reversal:                      │  Without Reversal:                   │
+│  ─────────────────────────────────────┼──────────────────────────────────── │
+│  10:00 AM: Order placed, auth $150   │  10:00 AM: Order placed, auth $150  │
+│  10:15 AM: Customer cancels          │  10:15 AM: Customer cancels         │
+│  10:20 AM: Reversal sent             │  (merchant just doesn't capture)    │
+│  10:21 AM: Hold released             │  Day 7: Hold finally expires        │
+│  Customer happy                      │  Customer frustrated for a week     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
 ### Authorization Validity Periods
 
 Authorizations don't last forever. If not captured, they expire:
@@ -246,6 +349,10 @@ Authorizations don't last forever. If not captured, they expire:
 | Hotels/Lodging | 31 days | 30 days |
 | Car rental | 31 days | 30 days |
 | Cruise lines | 31 days | 30 days |
+| Delayed delivery (e-commerce) | 30 days | 30 days |
+| Recurring/subscription | Special rules | Special rules |
+
+> **Note on 3D Secure:** While authorization typically takes 1-3 seconds, 3D Secure (Verified by Visa, Mastercard SecureCode) can add 5-20 seconds for CNP transactions requiring step-up authentication.
 
 **What happens when auth expires?**
 
@@ -316,8 +423,19 @@ Merchants typically don't send each capture individually. They batch them.
 │   4:15 PM   │  Auth+Capture │  $34.50   │  MC       │  ████████2211        │
 │    ...      │     ...       │    ...    │   ...     │      ...             │
 │                                                                             │
-│  END OF DAY (typically 11 PM or midnight):                                  │
-│  ──────────────────────────────────────────                                 │
+│  END OF DAY - BATCH CUTOFF TIME:                                            │
+│  ───────────────────────────────                                            │
+│                                                                             │
+│  Cutoff times vary by processor and location:                               │
+│  • East Coast merchants: typically 11:00 PM ET                              │
+│  • West Coast merchants: 8:00 PM PT (11:00 PM ET)                           │
+│  • Some processors: 6:00 PM local time                                      │
+│  • Enterprise merchants: Negotiated (can be midnight or later)              │
+│                                                                             │
+│  IMPORTANT: Transaction timing affects funding!                             │
+│  • 10:00 PM Friday (before cutoff) → Monday/Tuesday funding                 │
+│  • 11:30 PM Friday (after cutoff) → Tuesday/Wednesday funding               │
+│                                                                             │
 │                                                                             │
 │  ┌─────────────────────────────────────────────────────────────────────┐   │
 │  │                      BATCH SETTLEMENT                               │   │
@@ -792,14 +910,25 @@ Understanding failure scenarios is critical for building robust payment systems.
 │  When: AFTER batch settlement (next day+)                                   │
 │  What: New transaction crediting money back to card                         │
 │  Cost: Merchant pays refund transaction fees                                │
-│        Interchange is NOT returned (usually)                                │
+│        Interchange is generally NOT returned                                │
 │  Result: Credit posts to customer's account in 3-10 days                    │
 │                                                                             │
 │  Best for: Returns, service issues, post-purchase problems                  │
 │                                                                             │
-│  IMPORTANT: Refunds don't return interchange to merchant!                   │
-│  $100 sale: Merchant paid $1.80 interchange                                 │
-│  $100 refund: Merchant still out $1.80 (may get partial back)               │
+│  INTERCHANGE ON REFUNDS - THE FULL STORY:                                   │
+│  ─────────────────────────────────────────                                  │
+│  General Rule: Interchange is NOT returned on refunds.                      │
+│                                                                             │
+│  Example:                                                                   │
+│  • Sale: $100 (merchant pays $1.80 interchange)                             │
+│  • Refund: $100 (merchant refunds full amount)                              │
+│  • Merchant net loss: $1.80 + refund transaction fees                       │
+│                                                                             │
+│  EXCEPTIONS (important nuances):                                            │
+│  • Voids (same day before settlement): Interchange never charged            │
+│  • Some network programs: Partial interchange recovery within 24 hours      │
+│  • Chargeback win: If merchant wins representment, interchange returned     │
+│  • Auth reversal: Full release if reversed before settlement                │
 │                                                                             │
 │                                                                             │
 │  CHARGEBACK                                                                 │
@@ -919,7 +1048,11 @@ Understanding failure scenarios is critical for building robust payment systems.
 │  ───────────────────────────                                                │
 │                                                                             │
 │  Network makes final decision                                               │
-│  Fees: $250-$500 to losing party                                            │
+│  Fees (2024-2025):                                                          │
+│  • Visa: $500 filing fee (up from $350 in 2020)                             │
+│  • Mastercard: $350-$500 depending on chargeback type                       │
+│  • Pre-arbitration fees: $50-$100 additional                                │
+│  Losing party pays these fees                                               │
 │  Decision is binding                                                        │
 │                                                                             │
 │                                                                             │
@@ -1213,4 +1346,4 @@ Understanding the transaction lifecycle is critical for Payment Facilitators bec
 ---
 
 *Previous: [Card Network Role](./02-card-network-role.md)*
-*Next: [Payment Processors](./04-payment-processors.md)*
+*Next: [Payment Processors](./04-debit-networks-routing.md)*

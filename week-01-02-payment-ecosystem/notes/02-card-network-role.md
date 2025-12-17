@@ -18,12 +18,14 @@ Card networks serve three critical functions:
 
 ### The Major Card Networks
 
-| Network | Type | Market Share (US) | Notable Characteristics |
-|---------|------|-------------------|------------------------|
-| **Visa** | Open-loop | ~52% | Largest global network, does not issue cards |
-| **Mastercard** | Open-loop | ~24% | Second largest, does not issue cards |
-| **American Express** | Closed-loop | ~22% | Issues own cards, serves as issuer + acquirer |
-| **Discover** | Closed-loop | ~2% | Issues own cards, US-focused |
+| Network | Type | Market Share (US Volume) | Notable Characteristics |
+|---------|------|--------------------------|------------------------|
+| **Visa** | Open-loop | ~60-65% | Largest global network, does not issue cards |
+| **Mastercard** | Open-loop | ~25-30% | Second largest, does not issue cards |
+| **American Express** | Closed-loop | ~8-10% | Issues own cards, serves as issuer + acquirer |
+| **Discover** | Closed-loop | ~1-2% | Issues own cards, US-focused |
+
+> **Note on Market Share:** Amex's share of total *spending* may appear higher (~20%+) because they target affluent customers with higher average transaction values. The figures above reflect transaction volume/count.
 
 ---
 
@@ -101,10 +103,14 @@ CHARACTERISTICS:
 • Higher merchant fees (no competition)
 • Premium card positioning
 • Better data/insights (sees both sides)
-• No interchange—they keep everything
+• No interchange in traditional model—they keep the entire merchant discount
 
-Note: Amex has started issuing through partner banks (like Amex cards from
-Wells Fargo), blurring this model slightly.
+IMPORTANT EVOLUTION:
+• Amex co-branded cards (issued by partner banks like Wells Fargo) DO have
+  an interchange-like structure internally
+• OptBlue Program: Amex now allows third-party processors to handle merchants,
+  creating a de facto interchange model for smaller merchants
+• The "pure" closed-loop model is becoming less common
 ```
 
 ### Comparison Table
@@ -150,7 +156,37 @@ BIN STRUCTURE:
 │  First 6-8 digits = Issuing bank identifier                  │
 │  • 453212 might = Chase Sapphire Preferred                   │
 │  • 412345 might = Bank of America Platinum                   │
+│                                                              │
+│  OTHER NETWORK PREFIXES:                                     │
+│  • 3528-3589 = JCB (Japanese network)                        │
+│  • 62 = China UnionPay                                       │
 └──────────────────────────────────────────────────────────────┘
+```
+
+### BIN Length Evolution (IIN Transition)
+
+The payment industry is transitioning from 6-digit to 8-digit BINs due to BIN exhaustion:
+
+```text
+WHY THE CHANGE?
+───────────────
+• 6-digit BINs provide 1,000,000 possible combinations
+• With thousands of issuers globally (each needing multiple BINs for
+  credit, debit, prepaid, commercial), we were running out
+• ISO/IEC 7812 updated in 2017 to allow 8-digit BINs (100,000,000 combinations)
+
+IMPLEMENTATION TIMELINE:
+────────────────────────
+• 2017: ISO standard updated
+• 2018-2022: Networks began issuing 8-digit BINs
+• 2022-2025: Both 6-digit and 8-digit BINs in active use
+• Future: Gradual migration to 8-digit as standard
+
+DEVELOPER IMPACT:
+─────────────────
+• Payment systems MUST handle variable-length BINs (6 OR 8 digits)
+• BIN lookup tables need to support both lengths
+• Routing logic should check 8 digits first, fall back to 6
 ```
 
 ### Authorization Routing Flow
@@ -351,6 +387,20 @@ Networks charge fees for using their infrastructure.
 │  • Mastercard: 0.13% - 0.14% of transaction volume              │
 │  • Charged to acquirer (passed to merchant)                     │
 │                                                                 │
+│  PASSTHROUGH FEES (often overlooked!)                           │
+│  ────────────────────────────────────                           │
+│  Networks charge additional per-transaction fees beyond         │
+│  assessments:                                                   │
+│                                                                 │
+│  Visa:                                                          │
+│  • APF (Acquirer Processing Fee): $0.0195 per transaction       │
+│  • FANF (Fixed Acquirer Network Fee): Monthly fee by MCC        │
+│  • Digital Commerce Fee: 0.02% for e-commerce                   │
+│                                                                 │
+│  Mastercard:                                                    │
+│  • NABU (Network Access & Brand Usage): $0.0195 per auth        │
+│  • Digital Enablement Fee: $0.01 per transaction                │
+│                                                                 │
 │  TRANSACTION FEES (per-transaction)                             │
 │  ──────────────────────────────────                             │
 │  • Authorization fee: $0.02 - $0.04 per auth                    │
@@ -364,13 +414,18 @@ Networks charge fees for using their infrastructure.
 │  • Currency conversion fees: 0.20% - 0.30%                      │
 │  • Chargeback fees: $15 - $25 per dispute                       │
 │                                                                 │
-│  EXAMPLE: $100 Visa Transaction                                 │
-│  ──────────────────────────────                                 │
-│  Assessment:      $100 × 0.14% = $0.14                          │
-│  Authorization:               = $0.02                           │
-│  Clearing:                    = $0.01                           │
-│  ─────────────────────────────────────                          │
-│  Total Network Fees:          = $0.17                           │
+│  REALISTIC EXAMPLE: $100 Visa CNP Transaction                   │
+│  ────────────────────────────────────────────                   │
+│  Assessment:          $100 × 0.14%  = $0.14                     │
+│  APF:                               = $0.0195                   │
+│  Digital Commerce Fee: $100 × 0.02% = $0.02                     │
+│  Authorization:                     = $0.02                     │
+│  Clearing:                          = $0.01                     │
+│  ────────────────────────────────────────────                   │
+│  Total Network Fees:                = $0.21                     │
+│                                                                 │
+│  Note: Effective network fees are typically 0.15% - 0.25%       │
+│  when all passthrough fees are included.                        │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -434,16 +489,21 @@ Networks distinguish transaction types by risk level.
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 
-INTERCHANGE RATE COMPARISON:
+INTERCHANGE RATE COMPARISON (2024-2025 ranges):
 
-Transaction Type            │ Typical Rate
-────────────────────────────┼──────────────────
-CP - Debit (regulated)      │ 0.05% + $0.21
-CP - Debit (unregulated)    │ 0.80% + $0.15
-CP - Credit (standard)      │ 1.51% + $0.10
-CNP - Credit (standard)     │ 1.80% + $0.10
-CNP - Credit (rewards)      │ 2.10% + $0.10
-CNP - Credit (premium)      │ 2.40% + $0.10
+Transaction Type            │ Typical Rate          │ Notes
+────────────────────────────┼───────────────────────┼─────────────────────────
+CP - Debit (regulated)      │ 0.05% + $0.21         │ Durbin cap (banks >$10B)
+CP - Debit (unregulated)    │ 0.80% - 1.40% + $0.15 │ Small banks exempt
+CP - Credit (standard)      │ 1.54% + $0.10         │ Visa CPS Retail (2024)
+CP - Credit (rewards)       │ 1.65% + $0.10         │ Visa Signature Preferred
+CNP - Credit (standard)     │ 1.80% + $0.10         │ Base e-commerce rate
+CNP - Credit (rewards)      │ 2.30% - 2.50% + $0.10 │ Most consumer cards
+CNP - Credit (premium)      │ 2.60% - 3.15% + $0.10 │ World Elite/Infinite
+
+Note: Interchange varies by 300+ categories. The above are representative
+examples. Actual rates depend on MCC, card type, processing method, and
+data provided (AVS match, Level 2/3 data, etc.).
 ```
 
 ---
