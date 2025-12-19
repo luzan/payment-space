@@ -17,7 +17,7 @@ Personal study notes for the Payment Ecosystem Foundation module.
 
 | # | Topic | Status |
 |---|-------|--------|
-| 05 | [Payment Processors](./05-payment-processors.md) | Pending |
+| 05 | [Payment Processors](./05-payment-processors.md) | Complete |
 | 06 | [Payment Gateways](./06-payment-gateways.md) | Pending |
 | 07 | [Acquiring Banks](./07-acquiring-banks.md) | Pending |
 | 08 | [ISOs (Independent Sales Organizations)](./08-isos.md) | Pending |
@@ -32,7 +32,7 @@ Personal study notes for the Payment Ecosystem Foundation module.
 - [x] Card Network Role
 - [x] Transaction Lifecycle Basics
 - [x] Debit Networks & Routing
-- [ ] Payment Processors
+- [x] Payment Processors
 - [ ] Payment Gateways
 - [ ] Acquiring Banks
 - [ ] ISOs
