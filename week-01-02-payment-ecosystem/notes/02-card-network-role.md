@@ -1,5 +1,12 @@
 # Card Network Role
 
+> **Last Updated:** 2025-12-18
+>
+> **Status:** Complete
+>
+> **Changes Log:**
+> - 2025-12: Initial comprehensive notes covering open/closed loop networks
+
 Card networks (also called card schemes or card brands) are the backbone of electronic payments. They don't hold money or issue cards—they provide the infrastructure, rules, and routing that make card payments possible worldwide.
 
 ---

@@ -1,5 +1,14 @@
 # Debit Networks & Routing
 
+> **Last Updated:** 2025-12-18
+>
+> **Status:** Complete
+>
+> **Changes Log:**
+>
+> - 2025-12: Initial comprehensive notes with LCR analysis and regulatory context
+> - Note: Capital One/Discover acquisition status, Maestro sunset timeline should be verified periodically
+
 Debit card routing is one of the most complex and economically significant aspects of payment processing. Unlike credit cards that route through a single network (Visa or Mastercard), debit transactions can route through multiple networks. This creates opportunities for cost optimization.
 
 ---

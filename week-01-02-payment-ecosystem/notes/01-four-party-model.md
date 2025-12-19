@@ -1,5 +1,12 @@
 # The Four-Party Model
 
+> **Last Updated:** 2025-12-18
+>
+> **Status:** Complete
+>
+> **Changes Log:**
+> - 2025-12: Initial comprehensive notes with PayFac context
+
 The Four-Party Model (also known as the Four-Corner Model) is the foundational structure of modern card payment networks. Understanding this model is essential for anyone building payment systems.
 
 ---

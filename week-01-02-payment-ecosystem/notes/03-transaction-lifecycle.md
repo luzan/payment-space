@@ -1,5 +1,12 @@
 # Transaction Lifecycle Basics
 
+> **Last Updated:** 2025-12-18
+>
+> **Status:** Complete
+>
+> **Changes Log:**
+> - 2025-12: Initial comprehensive notes with chargeback lifecycle details
+
 Every card transaction follows a predictable lifecycle from the moment a card is swiped until the merchant receives funds. Understanding this lifecycle is critical for anyone building or operating payment systems.
 
 ---
@@ -1346,4 +1353,4 @@ Understanding the transaction lifecycle is critical for Payment Facilitators bec
 ---
 
 *Previous: [Card Network Role](./02-card-network-role.md)*
-*Next: [Payment Processors](./04-debit-networks-routing.md)*
+*Next: [Debit Networks & Routing](./04-debit-networks-routing.md)*
