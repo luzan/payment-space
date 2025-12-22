@@ -22,8 +22,8 @@ Personal study notes for the Payment Ecosystem Foundation module.
 | 07 | [Acquiring Banks](./07-acquiring-banks.md) | Complete |
 | 08 | [ISOs (Independent Sales Organizations)](./08-isos.md) | Complete |
 | 09 | [ISVs (Independent Software Vendors)](./09-isvs.md) | Complete |
-| 10 | [The Payment Facilitator Model](./10-payfac-model.md) | Pending |
-| 11 | [Comparing Models](./11-comparing-models.md) | Pending |
+| 10 | [The Payment Facilitator Model](./10-payfac-model.md) | Complete |
+| 11 | [Comparing Models](./11-comparing-models.md) | Complete |
 | 12 | [Alternative Payment Methods](./12-alternative-payment-methods.md) | Pending |
 
 ## Progress Tracker
@@ -37,8 +37,8 @@ Personal study notes for the Payment Ecosystem Foundation module.
 - [x] Acquiring Banks
 - [x] ISOs
 - [x] ISVs
-- [ ] PayFac Model
-- [ ] Comparing Models
+- [x] PayFac Model
+- [x] Comparing Models
 - [ ] Alternative Payment Methods
 
 ## Quick Reference
