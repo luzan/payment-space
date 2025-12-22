@@ -18,10 +18,10 @@ Personal study notes for the Payment Ecosystem Foundation module.
 | # | Topic | Status |
 |---|-------|--------|
 | 05 | [Payment Processors](./05-payment-processors.md) | Complete |
-| 06 | [Payment Gateways](./06-payment-gateways.md) | Pending |
-| 07 | [Acquiring Banks](./07-acquiring-banks.md) | Pending |
-| 08 | [ISOs (Independent Sales Organizations)](./08-isos.md) | Pending |
-| 09 | [ISVs (Independent Software Vendors)](./09-isvs.md) | Pending |
+| 06 | [Payment Gateways](./06-payment-gateways.md) | Complete |
+| 07 | [Acquiring Banks](./07-acquiring-banks.md) | Complete |
+| 08 | [ISOs (Independent Sales Organizations)](./08-isos.md) | Complete |
+| 09 | [ISVs (Independent Software Vendors)](./09-isvs.md) | Complete |
 | 10 | [The Payment Facilitator Model](./10-payfac-model.md) | Pending |
 | 11 | [Comparing Models](./11-comparing-models.md) | Pending |
 | 12 | [Alternative Payment Methods](./12-alternative-payment-methods.md) | Pending |
@@ -33,10 +33,10 @@ Personal study notes for the Payment Ecosystem Foundation module.
 - [x] Transaction Lifecycle Basics
 - [x] Debit Networks & Routing
 - [x] Payment Processors
-- [ ] Payment Gateways
-- [ ] Acquiring Banks
-- [ ] ISOs
-- [ ] ISVs
+- [x] Payment Gateways
+- [x] Acquiring Banks
+- [x] ISOs
+- [x] ISVs
 - [ ] PayFac Model
 - [ ] Comparing Models
 - [ ] Alternative Payment Methods
