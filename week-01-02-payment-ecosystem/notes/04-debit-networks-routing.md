@@ -9,7 +9,7 @@
 > - 2025-12: Initial comprehensive notes with LCR analysis and regulatory context
 > - Note: Capital One/Discover acquisition status, Maestro sunset timeline should be verified periodically
 
-Debit card routing is one of the most complex and economically significant aspects of payment processing. Unlike credit cards that route through a single network (Visa or Mastercard), debit transactions can route through multiple networks. This creates opportunities for cost optimization.
+Debit card routing is one of the most complex and economically significant aspects of payment processing. Unlike credit cards that route through a single [card network](./02-card-network-role.md) (Visa or Mastercard), debit transactions can route through multiple networks. This creates opportunities for cost optimization.
 
 ---
 
@@ -49,7 +49,7 @@ The Durbin Amendment (2010) requires issuers to support at least two unaffiliate
 │  • Maestro          │             │                     │
 │                     │             │                     │
 │  Single-message     │             │  Dual-message       │
-│  Real-time settle   │             │  2-3 day settle     │
+│  Real-time settle   │             │  [2-3 day settle](./03-transaction-lifecycle.md#phase-3-funding-settlement)     │
 │  Fixed fees         │             │  % + fixed fees     │
 └─────────────────────┘             └─────────────────────┘
 ```
@@ -107,7 +107,7 @@ These regional networks have declining market share as national networks dominat
 
 ### PINless Debit Support
 
-Not all PIN networks support card-not-present (CNP) transactions:
+Not all PIN networks support [card-not-present (CNP)](./02-card-network-role.md#card-present-vs-card-not-present) transactions:
 
 **PINless Enabled:**
 
@@ -136,7 +136,7 @@ Not all PIN networks support card-not-present (CNP) transactions:
 | **Message Type** | Single-message | Dual-message |
 | **Settlement** | Same/next day | 2-3 days |
 | **Fee Structure** | Fixed fee ($0.08-$0.15) | Percentage + fixed |
-| **Chargeback Risk** | Lower | Higher |
+| **[Chargeback](./03-transaction-lifecycle.md#when-things-go-wrong) Risk** | Lower | Higher |
 | **Cash Back** | Standard feature | Rare (some MCCs only) |
 
 ### Processing Flow Comparison
@@ -586,7 +586,7 @@ Math (per 100 transactions, $75 average ticket):
 
 **What is a BIN/IIN?**
 
-Bank Identification Number (BIN), also called Issuer Identification Number (IIN). The first 6-9 digits of a card number.
+[Bank Identification Number (BIN)](./02-card-network-role.md#bin-based-routing), also called Issuer Identification Number (IIN). The first 6-9 digits of a card number.
 
 ```text
 4111 1111 1111 1111
@@ -653,7 +653,7 @@ First digit identifies the network:
 
 ### Network Tokenization Impact
 
-**Challenge:** When a debit card is tokenized (stored in Apple Pay, Google Pay, or merchant vault), the token may be **network-specific**.
+**Challenge:** When a debit card is [tokenized](./06-payment-gateways.md#tokenization) (stored in Apple Pay, Google Pay, or merchant vault), the token may be **network-specific**.
 
 **Impact on Routing:**
 
@@ -667,7 +667,7 @@ First digit identifies the network:
 - **Multi-network tokens** where wallet provides tokens for multiple networks
 - **On-behalf tokenization** where merchant controls token network
 
-**PayFac Consideration:**
+**[PayFac](./09-isvs.md#the-payfac-model) Consideration:**
 
 If your platform supports recurring billing or card-on-file, tokenization strategy directly impacts routing optionality. Consider requesting tokens from multiple networks when storing cards.
 
@@ -757,7 +757,7 @@ Example: A Canadian Interac debit card used at a U.S. merchant:
 - Different settlement systems and currencies
 - Technical incompatibilities between domestic networks
 
-**PayFac Consideration:**
+**[PayFac](./09-isvs.md#the-payfac-model) Consideration:**
 
 If your sub-merchants have significant international tourist traffic, factor this into routing economics. LCR savings will be limited for international cards.
 
@@ -964,7 +964,7 @@ The PayFac should adjust LCR logic to balance cost and approval rate:
 
 ---
 
-## Why This Matters for PayFac
+## Why This Matters for [PayFac](./09-isvs.md#the-payfac-model)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -1089,3 +1089,18 @@ The PayFac should adjust LCR logic to balance cost and approval rate:
 
 *Previous: [Transaction Lifecycle Basics](./03-transaction-lifecycle.md)*
 *Next: [Payment Processors](./05-payment-processors.md)*
+
+---
+
+## Related Topics
+
+| Topic | Description |
+|-------|-------------|
+| [The Four-Party Model](./01-four-party-model.md) | Understanding interchange and fee structures |
+| [Card Network Role](./02-card-network-role.md) | BIN routing and network rules |
+| [Transaction Lifecycle](./03-transaction-lifecycle.md) | Authorization, settlement, and chargebacks |
+| [Payment Processors](./05-payment-processors.md) | Processor-owned networks (Fiserv STAR, FIS NYCE) |
+| [Payment Gateways](./06-payment-gateways.md) | Tokenization and CNP transaction handling |
+| [Acquiring Banks](./07-acquiring-banks.md) | Merchant settlement and funding |
+| [ISOs](./08-isos.md) | Merchant sales and routing optimization |
+| [ISVs](./09-isvs.md) | PayFac model and embedded payments |

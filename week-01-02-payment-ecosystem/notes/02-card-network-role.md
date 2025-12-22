@@ -19,9 +19,9 @@ Card networks serve three critical functions:
 
 | Function | Description |
 |----------|-------------|
-| **Rule Setting** | Define standards for all participants (issuers, acquirers, merchants) |
-| **Transaction Routing** | Route authorization requests between acquirers and issuers |
-| **Settlement Facilitation** | Calculate net positions and facilitate fund transfers |
+| **Rule Setting** | Define standards for all participants ([issuers, acquirers](./01-four-party-model.md), merchants) |
+| **Transaction Routing** | Route authorization requests between [acquirers](./07-acquiring-banks.md) and issuers |
+| **Settlement Facilitation** | Calculate net positions and facilitate [fund transfers](./03-transaction-lifecycle.md#settlement--funding) |
 
 ### The Major Card Networks
 
@@ -306,7 +306,7 @@ NETWORK RULES SERVE THREE PURPOSES:
 
 2. CONSUMER PROTECTION
    ────────────────────
-   • Chargeback rights (dispute process)
+   • [Chargeback](./03-transaction-lifecycle.md#when-things-go-wrong) rights (dispute process)
    • Zero liability for fraud
    • Data protection requirements
    • Receipt and disclosure requirements
@@ -326,7 +326,7 @@ NETWORK RULES SERVE THREE PURPOSES:
 | **Acceptance** | Must accept all valid cards of that brand (no cherry-picking) |
 | **Pricing** | Cannot charge more for card vs cash (varies by jurisdiction) |
 | **Display** | Must display network logos at point of sale |
-| **Security** | Must comply with PCI-DSS standards |
+| **Security** | Must comply with [PCI-DSS](./06-payment-gateways.md#pci-compliance) standards |
 | **Data** | Cannot store CVV/CVC after authorization |
 | **Disputes** | Must respond to chargebacks within specified timeframes |
 | **Refunds** | Must refund to same card used for purchase |
@@ -482,7 +482,7 @@ Networks distinguish transaction types by risk level.
 │  ✗ Higher fraud risk (card not verified physically)             │
 │  ✗ Higher interchange rates                                     │
 │  ✗ Weaker chargeback defense for merchant                       │
-│  ✗ Relies on CVV, AVS, 3D Secure for verification               │
+│  ✗ Relies on CVV, AVS, [3D Secure](./06-payment-gateways.md#3d-secure) for verification               │
 │                                                                 │
 │  INTERCHANGE EXAMPLE (Visa Card Not Present):                   │
 │  1.80% + $0.10 per transaction                                  │
@@ -500,7 +500,7 @@ INTERCHANGE RATE COMPARISON (2024-2025 ranges):
 
 Transaction Type            │ Typical Rate          │ Notes
 ────────────────────────────┼───────────────────────┼─────────────────────────
-CP - Debit (regulated)      │ 0.05% + $0.21         │ Durbin cap (banks >$10B)
+CP - Debit (regulated)      │ 0.05% + $0.21         │ [Durbin cap](./04-debit-networks-routing.md#durbin-amendment--regulated-debit) (banks >$10B)
 CP - Debit (unregulated)    │ 0.80% - 1.40% + $0.15 │ Small banks exempt
 CP - Credit (standard)      │ 1.54% + $0.10         │ Visa CPS Retail (2024)
 CP - Credit (rewards)       │ 1.65% + $0.10         │ Visa Signature Preferred
@@ -527,7 +527,7 @@ data provided (AVS match, Level 2/3 data, etc.).
 | **Card-Present (CP)** | Transaction where the physical card is presented (swipe, dip, tap) |
 | **Card-Not-Present (CNP)** | Transaction where card is not physically present (online, phone, mail) |
 | **ISO 8583** | International standard for payment card message formats used by networks |
-| **MATCH/TMF List** | Mastercard's terminated merchant file—a blacklist of merchants terminated for cause |
+| **MATCH/TMF List** | Mastercard's terminated merchant file—a blacklist of merchants terminated for cause (see [ISO underwriting](./08-isos.md#underwriting-and-risk-management)) |
 
 ---
 
@@ -699,3 +699,18 @@ Digits 1-6 or 1-8: Issuing bank + card product
 
 *Previous: [The Four-Party Model](./01-four-party-model.md)*
 *Next: [Transaction Lifecycle Basics](./03-transaction-lifecycle.md)*
+
+---
+
+## Related Topics
+
+| Topic | Description |
+|-------|-------------|
+| [The Four-Party Model](./01-four-party-model.md) | Core participants (issuer, acquirer, network) explained |
+| [Transaction Lifecycle](./03-transaction-lifecycle.md) | How authorization, capture, and settlement actually work |
+| [Debit Networks & Routing](./04-debit-networks-routing.md) | PIN networks, Durbin Amendment, and least-cost routing |
+| [Payment Processors](./05-payment-processors.md) | Front-end and back-end processing infrastructure |
+| [Payment Gateways](./06-payment-gateways.md) | Tokenization, PCI compliance, and 3D Secure |
+| [Acquiring Banks](./07-acquiring-banks.md) | Sponsor banks and merchant acquiring |
+| [ISOs](./08-isos.md) | Independent Sales Organizations and merchant services |
+| [ISVs](./09-isvs.md) | Software vendors with embedded payments |

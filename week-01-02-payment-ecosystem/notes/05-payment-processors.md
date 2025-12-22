@@ -8,7 +8,7 @@
 > **Changes Log:**
 > - 2025-12: Initial comprehensive notes with PayFac context and payment-critic review
 
-Payment processors are the technical backbone of the card payment ecosystem. They provide the infrastructure that routes transactions between merchants, card networks, and banks. Understanding processors is essential for anyone building a PayFac platform.
+Payment processors are the technical backbone of the card payment ecosystem. They provide the infrastructure that routes transactions between merchants, [card networks](./02-card-network-role.md), and banks. Understanding processors is essential for anyone building a [PayFac](./09-isvs.md#the-payfac-model) platform.
 
 ---
 
@@ -22,7 +22,7 @@ A **payment processor** is a company that provides the technical infrastructure 
 | **Business Services** | Underwriting, fraud detection, chargeback management, reporting |
 | **Financial Services** | Settlement coordination, reserve management, currency conversion |
 
-**Key Distinction:** Most third-party processors are NOT banks and don't hold banking licenses to move money independently. They must partner with acquiring banks (sponsor banks for PayFacs) that hold regulatory licenses and settlement accounts. However, some major processors are **bank-owned entities** (Chase Paymentech, Elavon, Wells Fargo Merchant Services) with direct access to banking infrastructure.
+**Key Distinction:** Most third-party processors are NOT banks and don't hold banking licenses to move money independently. They must partner with [acquiring banks](./07-acquiring-banks.md) (sponsor banks for [PayFacs](./09-isvs.md#the-payfac-model)) that hold regulatory licenses and settlement accounts. However, some major processors are **bank-owned entities** (Chase Paymentech, Elavon, Wells Fargo Merchant Services) with direct access to banking infrastructure.
 
 ---
 
@@ -36,14 +36,14 @@ A **payment processor** is a company that provides the technical infrastructure 
 |  TECHNICAL INFRASTRUCTURE:                                                  |
 |  * Connects merchants to card networks (Visa, Mastercard, etc.)             |
 |  * Routes authorization requests in milliseconds                            |
-|  * Batches and submits transactions for settlement                          |
+|  * Batches and submits transactions for [settlement](./03-transaction-lifecycle.md#phase-3-funding-settlement)                          |
 |  * Maintains PCI-compliant data security                                    |
 |  * Provides APIs, SDKs, and terminals                                       |
 |                                                                             |
 |  BUSINESS SERVICES:                                                         |
 |  * Merchant underwriting and onboarding                                     |
 |  * Fraud detection and prevention                                           |
-|  * Chargeback management                                                    |
+|  * [Chargeback](./03-transaction-lifecycle.md#when-things-go-wrong) management                                                    |
 |  * Reporting and reconciliation                                             |
 |  * Customer support                                                         |
 |                                                                             |
@@ -89,8 +89,8 @@ Impact:
 E-commerce revolution:
 - **1994:** First secure online transaction (Cybersource)
 - **1998:** PayPal founded (payment aggregator model)
-- **Late 1990s:** Payment gateways emerge (Authorize.Net, CyberSource)
-- Card-not-present (CNP) processing becomes significant
+- **Late 1990s:** [Payment gateways](./06-payment-gateways.md) emerge (Authorize.Net, CyberSource)
+- [Card-not-present (CNP)](./02-card-network-role.md#card-present-vs-card-not-present) processing becomes significant
 
 Industry consolidation:
 - Banks acquire processors for "end-to-end" control
@@ -137,7 +137,7 @@ Payment processing involves two distinct functions, often performed by different
 |     - Validate data format                                                  |
 |                                                                             |
 |  2. Routing to Card Networks                                                |
-|     - Identify card type from BIN                                           |
+|     - Identify card type from [BIN](./02-card-network-role.md#bin-based-routing)                                           |
 |     - Route to appropriate network (Visa/MC/Amex/Discover)                  |
 |     - Format message in ISO 8583 standard                                   |
 |                                                                             |
@@ -173,10 +173,10 @@ Payment processing involves two distinct functions, often performed by different
 |     - Sort by card network                                                  |
 |     - Create settlement files                                               |
 |                                                                             |
-|  2. Interchange Calculation                                                 |
+|  2. [Interchange](./01-four-party-model.md#interchange-demystified) Calculation                                                 |
 |     - Determine exact interchange rate for each transaction                 |
 |     - Based on: card type, MCC, entry mode, data quality                    |
-|     - Calculate network assessment fees                                     |
+|     - Calculate [network assessment fees](./02-card-network-role.md#network-fees-assessments)                                     |
 |                                                                             |
 |  3. Clearing Submission                                                     |
 |     - Submit files to Visa, Mastercard, etc.                                |
@@ -362,9 +362,9 @@ Processors must be **certified** by card networks to route transactions. This is
 | **Clover** | POS system for SMBs, competes with Square |
 | **Carat** | Omnichannel commerce platform for enterprise |
 | **North** | Traditional enterprise acquiring |
-| **Star Network** | 4th largest US debit network |
+| **[Star Network](./04-debit-networks-routing.md#major-networks-by-owner)** | 4th largest US debit network |
 
-**PayFac Relevance:** Many PayFacs use Fiserv/First Data. Offers PayFac-in-a-Box solutions and sponsor bank introductions.
+**[PayFac](./09-isvs.md#the-payfac-model) Relevance:** Many PayFacs use Fiserv/First Data. Offers PayFac-in-a-Box solutions and [sponsor bank](./07-acquiring-banks.md#sponsor-banks) introductions.
 
 ### Global Payments / Worldpay (Post-2025 Deal)
 
@@ -383,7 +383,7 @@ Processors must be **certified** by card networks to route transactions. This is
 - Processes $4 trillion+ annually
 - Strong in: Integrated software, vertical SaaS, e-commerce
 
-**PayFac Relevance:** Major provider for PayFac platforms. Worldpay has strong PayFac-as-a-Service offering.
+**[PayFac](./09-isvs.md#the-payfac-model) Relevance:** Major provider for PayFac platforms. Worldpay has strong PayFac-as-a-Service offering.
 
 ### FIS (Post-Worldpay Exit)
 
@@ -452,7 +452,7 @@ Processors must be **certified** by card networks to route transactions. This is
 - High authorization rates (smart routing)
 - Modern tech stack (built for cloud)
 
-**PayFac Relevance:** Offers "Platforms" solution for PayFac model. Used by Uber, Shopify, DoorDash.
+**[PayFac](./09-isvs.md#the-payfac-model) Relevance:** Offers "Platforms" solution for PayFac model. Used by Uber, Shopify, DoorDash.
 
 #### Stripe
 
@@ -475,7 +475,7 @@ Processors must be **certified** by card networks to route transactions. This is
 - Global reach (46+ countries)
 - Continuous innovation
 
-**PayFac Relevance:** **Stripe Connect is the PayFac platform leader.** Powers thousands of SaaS platforms.
+**[PayFac](./09-isvs.md#the-payfac-model) Relevance:** **Stripe Connect is the PayFac platform leader.** Powers thousands of SaaS platforms.
 
 ---
 
@@ -492,7 +492,7 @@ Processors must be **certified** by card networks to route transactions. This is
 
 ---
 
-## Payment Gateway vs Payment Processor
+## [Payment Gateway](./06-payment-gateways.md) vs Payment Processor
 
 This is a common point of confusion:
 
@@ -504,7 +504,7 @@ This is a common point of confusion:
 - Collects and encrypts customer payment data
 - Customer-facing interface (APIs, hosted checkout)
 - Acts as a bridge between parties
-- **Modern capabilities:** Tokenization/vaulting, fraud screening, routing logic, retry logic, multi-processor orchestration
+- **Modern capabilities:** [Tokenization](./06-payment-gateways.md#tokenization)/vaulting, fraud screening, routing logic, retry logic, multi-processor orchestration
 
 **Examples:** Authorize.Net, Braintree, NMI, Spreedly (orchestration), Primer.io
 
@@ -892,3 +892,18 @@ This is why Stripe can onboard merchants instantly - they ARE the PayFac, not ju
 ---
 
 *Next Topic: [Payment Gateways](./06-payment-gateways.md)*
+
+---
+
+## Related Topics
+
+| Topic | Description |
+|-------|-------------|
+| [The Four-Party Model](./01-four-party-model.md) | Interchange economics and fee structures |
+| [Card Network Role](./02-card-network-role.md) | BIN routing and network certifications |
+| [Transaction Lifecycle](./03-transaction-lifecycle.md) | Authorization, settlement, and chargebacks |
+| [Debit Networks & Routing](./04-debit-networks-routing.md) | Processor-owned networks (STAR, NYCE) |
+| [Payment Gateways](./06-payment-gateways.md) | Gateway vs processor distinction |
+| [Acquiring Banks](./07-acquiring-banks.md) | Sponsor banks and processor relationships |
+| [ISOs](./08-isos.md) | ISO/processor distribution model |
+| [ISVs](./09-isvs.md) | PayFac model and embedded payments |

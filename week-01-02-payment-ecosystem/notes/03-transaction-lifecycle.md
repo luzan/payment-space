@@ -54,7 +54,7 @@ Authorization is the real-time process of getting approval for a transaction. Th
                         AUTHORIZATION FLOW (1-3 seconds)
     ═══════════════════════════════════════════════════════════════════════
 
-    CARDHOLDER          MERCHANT           ACQUIRER          NETWORK           ISSUER
+    [CARDHOLDER](./01-four-party-model.md)          MERCHANT           [ACQUIRER](./07-acquiring-banks.md)          NETWORK           ISSUER
          │                  │                  │                 │                │
          │  1. Present Card │                  │                 │                │
          │  (tap/swipe/dip) │                  │                 │                │
@@ -115,7 +115,7 @@ Authorization is the real-time process of getting approval for a transaction. Th
 │                                                                             │
 │  ADDITIONAL DATA (varies)                                                   │
 │  ───────────────────────                                                    │
-│  • AVS Data (billing address)       • 3D Secure results                     │
+│  • AVS Data (billing address)       • [3D Secure](./06-payment-gateways.md#3d-secure) results                     │
 │  • Level 2/3 Data (B2B)             • Recurring indicator                   │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -359,7 +359,7 @@ Authorizations don't last forever. If not captured, they expire:
 | Delayed delivery (e-commerce) | 30 days | 30 days |
 | Recurring/subscription | Special rules | Special rules |
 
-> **Note on 3D Secure:** While authorization typically takes 1-3 seconds, 3D Secure (Verified by Visa, Mastercard SecureCode) can add 5-20 seconds for CNP transactions requiring step-up authentication.
+> **Note on [3D Secure](./06-payment-gateways.md#3d-secure):** While authorization typically takes 1-3 seconds, 3D Secure (Verified by Visa, Mastercard SecureCode) can add 5-20 seconds for CNP transactions requiring step-up authentication.
 
 **What happens when auth expires?**
 
@@ -510,8 +510,8 @@ Merchants typically don't send each capture individually. They batch them.
     KEY CLEARING ACTIVITIES:
 
     • Transactions matched to original authorizations
-    • Interchange fees calculated based on card type, MCC, etc.
-    • Network assessment fees calculated
+    • [Interchange fees](./01-four-party-model.md#interchange-demystified) calculated based on card type, MCC, etc.
+    • [Network assessment fees](./02-card-network-role.md#network-fees-assessments) calculated
     • Net settlement positions determined
     • Cardholder statements updated (pending → posted)
 ```
@@ -655,9 +655,9 @@ Funding is when actual money moves between bank accounts.
 │                                                                             │
 │  Gross Sales:                                    $10,000.00                 │
 │                                                                             │
-│  Less: Interchange Fees (avg 1.80%)              -$180.00                   │
-│  Less: Network Assessments (0.14%)               -$14.00                    │
-│  Less: Processor/Acquirer Markup (0.50%)         -$50.00                    │
+│  Less: [Interchange Fees](./01-four-party-model.md#interchange-demystified) (avg 1.80%)              -$180.00                   │
+│  Less: [Network Assessments](./02-card-network-role.md#network-fees-assessments) (0.14%)               -$14.00                    │
+│  Less: [Processor](./05-payment-processors.md)/[Acquirer](./07-acquiring-banks.md) Markup (0.50%)         -$50.00                    │
 │  Less: Per-Transaction Fees (47 × $0.10)         -$4.70                     │
 │                                                  ──────────                 │
 │  Total Fees:                                     -$248.70 (2.49%)           │
@@ -946,7 +946,7 @@ Understanding failure scenarios is critical for building robust payment systems.
 │  Result: Funds pulled from merchant account                                 │
 │                                                                             │
 │  Merchant can fight chargebacks by submitting evidence                      │
-│  Excessive chargebacks (>1%) can result in termination                      │
+│  Excessive chargebacks (>1%) can result in [MATCH listing](./02-card-network-role.md#consequences-of-rule-violations)                      │
 │                                                                             │
 │  TIMELINE COMPARISON:                                                       │
 │  ────────────────────                                                       │
@@ -1252,7 +1252,7 @@ When an authorization expires:
 
 ## Why This Matters for PayFac
 
-Understanding the transaction lifecycle is critical for Payment Facilitators because:
+Understanding the transaction lifecycle is critical for [Payment Facilitators](./09-isvs.md#the-payfac-model) because:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -1354,3 +1354,18 @@ Understanding the transaction lifecycle is critical for Payment Facilitators bec
 
 *Previous: [Card Network Role](./02-card-network-role.md)*
 *Next: [Debit Networks & Routing](./04-debit-networks-routing.md)*
+
+---
+
+## Related Topics
+
+| Topic | Description |
+|-------|-------------|
+| [The Four-Party Model](./01-four-party-model.md) | Participants and interchange economics |
+| [Card Network Role](./02-card-network-role.md) | Network rules, routing, and assessment fees |
+| [Debit Networks & Routing](./04-debit-networks-routing.md) | PIN vs signature debit and Durbin Amendment |
+| [Payment Processors](./05-payment-processors.md) | Front-end/back-end processing infrastructure |
+| [Payment Gateways](./06-payment-gateways.md) | Tokenization, 3D Secure, and PCI compliance |
+| [Acquiring Banks](./07-acquiring-banks.md) | Acquirer role in settlement and funding |
+| [ISOs](./08-isos.md) | Merchant services and risk management |
+| [ISVs](./09-isvs.md) | PayFac model and embedded payments |

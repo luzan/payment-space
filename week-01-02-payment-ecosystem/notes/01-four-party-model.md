@@ -22,7 +22,7 @@ The Four-Party Model consists of four main participants in every card transactio
 | **Issuing Bank (Issuer)** | Bank that issued the card | Chase (your credit card bank) |
 | **Acquiring Bank (Acquirer)** | Bank that enables merchant to accept cards | Wells Fargo Merchant Services |
 
-The **Card Network** (Visa, Mastercard) sits in the middle, facilitating communication between all parties.
+The **[Card Network](./02-card-network-role.md)** (Visa, Mastercard) sits in the middle, facilitating communication between all parties.
 
 ---
 
@@ -239,7 +239,7 @@ The cardholder is the consumer who:
 - Has a contractual relationship with the **issuing bank**
 - Uses the card to make purchases
 - Is responsible for paying the monthly bill
-- Can dispute transactions (initiating chargebacks)
+- Can dispute transactions (initiating [chargebacks](./03-transaction-lifecycle.md#when-things-go-wrong))
 
 **Key Point:** The cardholder has NO direct relationship with the merchant's bank or the card network.
 
@@ -282,11 +282,11 @@ The acquirer is a financial institution that:
 - Funds the merchant (after deducting fees)
 - Manages merchant underwriting and compliance
 
-**Examples:** Chase Paymentech, Wells Fargo Merchant Services, Worldpay, Fiserv
+**Examples:** Chase Paymentech, Wells Fargo Merchant Services, Worldpay, Fiserv (see [Acquiring Banks](./07-acquiring-banks.md) and [Payment Processors](./05-payment-processors.md) for detailed coverage)
 
 **Key Point:** The acquirer takes on significant risk. If a merchant processes fraudulent transactions and disappears, the acquirer is liable for chargebacks.
 
-### 5. Card Network (The "Fifth" Party)
+### 5. [Card Network](./02-card-network-role.md) (The "Fifth" Party)
 
 Though called the "Four-Party Model," the network is essential:
 
@@ -524,7 +524,7 @@ International transactions involve additional fees:
 
 ## The Durbin Amendment: Debit Interchange Caps
 
-The Durbin Amendment (2010, part of Dodd-Frank) caps debit interchange for large banks:
+The Durbin Amendment (2010, part of Dodd-Frank) caps debit interchange for large banks. For comprehensive coverage of debit networks and routing, see [Debit Networks & Routing](./04-debit-networks-routing.md).
 
 **Who It Affects:**
 
@@ -586,8 +586,8 @@ A critical network rule that affects merchants:
 | **BIN/IIN** | Bank/Issuer Identification Number. First 6-8 digits of card number identifying the issuing institution. Industry transitioned to 8-digit IINs in 2022. |
 | **Authorization** | Real-time approval from issuer to proceed with transaction. Places hold on funds. |
 | **Capture** | Merchant's request to collect authorized funds. Can be same day or later. |
-| **Settlement** | Actual movement of funds between banks. Typically T+1 to T+3. |
-| **Chargeback** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. |
+| **Settlement** | Actual movement of funds between banks. Typically T+1 to T+3. See [Transaction Lifecycle](./03-transaction-lifecycle.md). |
+| **Chargeback** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. See [Transaction Lifecycle](./03-transaction-lifecycle.md#chargebacks-the-forced-reversal). |
 
 ---
 
@@ -772,6 +772,19 @@ Premium rewards cards (like Chase Sapphire Reserve, AmEx Platinum) have higher i
 9. **PayFacs inherit acquirer risk**: With a sponsor bank, PayFacs take on underwriting, chargebacks, and compliance
 
 10. **Honor All Cards**: Merchants accepting Visa must accept ALL Visa cards, including premium
+
+---
+
+## Related Topics
+
+- **[Card Network Role](./02-card-network-role.md)** - Deep dive into network infrastructure, BIN routing, and network rules
+- **[Transaction Lifecycle](./03-transaction-lifecycle.md)** - Detailed authorization → capture → settlement flow
+- **[Debit Networks & Routing](./04-debit-networks-routing.md)** - PIN vs signature debit, Durbin Amendment, least-cost routing
+- **[Payment Processors](./05-payment-processors.md)** - The technical backbone connecting merchants to networks
+- **[Payment Gateways](./06-payment-gateways.md)** - Secure transmission layer for payment data
+- **[Acquiring Banks](./07-acquiring-banks.md)** - Merchant enablement and risk management
+- **[ISOs](./08-isos.md)** - Independent Sales Organizations and merchant acquisition
+- **[ISVs](./09-isvs.md)** - Software vendors with embedded payments
 
 ---
 
