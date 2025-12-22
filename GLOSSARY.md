@@ -2,9 +2,9 @@
 
 A comprehensive glossary of payment industry terms and definitions.
 
-> Source: [Jupico Documentation](https://docs.jupico.com/docs/glossary)
+> Sources: [Jupico Documentation](https://docs.jupico.com/docs/glossary) and additional terms from course notes
 
-[A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [I](#i) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w)
+[A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w)
 
 ---
 
@@ -49,9 +49,18 @@ A returned ACH transaction.
 **ACH Return**
 A failed ACH transaction.
 
+**Assessment Fees**
+Fees charged by card networks (Visa, Mastercard) for using their network infrastructure, typically 0.13-0.15% of transaction value.
+
 ---
 
 ## B
+
+**Back-End Processor**
+A processor that handles the post-authorization functions including clearing, settlement, and funding. Matches transactions to authorizations and calculates interchange.
+
+**BIN Sponsorship**
+When a sponsor bank provides their Bank Identification Number to a PayFac or ISO, allowing transactions to route through the sponsor's network membership.
 
 **Bank Identification Number (BIN)**
 A sequence of digits identifying the financial institution that issued a credit or debit card, typically the first six or eight digits of the card number.
@@ -77,6 +86,12 @@ Any transaction or scenario where a business sends money to a consumer.
 ---
 
 ## C
+
+**Capture**
+The process of finalizing a previously authorized transaction for settlement. Merchants capture transactions when they're ready to collect payment (e.g., after shipping goods).
+
+**Clearing**
+The exchange of transaction details between acquiring and issuing banks through the card network, calculating interchange and preparing for settlement.
 
 **Card Association**
 An organization that sets rules and regulations for payment card use, such as Visa, Mastercard, and American Express.
@@ -124,6 +139,12 @@ Policies, practices, and procedures enabling a financial institution to predict 
 
 ## D
 
+**Dual-Message Processing**
+A transaction flow where authorization and clearing are separate messages sent at different times. Typical for signature debit and credit card transactions.
+
+**Durbin Amendment**
+Part of the Dodd-Frank Act (2010) that caps debit interchange fees for banks with >$10B in assets at approximately 0.05% + $0.21 per transaction.
+
 **Debit**
 The amount withdrawn from an account.
 
@@ -158,12 +179,24 @@ An electronic way of transferring money between bank accounts without bank inter
 **Embedded Payments**
 The integration of payment processing as an integral part of a business offering or product.
 
+**EMV**
+Europay, Mastercard, Visa - the global standard for chip-based payment cards. EMV chips generate unique cryptograms for each transaction, preventing counterfeit fraud.
+
 **Equipment Fees**
 Charges imposed on merchants for leasing or maintenance of payment processing equipment.
 
 ---
 
 ## F
+
+**Four-Party Model**
+The foundational card payment structure involving four parties: Cardholder, Merchant, Issuing Bank, and Acquiring Bank, connected by the Card Network.
+
+**Front-End Processor**
+A processor that handles real-time authorization requests, routing transactions to the appropriate card network and returning approve/decline decisions.
+
+**Funding**
+The final step of settlement where funds are deposited into the merchant's bank account, typically occurring T+1 to T+3 after transaction.
 
 **Foreign Exchange (FX)**
 The trading of one currency for another, with fees applied by the receiving or originating institution.
@@ -183,7 +216,20 @@ A secure connection allowing payment transaction messages to be transmitted betw
 
 ---
 
+## H
+
+**Hosted Payment Page (HPP)**
+A payment page hosted by a gateway/processor where customers are redirected to enter card details, reducing the merchant's PCI compliance scope.
+
+---
+
 ## I
+
+**IIN (Issuer Identification Number)**
+The first 6-8 digits of a card number identifying the issuing bank, also called BIN. Extended from 6 to 8 digits in 2022.
+
+**Interchange-Plus Pricing**
+A transparent pricing model where merchants pay actual interchange fees plus a fixed processor markup, allowing visibility into true costs.
 
 **Independent Sales Organization (ISO)**
 A company that contracts with a member bank to provide merchant or cardholder solicitation, selling payment processing solutions including card readers and rate contracts.
@@ -232,12 +278,24 @@ The risk that lawsuits, adverse judgments, or unenforceable contracts may disrup
 **L2/L3 Processing**
 Features provided by Visa and Mastercard helping reduce interchange rates for corporate and commercial credit card transactions meeting specific requirements.
 
+**Least-Cost Routing (LCR)**
+A merchant strategy to route debit transactions through the lowest-cost network, enabled by the Durbin Amendment's requirement for multiple routing options.
+
 **Liquidated Damages**
 A penalty or fee charged by the acquirer when a merchant agreement is terminated early to recoup associated costs.
 
 ---
 
 ## M
+
+**MALPB (Merchant Acquiring Limited Purpose Bank)**
+A Georgia banking charter allowing non-depository payment processors to obtain direct card network membership without traditional banking licenses.
+
+**Master Merchant Account**
+A single merchant account held by a PayFac under which all sub-merchants process transactions, with the PayFac acting as the merchant of record.
+
+**Merchant Discount Rate (MDR)**
+The total percentage fee merchants pay to accept card payments, comprising interchange + assessments + processor/acquirer markup.
 
 **Markup Fees**
 Negotiable fees that credit card processors charge.
@@ -270,6 +328,12 @@ An element of anti-money laundering programs reviewing customer activity for unu
 
 ## N
 
+**Network Token**
+A card network-issued token that replaces the actual card number, providing enhanced security and automatic updates when cards are replaced.
+
+**NFC (Near Field Communication)**
+Short-range wireless technology enabling contactless payments (tap-to-pay) between a card/phone and payment terminal.
+
 **National Automated Clearing House Association (NACHA)**
 A national association responsible for developing and enforcing rules and guidelines for the ACH network.
 
@@ -292,12 +356,30 @@ The risk of direct or indirect loss due to inadequate or failed internal process
 **Originating Depository Financial Institution (ODFI)**
 The financial institution acting as the interface between the Federal Reserve or ACH network and the transaction originator.
 
+**Omnichannel**
+A unified commerce strategy where merchants accept payments across all channels (in-store, online, mobile) through a single platform with consistent customer experience.
+
+**Open-Loop System**
+A payment network where cards can be used at any merchant that accepts that network (e.g., Visa, Mastercard), as opposed to closed-loop systems like store cards.
+
 **Originator**
 The entity that initiates or starts a transaction flow.
 
 ---
 
 ## P
+
+**P2PE (Point-to-Point Encryption)**
+PCI-validated encryption standard where card data is encrypted at the point of interaction and only decrypted within a secure environment, reducing PCI scope.
+
+**PayFac-as-a-Service (PFaaS)**
+A platform (like Stripe Connect) that provides PayFac infrastructure to software companies, handling compliance, underwriting, and settlement while allowing pricing control.
+
+**PIN Debit**
+A debit transaction authenticated with the cardholder's PIN, typically routed through PIN networks (STAR, NYCE, Pulse) with lower interchange than signature debit.
+
+**POS (Point of Sale)**
+The location and hardware/software where a retail transaction occurs, including terminals, registers, and mobile payment devices.
 
 **Payment Card Industry Data Security Standards (PCI-DSS)**
 A security standard ensuring organizations handling payment cards have increased controls around cardholder data, with annual compliance validation.
@@ -348,12 +430,30 @@ The risk that adverse publicity will harm the financial institution's business p
 **Retrieval Request Fee (RRF)**
 A fee charged when the customer or issuing bank requests a copy of a sales draft.
 
+**Reserve**
+Funds held by an acquirer or PayFac to cover potential future chargebacks and losses. Types include rolling reserve (percentage held for fixed period), upfront reserve (initial deposit), and capped reserve (maximum amount).
+
+**Residual Income**
+Ongoing passive income earned by ISOs based on a percentage of their merchants' transaction volume, typically paid monthly for the life of the merchant relationship.
+
 **Risk-Based Approach**
 An assessment of risks associated with different business types, clients, accounts, and transactions to maximize anti-money laundering program effectiveness.
 
 ---
 
 ## S
+
+**Signature Debit**
+A debit transaction processed like a credit card (without PIN), routed through Visa/Mastercard networks with higher interchange than PIN debit.
+
+**Single-Message Processing**
+A transaction flow where authorization and clearing happen in a single message. Typical for PIN debit transactions where funds move immediately.
+
+**Sponsor Bank**
+An acquiring bank that provides card network membership, settlement infrastructure, and regulatory coverage to PayFacs and ISOs who cannot be network members directly.
+
+**Sub-Merchant**
+A merchant that processes payments under a PayFac's master merchant account, rather than having their own direct acquiring relationship.
 
 **Seize**
 To prevent funds or assets from transfer based on competent authority action, allowing control while remaining original property.
@@ -380,8 +480,14 @@ A government filing required by reporting entities documenting questionable tran
 
 ## T
 
+**Terminal**
+A device used at the point of sale to accept card payments, including countertop terminals, mobile card readers, and software-based solutions.
+
 **Terminal ID**
 A unique identification number provided by the credit card processor to identify transaction origin.
+
+**3D Secure (3DS)**
+A security protocol adding an authentication step for CNP transactions. Visa's "Verified by Visa" and Mastercard's "SecureCode" are 3DS implementations. Version 2.0+ enables frictionless authentication.
 
 **Termination Rights**
 The right to end an existing payment processing contract.
