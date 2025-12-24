@@ -1,0 +1,251 @@
+/* Hero Section */
+.heroBanner {
+  padding: 4rem 0 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.feature {
+  padding: 2rem;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.feature p {
+  color: var(--ifm-color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.featureLink {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.featureLink:hover {
+  text-decoration: underline;
+}
+
+/* Learning Path Section */
+.learningPath {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.learningPath h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.moduleCard {
+  background: var(--ifm-card-background-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.moduleCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.moduleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.moduleWeeks {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.moduleStatus {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.moduleStatusComplete {
+  background: #dcfce7;
+  color: #166534;
+}
+
+[data-theme='dark'] .moduleStatusComplete {
+  background: #14532d;
+  color: #86efac;
+}
+
+.moduleStatusInProgress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+[data-theme='dark'] .moduleStatusInProgress {
+  background: #78350f;
+  color: #fcd34d;
+}
+
+.moduleCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-heading-color);
+}
+
+.moduleCard p {
+  color: var(--ifm-color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Target Audience Section */
+.targetAudience {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.targetAudience h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.audienceList {
+  font-size: 1.1rem;
+  line-height: 2;
+  list-style-type: none;
+  padding: 0;
+}
+
+.audienceList li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.audienceList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* CTA Section */
+.cta {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lighter) 0%, var(--ifm-color-primary) 100%);
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 3rem 0 4rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .moduleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .targetAudience h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .feature,
+[data-theme='dark'] .moduleCard {
+  background: var(--ifm-background-surface-color);
+}

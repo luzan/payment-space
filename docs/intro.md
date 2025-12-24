@@ -2,7 +2,7 @@
 title: Introduction
 description: Master payment processing and fintech systems through structured learning for senior engineers
 sidebar_position: 1
-slug: /
+slug: /introduction
 ---
 
 # Payments Mastery

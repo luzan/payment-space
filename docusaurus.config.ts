@@ -80,8 +80,18 @@ const config: Config = {
       theme: {light: 'neutral', dark: 'dark'},
     },
     navbar: {
-      title: 'Payments and FinTech Learning Guide',
+      title: 'Payments Mastery',
+      logo: {
+        alt: 'Payments Mastery Logo',
+        src: 'img/logo.svg',
+      },
       items: [
+        {
+          to: '/',
+          label: 'Home',
+          position: 'left',
+          activeBaseRegex: '^/$',
+        },
         {
           type: 'doc',
           docId: 'intro',
