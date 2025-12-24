@@ -1,0 +1,10 @@
+{
+  "label": "Transaction Lifecycle",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "ecosystem/fundamentals/transaction-lifecycle/overview"
+  }
+}
