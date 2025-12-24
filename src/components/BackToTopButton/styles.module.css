@@ -1,0 +1,67 @@
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+.backToTopButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.backToTopButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.backToTopButton:active {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .backToTopButton {
+  background-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .backToTopButton:hover {
+  background-color: var(--ifm-color-primary-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .backToTop {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .backToTopButton {
+    width: 44px;
+    height: 44px;
+  }
+}
