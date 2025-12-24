@@ -1,0 +1,10 @@
+{
+  "label": "Payment Gateways",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "ecosystem/industry-players/payment-gateways/overview"
+  }
+}
