@@ -1,0 +1,10 @@
+{
+  "label": "Transaction Lifecycle",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "payment-ecosystem/fundamentals/transaction-lifecycle/overview"
+  }
+}
