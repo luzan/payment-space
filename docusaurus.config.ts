@@ -3,13 +3,13 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Payments and FinTech Learning Guide',
+  title: 'Payments Mastery',
   tagline: 'A structured learning path for senior engineers',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages configuration
-  url: 'https://luzan.github.io',
-  baseUrl: '/payment-space/',
+  // Custom domain configuration
+  url: 'https://paymentsmastery.com',
+  baseUrl: '/',
   organizationName: 'luzan',
   projectName: 'payment-space',
   trailingSlash: false,

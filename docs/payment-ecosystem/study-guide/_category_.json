@@ -1,0 +1,10 @@
+{
+  "label": "Study Guide",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Learning materials, research topics, self-assessment questions, and recommended resources"
+  }
+}

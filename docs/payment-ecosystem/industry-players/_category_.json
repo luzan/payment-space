@@ -1,0 +1,10 @@
+{
+  "label": "Industry Players",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Key entities in the payment ecosystem - processors, gateways, acquiring banks, ISOs, and ISVs"
+  }
+}
