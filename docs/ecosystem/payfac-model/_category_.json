@@ -1,8 +1,6 @@
 {
   "label": "PayFac Model",
   "position": 3,
-  "collapsible": true,
-  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "Understanding the Payment Facilitator model, implementation strategies, and comparison with traditional acquiring"
