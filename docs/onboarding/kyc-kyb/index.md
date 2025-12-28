@@ -14,23 +14,25 @@ keywords:
 
 # KYC & KYB Verification
 
-> **Last Updated:** 2025-12-26
->
+> **Last Updated:** 2025-12-28
 > **Status:** Complete
 
 ## Quick Reference
 
 **Key Regulations:**
+
 - **FinCEN CIP Rule (31 CFR 1020.220)** - Customer Identification Program requirements
 - **FinCEN CDD Rule (31 CFR 1010.230)** - Customer Due Diligence and beneficial ownership
 - **OFAC Sanctions** - Strict liability screening against SDN list
 
 **Critical Thresholds:**
+
 - **25%** - Ownership threshold triggering beneficial owner identification
 - **50%** - OFAC rule for automatic entity blocking
 - **10 years** - Record retention requirement (updated March 2025)
 
 **2025 Regulatory Updates:**
+
 - **March 21, 2025** - FinCEN exempts U.S. domestic entities from CTA BOI reporting
 - **March 21, 2025** - OFAC record retention extended from 5 to 10 years
 - **June 2025** - Banks may use third-party sources for TIN verification
@@ -42,13 +44,6 @@ While the Corporate Transparency Act (CTA) reporting was suspended for U.S. enti
 ## Overview
 
 KYC (Know Your Customer) and KYB (Know Your Business) verification form the foundation of compliant merchant onboarding. These processes ensure you know who you're doing business with and meet regulatory requirements for preventing fraud, money laundering, and sanctions violations.
-
-## What You'll Learn
-
-- **KYC Requirements** - How to verify individual identities for proprietors, principals, and beneficial owners
-- **KYB Requirements** - Business entity validation, documentation requirements, and verification methods
-- **Beneficial Ownership** - FinCEN's Ultimate Beneficial Owner (UBO) rule and implementation
-- **Sanctions Screening** - OFAC, SDN list checking, and ongoing monitoring obligations
 
 ## Key Distinctions
 
@@ -95,39 +90,87 @@ flowchart TB
 
 ### [KYC Requirements](./kyc-requirements.md)
 
-Master individual identity verification for business owners and principals:
-- **CIP Compliance** - FinCEN Customer Identification Program requirements
-- **Verification Methods** - Documentary (ID documents) vs. non-documentary (database checks)
-- **Liveness Detection** - ISO 30107-3 PAD standards and deepfake prevention
-- **PEP Screening** - Risk-based approach to politically exposed persons
-- **Provider Landscape** - Jumio, Onfido, Persona, Socure comparisons
+Master individual identity verification for business owners and principals.
+
+**Core Topics:**
+- CIP Compliance and verification flow
+- Required data elements
+- PEP and adverse media screening
+
+**Deep Dive Topics:**
+
+| Topic | Description |
+|-------|-------------|
+| [Verification Methods](./kyc/verification-methods.md) | Documentary, non-documentary, and biometric verification |
+| [Provider Landscape](./kyc/providers.md) | Jumio, Onfido, Persona, Alloy, Socure comparisons |
+| [PEP Screening](./kyc/pep-screening.md) | Politically exposed person identification and EDD |
+| [Implementation Guide](./kyc/implementation.md) | Integration patterns, data retention, SAR filing |
+
+---
 
 ### [KYB Requirements](./kyb-requirements.md)
 
-Verify business entities and their legal standing:
-- **Entity Types** - Sole proprietor, LLC, corporation, partnership documentation
-- **EIN Verification** - IRS TIN Matching, Form 147C, third-party services
-- **State Verification** - Secretary of State searches, Certificate of Good Standing
-- **Business Credit** - D&B, Experian Business reports and indicators
-- **Website/Address Verification** - Virtual office detection, physical presence confirmation
+Verify business entities and their legal standing.
+
+**Core Topics:**
+- Entity types and key terms
+- KYB vs KYC distinction
+- Verification flow diagrams
+
+**Deep Dive Topics:**
+
+| Topic | Description |
+|-------|-------------|
+| [Entity Types & Documentation](./kyb/entity-types.md) | Sole prop, LLC, corporation, partnership, non-profit requirements |
+| [Verification Methods](./kyb/verification-methods.md) | EIN, Secretary of State, business credit, address verification |
+| [Implementation Guide](./kyb/implementation.md) | Sponsor bank requirements, timelines, manual review triggers |
+| [2025 Regulatory Updates](./kyb/regulatory-updates.md) | FinCEN CTA exemption and CDD Rule status |
+
+---
 
 ### [Beneficial Ownership](./beneficial-ownership.md)
 
-Identify the natural persons behind legal entities:
-- **Two-Prong Test** - 25% ownership threshold OR control person
-- **Indirect Ownership** - Multi-layer calculation through corporate chains
-- **CDD Rule Requirements** - Data collection, certification, verification standards
-- **2025 CTA Update** - March exemption for U.S. entities (CDD Rule still active)
-- **Ongoing Monitoring** - Event-driven re-verification triggers
+Identify the natural persons behind legal entities.
+
+**Topics Covered:**
+- Two-prong test (25% ownership OR control person)
+- Indirect ownership calculation through corporate chains
+- CDD Rule data collection and certification requirements
+- 2025 CTA Update (March exemption for U.S. entities)
+- Ongoing monitoring and event-driven re-verification
+
+---
 
 ### [Sanctions Screening](./sanctions-screening.md)
 
-Mandatory OFAC compliance with strict liability:
-- **SDN List Screening** - Real-time verification against sanctions lists
-- **50% Rule** - Automatic blocking for entities majority-owned by SDN parties
-- **Fuzzy Matching** - Algorithms and false positive management
-- **True Match Procedures** - Blocking, reporting, and sponsor bank notification
-- **Record Retention** - 10-year requirement (March 2025 update)
+Mandatory OFAC compliance with strict liability.
+
+**Core Topics:**
+- SDN list and 50% Rule
+- Strict liability standard
+- Screening process flow
+
+**Deep Dive Topics:**
+
+| Topic | Description |
+|-------|-------------|
+| [Fuzzy Matching](./sanctions/fuzzy-matching.md) | Levenshtein, Jaro-Winkler, Soundex algorithms |
+| [False Positives](./sanctions/false-positives.md) | Mitigation strategies and exclusion lists |
+| [Screening Operations](./sanctions/operations.md) | Real-time vs batch, ongoing monitoring, record retention |
+| [True Match Procedures](./sanctions/true-match.md) | Blocking, SAR filing, OFAC reporting |
+| [Vendor Landscape](./sanctions/vendors.md) | Dow Jones, World-Check, ComplyAdvantage comparison |
+| [PayFac Implementation](./sanctions/payfac-implementation.md) | Sponsor bank requirements, transaction monitoring |
+| [Enforcement Actions](./sanctions/enforcement.md) | Recent OFAC cases and lessons learned |
+
+---
+
+### [Quiz](./quiz.md)
+
+Test your understanding with the KYC & KYB Quiz:
+
+- **20 comprehensive questions** across all module topics
+- **Scenario-based problems** testing practical application
+- **Detailed explanations** with regulatory context
 
 ## Why This Matters
 
@@ -146,15 +189,6 @@ Effective KYC/KYB verification:
 3. **Weak Document Verification** - Accepting photocopies without liveness checks
 4. **Sole Proprietor Confusion** - Treating DBA names as separate legal entities
 5. **Foreign Entity Gaps** - Inadequate verification for non-US businesses
-
-## Self-Assessment
-
-Test your understanding with the [KYC & KYB Quiz](./quiz.md), covering:
-
-- **20 comprehensive questions** across all module topics
-- **Scenario-based problems** testing practical application
-- **Detailed explanations** with regulatory context
-- **Key concepts** including the 20/20/20/20/20 ownership scenario, 50% Rule, and strict liability
 
 ## Learning Path
 
