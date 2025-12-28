@@ -13,7 +13,8 @@ keywords:
 
 # Underwriting & Risk Assessment
 
-> **Status:** Pending content development
+> **Last Updated:** 2025-12-28
+> **Status:** Complete
 
 ## Overview
 
@@ -166,10 +167,24 @@ Balance three competing objectives:
 7. **Offshore Connections** - High-risk jurisdictions, IP address mismatches
 8. **Unrealistic Projections** - Volume projections inconsistent with business age/size
 
+## Topics in This Section
+
+| Topic | Description | Status |
+|-------|-------------|--------|
+| [Fundamentals](./fundamentals.md) | Core underwriting principles and objectives | Complete |
+| [Risk Factors](./risk-factors.md) | Business indicators that signal merchant risk | Complete |
+| [MCC Codes](./mcc-codes.md) | Merchant Category Code classification and risk tiers | Complete |
+| [Risk Scoring](./risk-scoring.md) | Automated scoring models and decision frameworks | Complete |
+| [Quiz](./quiz.md) | Self-assessment with 14 questions covering all topics | Complete |
+
 ## Self-Assessment
 
-Complete the quiz in this section to test your understanding of underwriting and risk assessment.
+Test your understanding with the [Underwriting & Risk Assessment Quiz](./quiz.md):
+
+- **Questions 14-18:** Risk Factors (nutraceuticals risk, delivery timeframes, reserves, MATCH list)
+- **Questions 19-22:** MCC Codes (assignment, misclassification, high-risk categories, interchange rates)
+- **Questions 23-27:** Scenario Questions (complex underwriting decisions)
 
 ---
 
-> **Next:** Dive into each underwriting component through the topics in this section.
+> **Next:** Start with [Fundamentals](./fundamentals.md) or jump to specific topics based on your interests.

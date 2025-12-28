@@ -12,7 +12,8 @@ keywords:
 
 # Merchant Lifecycle
 
-> **Status:** Pending content development
+> **Last Updated:** 2025-12-28
+> **Status:** Complete
 
 ## Overview
 
@@ -156,10 +157,24 @@ Events that warrant re-verification or EDD:
 
 **The Standard:** Report only when required by reason codes, document thoroughly
 
+## Topics in This Section
+
+| Topic | Description | Status |
+|-------|-------------|--------|
+| [Merchant Agreements](./merchant-agreements.md) | MPA terms, reserves, liability, and termination | Complete |
+| [Ongoing Monitoring](./ongoing-monitoring.md) | Transaction monitoring, KYC refresh, EDD, and re-underwriting | Complete |
+| [Quiz](./quiz.md) | Self-assessment with 5 questions covering all topics | Complete |
+
 ## Self-Assessment
 
-Complete the quiz in this section to test your understanding of merchant agreements and ongoing monitoring.
+Test your understanding with the [Merchant Lifecycle Quiz](./quiz.md):
+
+- **Question 28:** KYC/KYB re-verification frequency and triggers
+- **Question 29:** Address change verification procedures
+- **Question 30:** Chargeback ratio re-underwriting process
+- **Question 31:** Enhanced Due Diligence (EDD) triggers (10 specific scenarios)
+- **Question 32:** Business model change risk assessment scenario
 
 ---
 
-> **Next:** Explore merchant agreements and monitoring processes in detail.
+> **Next:** Start with [Merchant Agreements](./merchant-agreements.md) or jump directly to [Ongoing Monitoring](./ongoing-monitoring.md).

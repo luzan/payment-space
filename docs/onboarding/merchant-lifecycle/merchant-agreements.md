@@ -21,6 +21,7 @@ keywords:
 ## Quick Reference
 
 **Key Facts:**
+
 - MPA (Merchant Processing Agreement) is the legal contract governing payment processing
 - Traditional MPAs average 3-year terms with 90-day non-renewal notice
 - Reserves protect acquirers from chargebacks, returns, and fraud losses
@@ -28,12 +29,14 @@ keywords:
 - Sub-merchant agreements are simpler but provide less control than traditional MPAs
 
 **Critical Numbers:**
+
 - Standard reserve: 0-5% for 90 days
 - High-risk reserve: 10-15% for 180 days
 - Chargeback MATCH threshold: \>1% ratio AND \>$5,000 total
 - Sub-merchant conversion threshold: $1M annual volume (US)
 
 **Time-Sensitive Updates:**
+
 - Code 06 changed from "Reserved" to "Coercion" (February 2025)
 - California SB 478 prohibits separate surcharges (July 2024)
 - Visa VAMP enforcement began October 2025
@@ -72,6 +75,7 @@ flowchart TD
 ```
 
 Understanding these agreements is critical because they:
+
 1. **Define financial risk exposure** (who pays when things go wrong)
 2. **Impact cash flow** (reserves lock up merchant funds)
 3. **Affect business continuity** (termination can be immediate)
@@ -84,6 +88,7 @@ Understanding these agreements is critical because they:
 The **Merchant Processing Agreement** is a legally binding contract between a merchant and an acquirer that authorizes the merchant to accept card payments and defines the terms of that relationship.
 
 **Key Components:**
+
 - **Services Scope:** Card brands accepted (Visa, Mastercard, Amex, Discover)
 - **Pricing Schedule:** Interchange-plus, flat rate, tiered pricing
 - **Fees Disclosure:** Transaction fees, monthly fees, chargeback fees, ETFs
@@ -95,6 +100,7 @@ The **Merchant Processing Agreement** is a legally binding contract between a me
 
 :::info Legal Structure
 An MPA is typically structured as a "terms of service" agreement where the merchant agrees to abide by:
+
 1. Acquirer's terms and conditions
 2. Card network operating regulations (by reference)
 3. Applicable laws and regulations (PCI DSS, AML, sanctions)
@@ -107,12 +113,14 @@ Merchants rarely negotiate terms in standard MPAs unless processing significant 
 #### Contract Duration and Renewal
 
 **Typical Structure:**
+
 - **Initial Term:** 3 years (36 months)
 - **Auto-Renewal:** Automatic renewal for successive 1-year terms
 - **Non-Renewal Notice:** 90 days written notice required to prevent renewal
 - **Early Termination Fee (ETF):** ~$495 (varies by processor)
 
 **Example Timeline:**
+
 ```
 Month 0: Sign MPA
 Month 1-33: Active processing, can terminate with 90-day notice + ETF
@@ -129,21 +137,25 @@ Many merchants miss the 90-day non-renewal window and are automatically locked i
 MPAs typically use one of three pricing models:
 
 **1. Interchange-Plus (Most Transparent)**
+
 - **Structure:** Interchange + Network Fees + Processor Markup
 - **Example:** Interchange + 0.20% + $0.10
 - **Best For:** Merchants processing \>$100K/month
 
 **2. Flat Rate (Simplest)**
+
 - **Structure:** Single percentage per transaction
 - **Example:** 2.9% + $0.30 per transaction
 - **Best For:** Small merchants, low volume, variable ticket sizes
 
 **3. Tiered Pricing (Least Transparent)**
+
 - **Structure:** Qualified, Mid-Qualified, Non-Qualified rates
 - **Example:** 1.79% (qualified), 2.49% (mid), 3.49% (non)
 - **Best For:** Processors (not merchants - avoid if possible)
 
 **Additional Fees Commonly Included:**
+
 - Monthly account fee: $10-$30
 - PCI compliance fee: $5-$15/month
 - Chargeback fee: $15-$25 per chargeback
@@ -155,16 +167,19 @@ MPAs typically use one of three pricing models:
 #### Termination Rights
 
 **Merchant-Initiated Termination:**
+
 - **Standard:** 30 days written notice
 - **Financial Obligation:** Pay ETF if within initial term
 - **Reserve Impact:** Reserves typically held for 6-12 months post-termination
 
 **Acquirer-Initiated Termination:**
+
 - **With Cause:** Immediate termination (breach of contract, excessive fraud)
 - **Without Cause:** Can terminate for any reason per contract terms
 - **Reserve Impact:** May extend reserve hold period indefinitely
 
 **Common Termination Triggers:**
+
 - Chargeback ratio exceeds thresholds (\>1% is common trigger)
 - Fraud losses exceed acceptable levels
 - Volume dramatically exceeds underwritten limits
@@ -182,23 +197,28 @@ Acquirers typically reserve the right to terminate immediately "with or without 
 The type of relationship significantly affects the merchant experience:
 
 ```mermaid
-graph TB
-    subgraph Traditional[Traditional Direct Acquirer]
+flowchart TB
+    subgraph Traditional["Traditional Direct Acquirer"]
+    direction LR
     M1[Merchant] <-->|Full MPA| A1[Acquirer]
     A1 <-->|Network Rules| CN1[Card Networks]
     end
 
-    subgraph ISO[ISO/Agent Model]
-    M2[Merchant] <-->|MPA| ISO[ISO/Agent]
-    ISO <-->|Master Agreement| A2[Acquirer]
+    subgraph ISOModel["ISO/Agent Model"]
+    direction LR
+    M2[Merchant] <-->|MPA| ISO1[ISO/Agent]
+    ISO1 <-->|Master Agreement| A2[Acquirer]
     A2 <-->|Network Rules| CN2[Card Networks]
     end
 
-    subgraph PayFac[Payment Facilitator]
+    subgraph PayFacModel["Payment Facilitator"]
+    direction LR
     M3[Sub-Merchant] <-->|Sub-Merchant Agreement| PF[PayFac]
     PF <-->|Master MPA| A3[Sponsor Bank]
     A3 <-->|Network Rules| CN3[Card Networks]
     end
+
+    Traditional ~~~ ISOModel ~~~ PayFacModel
 
     style M1 fill:#e1f5ff
     style M2 fill:#fff4e1
@@ -206,6 +226,7 @@ graph TB
 ```
 
 **Traditional Direct Acquirer:**
+
 - **Setup Time:** 2-4 weeks
 - **Underwriting:** Comprehensive bank underwriting
 - **Fees:** Lowest (direct pricing)
@@ -214,6 +235,7 @@ graph TB
 - **Best For:** Established businesses, high volume
 
 **ISO/Agent Model:**
+
 - **Setup Time:** 1-3 weeks
 - **Underwriting:** ISO submits to acquirer
 - **Fees:** Mid-range (ISO adds markup)
@@ -222,6 +244,7 @@ graph TB
 - **Best For:** Businesses needing local support, moderate volume
 
 **PayFac Model:**
+
 - **Setup Time:** Minutes to 2 days
 - **Underwriting:** PayFac performs initial underwriting
 - **Fees:** Highest (PayFac + acquirer markup)
@@ -257,6 +280,7 @@ If the merchant has already been paid but later goes out of business or disappea
 **Structure:** A percentage of each transaction is withheld and held for a specified period before release.
 
 **Common Parameters:**
+
 - **Withhold Rate:** 5-20% (most common: 5-10%)
 - **Hold Period:** 30-180 days (most common: 180 days)
 - **Release:** Automatic on a rolling basis
@@ -284,11 +308,13 @@ Steady State (Month 7+):
 ```
 
 **Impact on Cash Flow:**
+
 - **Startup Impact:** Significant (building up reserve for first 6 months)
 - **Steady State:** Minimal (releases balance new withholdings)
 - **Shutdown:** Reserves held for 6-12 months after closure
 
 **Best For:**
+
 - Merchants with consistent monthly volume
 - Businesses with predictable chargeback patterns
 - Moderate to high-risk categories
@@ -298,6 +324,7 @@ Steady State (Month 7+):
 **Structure:** A lump sum deposited upfront and held throughout the processing relationship.
 
 **Common Parameters:**
+
 - **Amount:** $5,000 - $50,000+ (based on projected risk)
 - **Calculation:** 50-100% of estimated monthly volume
 - **Release:** After account closure + chargeback window (6-12 months)
@@ -318,11 +345,13 @@ Scenario:
 ```
 
 **Impact on Cash Flow:**
+
 - **Startup Impact:** Severe (requires significant capital upfront)
 - **Ongoing Impact:** None (doesn't grow with volume)
 - **Shutdown:** Long wait for return
 
 **Best For:**
+
 - High-risk merchants (travel, nutraceuticals, adult)
 - Merchants with poor credit history
 - New merchants in risky verticals
@@ -336,6 +365,7 @@ Fixed reserves can be a significant barrier to entry for small businesses. A $50
 **Structure:** A percentage is withheld until a maximum cap is reached, then withholding stops.
 
 **Common Parameters:**
+
 - **Withhold Rate:** 5-15%
 - **Cap Amount:** Based on risk assessment
 - **Release:** After account closure or when cap is reached
@@ -357,6 +387,7 @@ Cash Flow Impact:
 ```
 
 **Best For:**
+
 - Growing businesses (predictable endpoint)
 - Merchants negotiating better terms over time
 - Moderate-risk categories
@@ -366,6 +397,7 @@ Cash Flow Impact:
 **Structure:** Specific to ACH processing, holding 20% for 60 days to cover ACH return window.
 
 **Common Parameters:**
+
 - **Withhold Rate:** 20% (industry standard)
 - **Hold Period:** 60 days (ACH return window)
 - **Release:** Rolling after 60 days
@@ -406,6 +438,7 @@ Reserve requirements scale with merchant risk profile:
 | **Extreme** | Up to 100% | 180-365+ days | Adult content, crypto, gambling, MATCH-listed merchants | Very high fraud/chargeback risk, regulatory concerns |
 
 **Risk Factors Affecting Reserve Levels:**
+
 - **Chargeback History:** Previous chargeback ratios >0.5% increase reserves
 - **Industry Vertical:** High-risk industries always have higher reserves
 - **Business Age:** Startups often face higher reserves than established businesses
@@ -476,6 +509,7 @@ Reserves are released when:
 5. **Volume Threshold:** Some PayFacs release reserves after merchant processes certain volume ($100K+)
 
 **Post-Termination Hold Periods:**
+
 - **Low Risk:** 6 months
 - **Moderate Risk:** 9 months
 - **High Risk:** 12-18 months
@@ -483,6 +517,7 @@ Reserves are released when:
 
 :::tip Negotiating Reserves
 After 6-12 months of clean processing (low chargebacks, no fraud), merchants can request reserve reductions. Document your clean history:
+
 - Monthly chargeback reports showing \<0.5% ratio
 - Fraud monitoring reports showing low fraud rates
 - PCI compliance certificates
@@ -502,11 +537,13 @@ Being added to the MATCH list (also called TMF - Terminated Merchant File) effec
 ### What is the MATCH List?
 
 **Purpose:**
+
 - Alert acquirers to high-risk merchants before onboarding
 - Prevent merchant "fraud shopping" (switching acquirers after termination)
 - Protect payment ecosystem from repeat bad actors
 
 **Key Characteristics:**
+
 - **Maintenance:** Mastercard system, used by all networks
 - **Duration:** 5-year automatic retention
 - **Scope:** Global (affects processing worldwide)
@@ -566,6 +603,7 @@ Code 06 was previously "Reserved for Future Use" but was changed to "Coercion" i
 Acquirers must report merchants to MATCH within **5 business days** of making the termination decision for any of the 14 reason codes.
 
 **Required Information:**
+
 - Business legal name and DBA
 - Federal Tax ID (TIN/EIN)
 - Principal owner information (name, SSN, DOB)
@@ -575,6 +613,7 @@ Acquirers must report merchants to MATCH within **5 business days** of making th
 - Supporting documentation
 
 **Monthly Maintenance:**
+
 - Mastercard automatically purges entries older than 5 years
 - Acquirers must update or confirm entries annually
 - No manual removal except error correction or Code 12 compliance path
@@ -582,17 +621,20 @@ Acquirers must report merchants to MATCH within **5 business days** of making th
 ### Impact on Merchants
 
 **Immediate Consequences:**
+
 1. **Processing Termination:** Account closed immediately or within days
 2. **Fund Holds:** Reserves extended to cover chargeback exposure (often 12-18 months)
 3. **Reputational Damage:** MATCH listing signals high risk to entire industry
 
 **Long-Term Consequences:**
+
 1. **5-Year Blacklist:** Extremely difficult to obtain new merchant account
 2. **High-Risk Processing:** Only ultra-high-risk processors will consider (if any)
 3. **Premium Fees:** 2-3x normal rates + high reserves if accepted
 4. **Business Impact:** May need to restructure business, change ownership, or shut down
 
 **Secondary Effects:**
+
 - Payment facilitators (PayFac) will deny sub-merchant applications
 - E-commerce platforms may ban merchant from selling
 - Chargeback monitoring programs (VDMP, ECP) may impose fines
@@ -624,6 +666,7 @@ MATCH removal is intentionally difficult to prevent abuse:
    - Still extremely rare in practice
 
 **What Does NOT Work:**
+
 - Paying outstanding debts (does not remove entry)
 - Negotiating with new acquirers (they can't remove entries)
 - Disputing with Mastercard directly (only reporting acquirer can remove)
@@ -634,12 +677,14 @@ MATCH removal is intentionally difficult to prevent abuse:
 The best strategy is prevention:
 
 **Monitor Key Metrics:**
+
 - Keep chargeback ratio below 0.75% (well under 1% threshold)
 - Maintain fraud-to-sales below 5% (well under 8% threshold)
 - Respond to customer service issues proactively
 - Address acquirer concerns immediately
 
 **Early Warning Signs:**
+
 - Chargeback ratio increasing month-over-month
 - Acquirer requests additional documentation
 - Reserve increases without explanation
@@ -762,6 +807,7 @@ Scenario C: PayFac Insolvency (Rare)
 
 :::danger PayFac Risk Management
 PayFacs manage this liability cascade through:
+
 - Rigorous sub-merchant underwriting (even if fast)
 - Rolling reserves on risky sub-merchants
 - Volume and transaction limits
@@ -829,6 +875,7 @@ Plus: Greater control, higher limits, better support for large volume
 ### When to Choose Sub-Merchant vs Traditional MPA
 
 **Choose Sub-Merchant Agreement (PayFac) When:**
+
 - Starting out with low/no processing history
 - Need to launch quickly (hours/days, not weeks)
 - Processing \<$500K annually (fees less critical)
@@ -838,6 +885,7 @@ Plus: Greater control, higher limits, better support for large volume
 - Limited technical resources for integration
 
 **Choose Traditional MPA When:**
+
 - Processing \>$1M annually (cost savings significant)
 - Established business with financial history
 - Need customized pricing or terms
@@ -910,6 +958,7 @@ Many businesses start as sub-merchants for speed and simplicity, then convert to
 **Why the Asymmetry?**
 
 Acquirers have significantly stronger termination rights because:
+
 - They bear financial risk (chargebacks can occur 6+ months later)
 - Regulatory obligations require quick action on risky merchants
 - Card network rules mandate immediate termination for certain violations
@@ -920,6 +969,7 @@ This asymmetry is standard across the industry and rarely negotiable except for 
 **Practical Implications:**
 
 For merchants:
+
 - Always have a backup processor relationship
 - Monitor your key metrics (chargeback ratio, fraud rate)
 - Build strong reserve cushion to avoid cash flow shock
@@ -940,11 +990,13 @@ For merchants:
 **1. Rolling Reserve:**
 
 **Structure:**
+
 - Percentage of daily/monthly transactions withheld
 - Held for specific period (30-180 days)
 - Released on rolling basis (Month 7 releases Month 1 withholdings)
 
 **Calculation Example:**
+
 ```
 $100K monthly volume × 10% reserve × 6 months hold = $60K steady-state balance
 
@@ -958,11 +1010,13 @@ Month 7: Withhold $10K, Release $10K → Reserve: $60K (steady state)
 ```
 
 **When Used:**
+
 - Moderate to high-risk merchants
 - Consistent monthly volume businesses
 - Subscription models, digital goods, services
 
 **Cash Flow Impact:**
+
 - **Startup (Months 1-6):** Significant impact, building to steady state
 - **Steady State (Month 7+):** Minimal impact (releases = new withholdings)
 - **Shutdown:** Long wait (6+ months) for full recovery
@@ -971,11 +1025,13 @@ Month 7: Withhold $10K, Release $10K → Reserve: $60K (steady state)
 **2. Fixed/Upfront Reserve:**
 
 **Structure:**
+
 - Lump sum deposited before processing begins
 - Held throughout relationship
 - Released 6-18 months after termination
 
 **Calculation Example:**
+
 ```
 Travel merchant, $50K monthly volume:
 - Fixed reserve: $50K (100% of monthly volume)
@@ -984,12 +1040,14 @@ Travel merchant, $50K monthly volume:
 ```
 
 **When Used:**
+
 - Very high-risk merchants (travel, adult, crypto)
 - Merchants with poor credit or no processing history
 - MATCH-listed merchants (if accepted at all)
 - Businesses with long chargeback windows
 
 **Cash Flow Impact:**
+
 - **Startup:** Severe (requires significant upfront capital)
 - **Ongoing:** None (doesn't grow with volume)
 - **Shutdown:** Long wait for large lump sum return
@@ -998,11 +1056,13 @@ Travel merchant, $50K monthly volume:
 **3. Capped Reserve:**
 
 **Structure:**
+
 - Percentage withheld until maximum cap reached
 - Withholding stops at cap
 - Provides predictable endpoint
 
 **Calculation Example:**
+
 ```
 $100K monthly volume, 10% until $30K cap:
 
@@ -1013,12 +1073,14 @@ Month 4+: Withhold $0 → Reserve: $30K (stable)
 ```
 
 **When Used:**
+
 - Growing businesses demonstrating lower risk
 - Negotiated terms after proving track record
 - Moderate-risk businesses with potential for reclassification
 - Compromise between merchant and acquirer
 
 **Cash Flow Impact:**
+
 - **Months 1-3:** Reduced by withholding percentage
 - **Month 4+:** Normal cash flow resumes
 - **Predictability:** Merchant knows exact amount and timeline
@@ -1055,6 +1117,7 @@ Very High Risk (MATCH listed, Adult):
 **Negotiation Strategy:**
 
 After 6-12 months of clean processing history:
+
 1. Document performance:
    - Chargeback ratio \<0.5%
    - Fraud rate \<1%
@@ -1074,6 +1137,7 @@ After 6-12 months of clean processing history:
 **Cash Flow Planning:**
 
 When evaluating reserves:
+
 - **Startup Capital:** Ensure you have reserve amount + 3 months operating capital
 - **Growth Planning:** Model impact of reserve build-up on expansion plans
 - **Seasonal Business:** Reserves based on peak months can create cash crunches
@@ -1088,6 +1152,7 @@ When evaluating reserves:
 - [Payment Facilitator Model](/ecosystem/payfac-model/overview.md) - PayFac structure and economics
 
 **Coming Soon:**
+
 - Chargeback Management - Understanding Code 04 MATCH trigger
 - Monitoring Programs - VDMP/ECP/VAMP thresholds
 
@@ -1114,6 +1179,7 @@ When evaluating reserves:
 ### Time-Sensitive Information
 
 :::warning Last Verified
+
 - MATCH reason codes: December 2025 (Code 06 updated February 2025)
 - Reserve percentages: December 2025 (industry standards)
 - Volume thresholds: December 2025 ($1M US conversion requirement)
@@ -1124,6 +1190,7 @@ When evaluating reserves:
 ---
 
 **Next Steps:**
+
 - Review [Merchant Lifecycle Overview](./index.md) for complete onboarding context
 - Understand [Risk Scoring](../underwriting/risk-scoring.md) to see how reserves are determined
 - Learn about chargeback management (coming soon) to avoid Code 04 MATCH listing
