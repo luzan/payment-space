@@ -95,29 +95,28 @@ The **Specially Designated Nationals and Blocked Persons List** is OFAC's primar
 - No transactions, transfers, or business relationships permitted
 - Applies to direct AND indirect transactions
 
-### Current Comprehensive Sanctions Programs (December 2025)
+### Current Comprehensive Sanctions Programs
 
 :::warning Time-Sensitive Information
-Sanctions programs evolve rapidly. The following reflects status as of December 2025.
+Sanctions programs evolve rapidly. **Always verify current status** at [OFAC Sanctions Programs](https://ofac.treasury.gov/sanctions-programs-and-country-information) before making compliance decisions.
 :::
 
-**Active Comprehensive Sanctions:**
+**Examples of Comprehensive Sanctions Programs (verify current status):**
 
 | Country/Region | Since | Scope | Key Drivers |
 |---------------|-------|-------|-------------|
 | **Cuba** | 1960s | Nearly total embargo | Historical U.S. policy |
-| **Iran** | 1979 (intensified) | "Maximum pressure" campaign re-launched Feb 2025 | Nuclear program, regional influence |
+| **Iran** | 1979 (intensified) | Comprehensive sanctions | Nuclear program, regional influence |
 | **North Korea** | 2000s (intensified) | Comprehensive sanctions | Nuclear weapons, ballistic missiles |
 | **Russia** | 2014 (expanded 2022) | Crimea, Donetsk, Luhansk regions | Ukraine invasion, territorial annexation |
+| **Syria** | 2011 | Varies - verify current status | Civil war, human rights concerns |
 
-**Recent Changes:**
-
-:::tip Syria Sanctions Lifted
-**Effective July 1, 2025:** Comprehensive sanctions on Syria were LIFTED. However:
-- Individual SDN designations remain (terrorism, human rights violations, etc.)
-- Syrian nationals previously designated remain on SDN list unless specifically delisted
-- Entities owned 50%+ by sanctioned Syrian nationals remain blocked (50% Rule)
-- Always check current SDN list rather than relying on country-program status alone
+:::info Country Program vs. Individual Designations
+When a country-based sanctions program is modified or lifted:
+- **Individual SDN designations remain active** unless specifically delisted
+- Nationals previously designated stay on SDN list
+- Entities owned 50%+ by sanctioned nationals remain blocked (50% Rule)
+- **Always check the current SDN list** rather than relying on country-program status alone
 :::
 
 **Sectoral Sanctions:**

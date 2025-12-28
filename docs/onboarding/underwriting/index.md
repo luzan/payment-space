@@ -1,7 +1,8 @@
 ---
 title: "Underwriting & Risk Assessment"
 description: "Merchant risk evaluation, scoring models, and underwriting fundamentals"
-sidebar_position: 2
+sidebar_position: 1
+sidebar_label: "Overview"
 keywords:
   - underwriting
   - risk assessment
