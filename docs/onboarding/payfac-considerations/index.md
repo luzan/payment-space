@@ -12,7 +12,9 @@ keywords:
 
 # PayFac Considerations
 
-> **Status:** Pending content development
+> **Status:** Complete
+>
+> **Last Updated:** 2025-12-28
 
 ## Overview
 
@@ -20,8 +22,12 @@ Payment Facilitators (PayFacs) have unique onboarding responsibilities that diff
 
 ## What You'll Learn
 
-- **Sponsor Delegation** - What responsibilities transfer from sponsor bank to PayFac
-- **Portfolio Risk** - Aggregate risk management across all sub-merchants
+- **[Sponsor Delegation](./sponsor-delegation.md)** - What responsibilities transfer from sponsor bank to PayFac
+- **[Portfolio Risk](./portfolio-risk.md)** - Aggregate risk management across all sub-merchants
+- **[Network Requirements](./network-requirements.md)** - Visa, Mastercard, VIRP, and VAMP compliance
+- **[Sub-Merchant Management](./sub-merchant-management.md)** - MID structure, identification, and graduation
+- **[Financial Requirements](./financial-requirements.md)** - Capital, insurance, and reserve requirements
+- **[Quiz](./quiz.md)** - Test your understanding with 16 comprehensive questions
 
 ## Why PayFac Onboarding Is Different
 
@@ -73,7 +79,7 @@ flowchart TB
 
 ## Topics Covered
 
-### Sponsor Delegation
+### [Sponsor Delegation](./sponsor-delegation.md)
 
 What responsibilities the sponsor bank delegates to the PayFac:
 
@@ -82,18 +88,44 @@ What responsibilities the sponsor bank delegates to the PayFac:
 - Sanctions screening
 - Ongoing monitoring
 - MATCH list reporting
-- PCI compliance oversight
-- Chargeback management
+- Sponsor bank audit mechanics
 
-### Portfolio Risk
+### [Portfolio Risk](./portfolio-risk.md)
 
 Managing aggregate risk across all sub-merchants:
 
 - Portfolio-level monitoring
 - Concentration risk (industry, geography, volume)
 - Aggregate chargeback ratios
-- Fraud rates across portfolio
-- Sponsor bank reporting requirements
+- Network chargeback programs (VAMP, ECP)
+- Risk-based pricing strategies
+
+### [Network Requirements](./network-requirements.md)
+
+Card network registration and compliance:
+
+- Visa PayFac registration and VROL access
+- Mastercard requirements and MATCH obligations
+- VIRP (Visa Integrity Risk Program) for high-risk MCCs
+- Network audit rights and preparation
+
+### [Sub-Merchant Management](./sub-merchant-management.md)
+
+MID structure and sub-merchant lifecycle:
+
+- Master MID vs. Sub-Merchant ID (SMID)
+- Descriptor requirements
+- Chargeback routing mechanics
+- Graduation process to direct MID
+
+### [Financial Requirements](./financial-requirements.md)
+
+Capital and insurance requirements:
+
+- Minimum net worth requirements
+- E&O, cyber liability, and fidelity insurance
+- Portfolio reserve vs. sub-merchant reserves
+- Liquidity and operating capital planning
 
 ## PayFac Onboarding Challenges
 
@@ -123,8 +155,12 @@ Managing aggregate risk across all sub-merchants:
 
 ## Self-Assessment
 
-Complete the quiz questions in the study guide to test your understanding of PayFac-specific onboarding considerations.
+Test your understanding with the **[PayFac Considerations Quiz](./quiz.md)** - 16 comprehensive questions covering sponsor delegation, portfolio risk, network requirements, and financial considerations.
 
 ---
 
-> **Next:** Explore sponsor delegation and portfolio risk management in detail.
+## Navigation
+
+| Previous | Up | Next |
+|----------|-----|------|
+| [Merchant Lifecycle](../merchant-lifecycle/index.md) | [Onboarding Module](../index.md) | [Sponsor Delegation](./sponsor-delegation.md) |

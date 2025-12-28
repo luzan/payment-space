@@ -11,15 +11,13 @@ keywords:
 
 # Portfolio Risk Management
 
-> **Status:** Pending content development
+> **Status:** Complete
 >
-> **Last Updated:** 2025-12-25
+> **Last Updated:** 2025-12-28
 
 ## Overview
 
 Unlike traditional acquirers who manage individual merchant risk, PayFacs must also manage portfolio-level risk - the aggregate exposure across all sub-merchants. A healthy portfolio is critical for maintaining sponsor bank relationships and card network standing.
-
-## Content Sections (To Be Developed)
 
 ### What Is Portfolio Risk?
 
@@ -70,6 +68,10 @@ Portfolio Chargeback Ratio = Total Chargebacks / Total Transactions
 Compare to network thresholds:
 - Visa: &lt;0.9% (early warning at 0.9%, excessive at 1.8%)
 - Mastercard: &lt;1.0% (early warning at 1.0%, excessive at 1.5%)
+
+:::warning Time-Sensitive Information
+Visa VAMP thresholds are tightening in 2026. The standard threshold will move from 1.5% to 0.9%. PayFacs should plan accordingly.
+:::
 
 **Fraud Rate:**
 ```
@@ -197,6 +199,112 @@ When portfolio metrics deteriorate:
 - Mass termination of high-risk portfolio segment
 - Implement mandatory reserve increases
 
+### Network Chargeback Programs
+
+Understanding network monitoring programs is critical - breaching thresholds can result in significant fines and relationship damage with sponsor banks.
+
+#### Visa VAMP (Visa Acquirer Monitoring Program)
+
+VAMP monitors acquirers (and PayFacs through their sponsors) for excessive chargeback ratios.
+
+**Current Thresholds (2025):**
+
+| Tier | Threshold | Monthly Fines | Notes |
+|------|-----------|---------------|-------|
+| **Early Warning** | 0.9% dispute ratio OR 450 disputes | None | Warning notification only |
+| **Standard** | 0.9% + 500 disputes | $10,000-$25,000/month | 60-90 day remediation period |
+| **Excessive** | 1.8% + 1,000 disputes | $25,000+/month | Enhanced remediation, potential termination |
+
+**2026 Changes:**
+:::danger Upcoming Threshold Change
+Effective April 2026, Visa VAMP Standard threshold tightens from 1.5% to 0.9%. PayFacs currently between 0.9-1.5% must remediate before this date.
+:::
+
+**Portfolio Impact:**
+- VAMP applies at the **acquirer/sponsor level**, not individual merchant
+- For PayFacs, this means the **aggregate portfolio** chargeback ratio determines program entry
+- Sponsor bank receives notifications and fines
+- Sponsor passes requirements down to PayFac
+
+**Remediation Requirements:**
+1. Submit action plan within 30 days of program entry
+2. Implement remediation measures (terminate high-CBR merchants, tighten underwriting)
+3. Report monthly progress to sponsor
+4. Exit program within 60-90 days or face escalating consequences
+
+**Real-World Example:**
+```
+PayFac with 500 sub-merchants processing $50M/month:
+- Total monthly transactions: 2,000,000
+- Total monthly disputes: 20,000
+- Chargeback ratio: 1.0%
+
+Result: Enters VAMP Standard tier
+- Monthly fines: $15,000
+- Sponsor requires immediate remediation plan
+- Must reduce CBR below 0.9% within 90 days
+- New onboarding frozen until remediated
+```
+
+#### Mastercard ECP (Excessive Chargeback Program)
+
+ECP monitors individual merchants but aggregates at portfolio level for PayFacs.
+
+**Thresholds:**
+
+| Program | Threshold | Assessments | Notes |
+|---------|-----------|-------------|-------|
+| **ECMP** (Excessive Chargeback Merchant Program) | 1.0% + 100 chargebacks | $1,000-$10,000/month per merchant | Applied to individual merchants |
+| **HECM** (High Excessive Chargeback Merchant) | 1.5% + 300 chargebacks | $25,000-$200,000/month per merchant | Severe tier |
+
+**Key Difference from Visa:**
+- Mastercard programs apply at the **merchant level** (each sub-merchant tracked individually)
+- BUT for PayFacs, sponsor bank sees **aggregate** of all merchants in programs
+- Multiple sub-merchants in ECP indicates portfolio underwriting problems
+
+**Portfolio vs Individual Merchant:**
+
+```mermaid
+flowchart TD
+    A[PayFac Portfolio: 500 Sub-Merchants] --> B{Individual Merchant CBR}
+    B -->|5% CBR, $10k/month| C[Low Volume Impact]
+    B -->|5% CBR, $500k/month| D[High Volume Impact]
+    B -->|50 merchants at 2% CBR| E[Systemic Problem]
+
+    C --> F[May not trigger ECP<br/>BUT requires action]
+    D --> G[Triggers ECP<br/>Major portfolio impact]
+    E --> H[Portfolio degradation<br/>Sponsor concern]
+```
+
+**Why Individual High-CBR Merchants Still Matter:**
+- Even if portfolio overall is healthy (0.7%), individual high-CBR merchants indicate:
+  - Underwriting failures
+  - Monitoring gaps
+  - Potential for multiplication (similar merchants approved)
+- Proactive management prevents portfolio degradation
+
+**Example Scenario:**
+```
+Sub-merchant at 3% CBR processing $10k/month:
+- Won't trigger network programs (volume too low)
+- Portfolio impact: Negligible if isolated
+- BUT: Must investigate and remediate because:
+  - Demonstrates poor underwriting
+  - If 50 similar merchants approved → portfolio at risk
+  - Sponsor bank wants proactive management
+```
+
+#### Network Program Comparison
+
+| Aspect | Visa VAMP | Mastercard ECP |
+|--------|-----------|----------------|
+| **Application Level** | Acquirer/Portfolio aggregate | Individual merchant (aggregated for PayFacs) |
+| **Threshold (Standard)** | 0.9% + 500 disputes | 1.0% + 100 chargebacks |
+| **Fines** | $10,000-$25,000/month | $1,000-$200,000/month (per merchant) |
+| **Remediation Period** | 60-90 days | 4 months (with milestones) |
+| **Portfolio Impact** | Direct portfolio metric | Indirect (count of merchants in program) |
+| **PayFac Concern** | Aggregate CBR must stay below threshold | Minimize count of individual merchants entering |
+
 ### Reserves and Portfolio Risk
 
 PayFac maintains reserves at two levels:
@@ -217,6 +325,115 @@ PayFac's own reserve held by sponsor bank to cover portfolio-wide exposure
 - Sponsor risk tolerance
 
 **Typical Range:** 5-15% of monthly portfolio volume, held for 90-180 days
+
+### Risk-Based Pricing
+
+PayFacs must balance competitive pricing with risk management through tiered pricing structures that reflect the true cost of risk across different merchant segments.
+
+#### Pricing Tiers Based on Risk
+
+| Risk Tier | Typical Pricing | Reserve | Examples |
+|-----------|----------------|---------|----------|
+| **Low-Risk** | 2.6% + $0.10 | 0-5% | Card-present retail, professional services |
+| **Medium-Risk** | 2.9% + $0.30 | 5-10% | E-commerce, subscription services |
+| **High-Risk** | 3.5% - 5.0% + $0.30 | 10-20% | Nutraceuticals, travel, high-ticket |
+| **VIRP Tier 1** | 4.0%+ + $0.30 + $0.10 | 15-25% | Gambling, dating, CBD |
+
+**VIRP (Visa Integrity Risk Program):** Additional monitoring for high-brand-risk industries with stricter requirements and higher fees.
+
+#### Portfolio Economics
+
+A sustainable PayFac portfolio requires careful balancing of risk tiers:
+
+```mermaid
+pie title Ideal Portfolio Mix by Volume
+    "Low-Risk (60-70%)" : 65
+    "Medium-Risk (20-30%)" : 25
+    "High-Risk (<10%)" : 10
+```
+
+**Why This Balance Matters:**
+
+**Can't Avoid All High-Risk:**
+- High-risk merchants generate highest margins (3-5% vs 2.6%)
+- Profitability requires some high-risk exposure
+- Competitive differentiation - many competitors won't serve these merchants
+
+**Can't Accept Only High-Risk:**
+- Portfolio chargeback ratio would breach network thresholds
+- Sponsor bank would restrict or terminate relationship
+- Reserve requirements would become unsustainable
+- Concentration risk too high
+
+**Optimal Strategy:**
+- **60-70% low-risk:** Stable base, consistent volume, low churn
+- **20-30% medium-risk:** Growth segment, reasonable margins
+- **Under 10% high-risk:** Highest margins but controlled exposure
+
+#### Pricing vs Reserve Trade-off
+
+Higher pricing enables higher reserves, creating self-funding risk coverage:
+
+**High-Pricing / High-Reserve Model:**
+```
+Merchant pricing: 3.5% + $0.30
+Reserve requirement: 20% of monthly volume
+Monthly volume: $100,000
+
+Monthly fees collected: $3,530
+Reserve held: $20,000
+Reserve accumulated over 6 months: $120,000
+
+Coverage ratio: Reserve covers 3.4 months of volume
+Risk buffer: Substantial protection against chargebacks
+```
+
+**Low-Pricing / Low-Reserve Model:**
+```
+Merchant pricing: 2.9% + $0.30
+Reserve requirement: 10% of monthly volume
+Monthly volume: $100,000
+
+Monthly fees collected: $2,930
+Reserve held: $10,000
+Reserve accumulated over 6 months: $60,000
+
+Coverage ratio: Reserve covers 2.1 months of volume
+Risk buffer: Moderate protection, higher PayFac exposure
+```
+
+**Strategic Considerations:**
+
+**When to Use High-Pricing/High-Reserve:**
+- New sub-merchant (no processing history)
+- High-risk MCC (nutraceuticals, travel)
+- Delivery delays (pre-orders, custom goods)
+- International merchants
+- Poor credit history
+
+**When to Use Low-Pricing/Low-Reserve:**
+- Established sub-merchant (>12 months good history)
+- Low-risk MCC (professional services, card-present retail)
+- Immediate delivery model
+- Strong financials and creditworthiness
+
+**Portfolio-Level Reserve Strategy:**
+
+Individual sub-merchant reserves should fund themselves:
+```
+Reserve Required = (Expected Chargeback Rate × 3) × Monthly Volume
+
+Example - Medium Risk Merchant:
+Expected CBR: 0.5%
+Safety Multiple: 3x
+Monthly Volume: $100,000
+
+Reserve = (0.5% × 3) × $100,000 = $1,500
+
+Hold Period: Until merchant demonstrates <0.3% CBR for 6 months
+```
+
+PayFac portfolio reserve is separate - funded by PayFac capital to cover systemic events.
 
 ### Sponsor Bank Reporting
 
@@ -274,7 +491,223 @@ Regular portfolio reports to sponsor:
 
 ## Self-Assessment Questions
 
-[Questions to be added covering portfolio metrics, concentration risk, and management strategies]
+### Question 1: Network Program Triggers
+**A PayFac has 500 sub-merchants processing $50M/month with aggregate 1.2% chargeback ratio. What network programs are triggered, and what are the consequences?**
+
+<details>
+<summary>View Answer</summary>
+
+**Programs Triggered:**
+
+**Visa VAMP:**
+- At 1.2%, the PayFac is in **Standard** tier (above 0.9% threshold)
+- Not yet in Excessive (1.8%)
+- Monthly fines of $10,000-$25,000
+- 60-90 day remediation period
+- Must submit action plan to sponsor bank
+
+**Mastercard ECP:**
+- At 1.2%, depends on total dispute count
+- If >100 chargebacks: triggers ECMP
+- Monthly assessments apply
+- Remediation required
+
+**Consequences:**
+1. Immediate notification to sponsor bank
+2. Mandatory remediation plan within 30 days
+3. Monthly fines until ratio drops below threshold
+4. Potential onboarding freeze if not remediated
+5. Enhanced monitoring and reporting to sponsor
+
+**Required Actions:**
+- Identify and terminate highest CBR sub-merchants
+- Tighten underwriting for new sub-merchants
+- Implement enhanced fraud tools
+- Increase reserves on existing high-risk merchants
+
+</details>
+
+### Question 2: Concentration Risk Analysis
+**200 of a PayFac's 500 sub-merchants are MCC 5999 (Miscellaneous Retail) representing 65% of total volume. Is this concentration risky? Why or why not?**
+
+<details>
+<summary>View Answer</summary>
+
+**Yes, this represents significant concentration risk.**
+
+**Why It's Risky:**
+
+1. **Single Point of Failure:** 65% of volume in one MCC means industry-specific issues could devastate the portfolio
+   - Regulatory changes (e.g., product bans)
+   - Economic downturns affecting retail
+   - Network rule changes for the MCC
+
+2. **Exceeds Best Practices:** Recommended maximum is 20% concentration in any single MCC
+
+3. **Systemic Event Vulnerability:**
+   - Example: COVID-19 impact on retail
+   - Example: Regulatory crackdown on specific product categories
+
+4. **Sponsor Concern:** This concentration would likely trigger sponsor bank scrutiny and potential restrictions
+
+**Recommended Actions:**
+
+1. **Immediate:** Freeze new MCC 5999 onboarding until concentration drops below 30%
+
+2. **Short-term (30-90 days):**
+   - Accelerate diversification efforts (target other industries)
+   - Increase monitoring of existing 5999 merchants
+   - Stress test: What if 50% of 5999 volume disappears?
+
+3. **Long-term:**
+   - Set MCC concentration limits in underwriting policy (max 25%)
+   - Build automated alerts for concentration breaches
+   - Report concentration to sponsor proactively
+
+</details>
+
+### Question 3: Reserve Types
+**Distinguish between sub-merchant reserves and PayFac portfolio reserves. Who holds each, and what do they cover?**
+
+<details>
+<summary>View Answer</summary>
+
+**Two Distinct Reserve Types:**
+
+**Sub-Merchant Reserves:**
+| Aspect | Details |
+|--------|---------|
+| **Held by** | PayFac |
+| **Funded by** | Withheld from sub-merchant settlements |
+| **Purpose** | Cover individual sub-merchant chargebacks, fraud, refunds |
+| **Typical Range** | 5-20% of volume, 90-365 days |
+| **Calculation** | Based on sub-merchant risk: MCC, processing history, delivery time |
+| **Release** | After hold period if sub-merchant performs well |
+| **Covers** | Individual sub-merchant failures only |
+
+**PayFac Portfolio Reserve:**
+| Aspect | Details |
+|--------|---------|
+| **Held by** | Sponsor bank |
+| **Funded by** | PayFac's own capital |
+| **Purpose** | Cover portfolio-wide exposure, systemic risk |
+| **Typical Range** | 3-10% of monthly portfolio volume |
+| **Calculation** | Based on: portfolio size, aggregate CBR, high-risk concentration |
+| **Release** | Ongoing requirement, adjusted based on portfolio performance |
+| **Covers** | Situations where sub-merchant reserves are insufficient |
+
+**Key Difference:**
+- Sub-merchant reserves protect **PayFac** from individual merchant losses
+- Portfolio reserves protect **sponsor bank** from PayFac failure or systemic events
+
+**Example:**
+- PayFac processes $10M/month
+- Holds $500k in sub-merchant reserves (distributed across 500 merchants)
+- Sponsor holds $700k in portfolio reserve (7% of volume)
+- Total reserve coverage: $1.2M against various risk scenarios
+
+</details>
+
+### Question 4: High-CBR Merchant Decision
+**A sub-merchant has 5% chargeback ratio but processes only $10,000/month. The portfolio overall is at 0.7% CBR. How should the PayFac handle this?**
+
+<details>
+<summary>View Answer</summary>
+
+**Analysis:**
+
+Despite the high 5% individual CBR:
+- Portfolio impact: Minimal (0.7% aggregate is healthy)
+- Volume contribution: Small ($10k/month is under 1% of typical portfolio)
+- Network trigger: Individual merchant doesn't trigger programs if portfolio is healthy
+
+**However, this requires action because:**
+1. 5% CBR is unsustainable for any merchant long-term
+2. Multiple similar merchants would compound into portfolio problem
+3. Demonstrates poor underwriting or monitoring
+4. Could indicate fraud or business problems
+
+**Recommended Actions:**
+
+**Immediate:**
+1. Contact sub-merchant to understand root cause
+2. Implement enhanced monitoring
+3. Set 90-day improvement deadline
+
+**If pattern continues:**
+1. Increase reserve to 25% of monthly volume
+2. Implement daily funding holds
+3. Require chargeback prevention training
+
+**Remediation Target:**
+- CBR must drop below 1.5% within 90 days
+- Below 1.0% within 180 days
+
+**If no improvement:**
+1. Issue termination notice
+2. MATCH report if required (depending on reason codes)
+3. Withhold final reserves for 180+ days to cover post-termination chargebacks
+
+**Key Lesson:** Even small merchants with high CBR need attention - they represent underwriting failures and could multiply across similar merchants.
+
+</details>
+
+### Question 5: Portfolio Trend Response
+**Portfolio chargeback ratio is trending from 0.8% to 1.1% over 3 months. What preventive actions should a PayFac take?**
+
+<details>
+<summary>View Answer</summary>
+
+**Trend Analysis:**
+- 0.8% → 0.9% → 1.0% → 1.1% over 3 months
+- Crossing VAMP early warning threshold (0.9%)
+- Approaching ECMP threshold (1.0%)
+- On trajectory to exceed excessive threshold within 2-3 months
+
+**Immediate Actions (Week 1):**
+
+1. **Root Cause Analysis:**
+   - Identify top 20 merchants by chargeback volume
+   - Determine if concentrated in specific MCC, cohort, or geography
+   - Check for fraud patterns or operational issues
+
+2. **Enhanced Monitoring:**
+   - Implement daily CBR tracking (vs monthly)
+   - Set alerts at individual merchant level (>1.5% triggers review)
+
+**Short-Term Actions (Month 1):**
+
+3. **Underwriting Tightening:**
+   - Increase risk scores required for approval
+   - Add velocity checks (rate of new approvals)
+   - Pause high-risk MCC onboarding
+
+4. **Portfolio Cleanup:**
+   - Terminate top 5 highest CBR merchants
+   - Issue warnings to merchants >2% CBR
+   - Implement chargeback recovery programs
+
+5. **Communication:**
+   - Proactively inform sponsor bank of trend and action plan
+   - Better to disclose early than have sponsor discover
+
+**Medium-Term Actions (Months 2-3):**
+
+6. **Systematic Improvements:**
+   - Deploy fraud prevention tools
+   - Implement descriptor optimization
+   - Add customer service improvements for sub-merchants
+
+7. **Reserve Adjustments:**
+   - Increase reserves on medium and high-risk merchants
+   - Build portfolio reserve buffer
+
+**Expected Outcome:**
+- Stabilize within 30 days
+- Decline below 0.9% within 60-90 days
+- Avoid network program entry or minimize duration
+
+</details>
 
 ## Related Topics
 
