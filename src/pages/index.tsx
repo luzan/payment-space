@@ -104,36 +104,42 @@ function LearningPath() {
       title: 'Payment Ecosystem',
       topics: 'Core entities, money flow, industry players, transaction models',
       status: 'Complete',
+      link: '/ecosystem',
     },
     {
       weeks: 'Weeks 3-4',
       title: 'Merchant Onboarding',
       topics: 'KYC/KYB, risk assessment, underwriting, compliance checks',
-      status: 'In Progress',
+      status: 'Complete',
+      link: '/onboarding',
     },
     {
       weeks: 'Weeks 5-6',
       title: 'Risk & Compliance',
       topics: 'Chargebacks, fraud prevention, PCI-DSS, AML/BSA',
       status: 'Planned',
+      link: null,
     },
     {
       weeks: 'Weeks 7-8',
       title: 'Transaction Processing',
       topics: 'Authorization, settlement, reconciliation, ISO 8583',
       status: 'Planned',
+      link: null,
     },
     {
       weeks: 'Weeks 9-10',
       title: 'Platform Architecture',
       topics: 'Data models, audit trails, event systems, scalability',
       status: 'Planned',
+      link: null,
     },
     {
       weeks: 'Weeks 11-12',
       title: 'Regulatory & Partnerships',
       topics: 'Sponsor banks, network registration, compliance frameworks',
       status: 'Planned',
+      link: null,
     },
   ];
 
@@ -142,20 +148,35 @@ function LearningPath() {
       <div className="container">
         <h2>12-Week Structured Learning Path</h2>
         <div className={styles.moduleGrid}>
-          {modules.map((module, idx) => (
-            <div key={idx} className={styles.moduleCard}>
-              <div className={styles.moduleHeader}>
-                <span className={styles.moduleWeeks}>{module.weeks}</span>
-                <span className={clsx(
-                  styles.moduleStatus,
-                  module.status === 'Complete' && styles.moduleStatusComplete,
-                  module.status === 'In Progress' && styles.moduleStatusInProgress,
-                )}>{module.status}</span>
+          {modules.map((module, idx) => {
+            const cardContent = (
+              <>
+                <div className={styles.moduleHeader}>
+                  <span className={styles.moduleWeeks}>{module.weeks}</span>
+                  <span className={clsx(
+                    styles.moduleStatus,
+                    module.status === 'Complete' && styles.moduleStatusComplete,
+                    module.status === 'In Progress' && styles.moduleStatusInProgress,
+                  )}>{module.status}</span>
+                </div>
+                <h3>{module.title}</h3>
+                <p>{module.topics}</p>
+                {module.link && (
+                  <span className={styles.moduleLink}>Start learning →</span>
+                )}
+              </>
+            );
+
+            return module.link ? (
+              <Link key={idx} to={module.link} className={clsx(styles.moduleCard, styles.moduleCardClickable)}>
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={idx} className={styles.moduleCard}>
+                {cardContent}
               </div>
-              <h3>{module.title}</h3>
-              <p>{module.topics}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

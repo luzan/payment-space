@@ -1,3 +1,17 @@
+---
+title: "Payments Glossary"
+description: "A comprehensive glossary of payment industry terms and definitions for Payment Facilitator platforms"
+sidebar_position: 100
+sidebar_label: "Glossary"
+keywords:
+  - payments glossary
+  - payment terms
+  - PayFac terminology
+  - acquiring
+  - interchange
+  - chargeback
+---
+
 # Payments Glossary
 
 A comprehensive glossary of payment industry terms and definitions.
@@ -12,6 +26,9 @@ A comprehensive glossary of payment industry terms and definitions.
 
 **Acquirer**
 A financial institution that processes payments made by credit or debit card on behalf of a merchant. The acquirer enables merchants to accept payments from card-issuing banks.
+
+**Adverse Action Notice**
+A legally required notification to merchants (under FCRA and ECOA) explaining why their application for payment processing was declined, including specific reasons for the decision.
 
 **Acquirer Agreement**
 A contract between an ISV, ISO, or payment facilitator and the acquirer that sells processing services. This agreement covers processing rates, transaction fees, value-added services, liability, and applicable service level agreements (SLAs).
@@ -62,6 +79,12 @@ A processor that handles the post-authorization functions including clearing, se
 **BIN Sponsorship**
 When a sponsor bank provides their Bank Identification Number to a PayFac or ISO, allowing transactions to route through the sponsor's network membership.
 
+**BOI (Beneficial Ownership Information)**
+Information about the natural persons who ultimately own or control a legal entity, required to be collected under FinCEN regulations.
+
+**BRAM (Business Risk Assessment and Mitigation)**
+Mastercard's tiered merchant risk classification program identifying high-risk merchant segments requiring enhanced controls, including categories like telemarketing, adult entertainment, and cryptocurrency.
+
 **Bank Identification Number (BIN)**
 A sequence of digits identifying the financial institution that issued a credit or debit card, typically the first six or eight digits of the card number.
 
@@ -87,8 +110,26 @@ Any transaction or scenario where a business sends money to a consumer.
 
 ## C
 
+**Capped Reserve**
+A reserve where a percentage of transactions is withheld until a maximum cap is reached, after which withholding stops. Provides predictability for merchants as they know the exact amount that will be held.
+
 **Capture**
 The process of finalizing a previously authorized transaction for settlement. Merchants capture transactions when they're ready to collect payment (e.g., after shipping goods).
+
+**CDD Rule (Customer Due Diligence Rule)**
+FinCEN regulation (31 CFR 1010.230) requiring financial institutions to identify and verify beneficial owners of legal entity customers. Effective since May 2018.
+
+**CFPB (Consumer Financial Protection Bureau)**
+Federal agency responsible for consumer protection in the financial sector, including oversight of payment processors and enforcement of fair lending practices.
+
+**CIP (Customer Identification Program)**
+BSA/AML requirement (31 CFR 1020.220) for financial institutions to verify the identity of customers opening accounts, including collection of name, date of birth, address, and identification number.
+
+**Control Person**
+An individual with significant responsibility to control, manage, or direct a legal entity, identified when no individual owns 25% or more of the entity. Required under the CDD Rule.
+
+**CTA (Corporate Transparency Act)**
+Federal law requiring certain companies to report beneficial ownership information to FinCEN. Note: U.S. domestic entities were exempted from reporting as of March 2025.
 
 **Clearing**
 The exchange of transaction details between acquiring and issuing banks through the card network, calculating interchange and preparing for settlement.
@@ -139,6 +180,9 @@ Policies, practices, and procedures enabling a financial institution to predict 
 
 ## D
 
+**Delegated Underwriting Authority**
+Permission granted by an acquiring bank (sponsor bank) to a PayFac or ISO to make underwriting decisions on their behalf, within defined parameters and risk thresholds.
+
 **Dual-Message Processing**
 A transaction flow where authorization and clearing are separate messages sent at different times. Typical for signature debit and credit card transactions.
 
@@ -163,6 +207,12 @@ A service allowing customers to pay in their home currency when making a purchas
 
 **Early Termination Fees**
 Fees that merchants may incur when terminating the processing agreement before the end of a specified period.
+
+**ECOA (Equal Credit Opportunity Act)**
+Federal law prohibiting discrimination in credit decisions and requiring specific reasons for denial. Applies to merchant processing as a form of credit extension.
+
+**EDD (Enhanced Due Diligence)**
+Additional verification steps required for high-risk customers, merchants, or beneficial owners, including deeper background checks and ongoing monitoring.
 
 **eCheck**
 An electronic form of a check.
@@ -189,11 +239,29 @@ Charges imposed on merchants for leasing or maintenance of payment processing eq
 
 ## F
 
+**False Positive (Screening)**
+A sanctions or fraud screening result that incorrectly flags a legitimate entity as a match. Managing false positives is critical for balancing compliance with customer experience.
+
+**FCRA (Fair Credit Reporting Act)**
+Federal law governing the use of consumer credit reports, requiring merchant consent before pulling reports and specific adverse action notices when declined based on credit information.
+
+**50% Rule (OFAC)**
+OFAC rule stating that any entity owned 50% or more (directly or indirectly) by a blocked person is itself blocked, even if not specifically listed on the SDN List.
+
+**FinCEN (Financial Crimes Enforcement Network)**
+Bureau of the U.S. Department of Treasury responsible for safeguarding the financial system from illicit use, combating money laundering, and promoting national security.
+
+**Fixed Reserve**
+A lump sum deposited upfront and held throughout the merchant processing relationship, released 6-18 months after account closure. Common for high-risk merchants.
+
 **Four-Party Model**
 The foundational card payment structure involving four parties: Cardholder, Merchant, Issuing Bank, and Acquiring Bank, connected by the Card Network.
 
 **Front-End Processor**
 A processor that handles real-time authorization requests, routing transactions to the appropriate card network and returning approve/decline decisions.
+
+**Fuzzy Matching**
+Screening technique using algorithms (Levenshtein, Jaro-Winkler, Soundex) to identify potential matches despite name variations, misspellings, or transliterations.
 
 **Funding**
 The final step of settlement where funds are deposited into the merchant's bank account, typically occurring T+1 to T+3 after transaction.
@@ -227,6 +295,9 @@ A payment page hosted by a gateway/processor where customers are redirected to e
 
 **IIN (Issuer Identification Number)**
 The first 6-8 digits of a card number identifying the issuing bank, also called BIN. Extended from 6 to 8 digits in 2022.
+
+**Integrity Risk Fee**
+Additional fee charged by Visa on Tier 1 high-risk MCC transactions under the VIRP program, calculated as $0.10 per transaction plus 0.10% of transaction amount.
 
 **Interchange-Plus Pricing**
 A transparent pricing model where merchants pay actual interchange fees plus a fixed processor markup, allowing visibility into true costs.
@@ -300,8 +371,14 @@ The total percentage fee merchants pay to accept card payments, comprising inter
 **Markup Fees**
 Negotiable fees that credit card processors charge.
 
-**MATCH List**
-The Terminated Merchant File (TMF) maintained by Mastercard identifying high-risk merchants or those terminated by another entity within the last five years.
+**MATCH List (Member Alert to Control High-Risk Merchants)**
+Industry database maintained by Mastercard tracking merchants terminated by acquirers for fraud, excessive chargebacks, or other violations. Entries remain for 5 years and effectively blacklist merchants from obtaining new processing accounts. Also known as TMF (Terminated Merchant File).
+
+**Master MID**
+The primary Merchant Identification Number held by a PayFac under which all sub-merchants process transactions. The PayFac is the merchant of record for all transactions.
+
+**MCC Misclassification**
+Fraudulent or negligent assignment of an incorrect Merchant Category Code to reduce fees, bypass restrictions, or avoid high-risk monitoring. Subject to network fines of $25,000+ per merchant.
 
 **Merchant**
 Any business accepting payments from credit or debit cards or alternative payment methods, offering goods or services in exchange.
@@ -350,6 +427,9 @@ A notice generated by a Receiving Depository Financial Institution (RDFI) inform
 
 ## O
 
+**OFAC (Office of Foreign Assets Control)**
+Division of the U.S. Department of Treasury administering and enforcing economic and trade sanctions, including the SDN List. Violations carry strict liability regardless of intent.
+
 **Operational Risk**
 The risk of direct or indirect loss due to inadequate or failed internal processes, people, systems, or external events.
 
@@ -371,6 +451,9 @@ The entity that initiates or starts a transaction flow.
 
 **P2PE (Point-to-Point Encryption)**
 PCI-validated encryption standard where card data is encrypted at the point of interaction and only decrypted within a secure environment, reducing PCI scope.
+
+**PEP (Politically Exposed Person)**
+Individual who holds or has held a prominent public position (government officials, senior executives of state-owned corporations), requiring enhanced due diligence due to increased corruption risk.
 
 **PayFac-as-a-Service (PFaaS)**
 A platform (like Stripe Connect) that provides PayFac infrastructure to software companies, handling compliance, underwriting, and settlement while allowing pricing control.
@@ -418,6 +501,15 @@ A qualified institution that can receive ACH entries.
 **Reconciliation**
 The process of matching transactions processed by the payment processor with transactions recorded by the merchant.
 
+**Risk Appetite**
+The level and type of risk an organization is willing to accept in pursuit of business objectives. Varies significantly across payment processors.
+
+**Risk Score**
+Numerical assessment (typically 0-100) representing the likelihood of merchant-related losses during underwriting. Higher scores indicate higher risk.
+
+**Rolling Reserve**
+A percentage of each transaction withheld and held for a specified period (30-180 days) before automatic release on a rolling basis. Common reserve type for moderate to high-risk merchants.
+
 **Refund**
 When a customer cancels their purchase and the merchant returns funds to the customer.
 
@@ -443,17 +535,38 @@ An assessment of risks associated with different business types, clients, accoun
 
 ## S
 
+**SAR (Suspicious Activity Report)**
+A government filing required when suspicious or potentially illegal activity is detected, including potential money laundering, fraud, or sanctions violations.
+
+**SDN List (Specially Designated Nationals List)**
+OFAC-maintained list of individuals and entities with whom U.S. persons are generally prohibited from doing business. Updated frequently and subject to strict liability.
+
 **Signature Debit**
 A debit transaction processed like a credit card (without PIN), routed through Visa/Mastercard networks with higher interchange than PIN debit.
 
 **Single-Message Processing**
 A transaction flow where authorization and clearing happen in a single message. Typical for PIN debit transactions where funds move immediately.
 
+**SMID (Sub-Merchant ID)**
+Unique identifier assigned to each sub-merchant under a PayFac's master MID, used for internal routing, network reporting, and chargeback allocation.
+
 **Sponsor Bank**
-An acquiring bank that provides card network membership, settlement infrastructure, and regulatory coverage to PayFacs and ISOs who cannot be network members directly.
+An acquiring bank that provides card network membership, settlement infrastructure, and regulatory coverage to PayFacs and ISOs who cannot be network members directly. Bears ultimate liability for PayFac activities.
+
+**Statement Descriptor**
+Text that appears on a cardholder's bank or credit card statement identifying a transaction. Format typically: [PayFac Name]*[Sub-Merchant Name].
+
+**STP (Straight-Through Processing)**
+Applications that are approved or declined automatically by algorithms without human intervention during underwriting. Top performers achieve 70%+ STP rates.
+
+**Strict Liability**
+Legal standard where a party is liable regardless of fault or intent. OFAC sanctions violations carry strict liability - "we didn't know" is not a defense.
 
 **Sub-Merchant**
 A merchant that processes payments under a PayFac's master merchant account, rather than having their own direct acquiring relationship.
+
+**Sub-Merchant Graduation**
+Process where a high-volume sub-merchant (typically >$500K-$1M/year) transitions from a PayFac's master MID to their own direct merchant account.
 
 **Seize**
 To prevent funds or assets from transfer based on competent authority action, allowing control while remaining original property.
@@ -492,8 +605,14 @@ A security protocol adding an authentication step for CNP transactions. Visa's "
 **Termination Rights**
 The right to end an existing payment processing contract.
 
+**TMF (Terminated Merchant File)**
+Another name for the MATCH List. See MATCH List.
+
 **Tokenization**
 The process of encrypting payment card information into a "token," a hashed version protecting cardholder information while enabling card-on-file processing.
+
+**True Match**
+A confirmed match against sanctions lists (SDN, etc.) that requires immediate action including blocking the transaction/relationship and filing SAR as appropriate.
 
 ---
 
@@ -508,6 +627,9 @@ The process of evaluating merchant risk and determining approval or decline for 
 ---
 
 ## V
+
+**VIRP (Visa Integrity Risk Program)**
+Visa's tiered risk framework introduced May 2023 (replacing GBPP) for classifying high-risk merchants. Tier 1 requires Visa approval and Integrity Risk Fees; Tier 2/3 have lower requirements.
 
 **Void Transaction**
 A transaction canceled before settlement using a customer's credit or debit card.

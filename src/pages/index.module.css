@@ -155,6 +155,30 @@
   margin: 0;
 }
 
+.moduleCardClickable {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.moduleCardClickable:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.moduleCardClickable:hover .moduleLink {
+  text-decoration: underline;
+}
+
+.moduleLink {
+  display: block;
+  margin-top: 1rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 /* Target Audience Section */
 .targetAudience {
   padding: 4rem 0;

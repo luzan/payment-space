@@ -1,0 +1,8 @@
+{
+  "label": "Merchant Onboarding",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how payment platforms onboard and verify merchants through KYC/KYB, underwriting, and risk assessment processes."
+  }
+}

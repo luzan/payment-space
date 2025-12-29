@@ -40,7 +40,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/luzan/payment-space/tree/main/',
           sidebarCollapsible: true,
-          sidebarCollapsed: false,
+          sidebarCollapsed: true,
           // Enable after initial commit to show accurate git dates
           // showLastUpdateTime: true,
           // showLastUpdateAuthor: true,
