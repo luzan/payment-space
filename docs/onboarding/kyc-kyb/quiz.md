@@ -1444,7 +1444,7 @@ Sanctions programs change frequently. Always check the current status at [OFAC S
 - [KYB Requirements](./kyb-requirements.md) - Entity verification deep dive
 - [Beneficial Ownership](./beneficial-ownership.md) - UBO identification and calculation
 - [Sanctions Screening](./sanctions-screening.md) - OFAC compliance comprehensive guide
-- GLOSSARY.md (project root) - Payment industry terminology reference
+- [Payments Glossary](/glossary) - Payment industry terminology reference
 
 ---
 

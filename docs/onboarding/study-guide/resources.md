@@ -323,7 +323,7 @@ Review for understanding data requirements:
 For payment industry terminology, refer to:
 
 **Project Glossary**
-- See the GLOSSARY.md file in the project root - 100+ payment industry terms
+- See the [Payments Glossary](/glossary) - 100+ payment industry terms
 
 **External Glossaries**
 - Visa Global Payment Terms

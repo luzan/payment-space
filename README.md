@@ -42,7 +42,7 @@ Each module contains:
 
 ## Reference
 
-- **[Glossary](./GLOSSARY.md)** - 100+ payment industry terms and definitions
+- **[Glossary](./docs/glossary.md)** - 100+ payment industry terms and definitions
 
 ## Note
 
