@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Payments Mastery',
   tagline: 'A structured learning path for senior engineers',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon-32.png',
 
   // Custom domain configuration
   url: 'https://paymentsmastery.com',
@@ -15,6 +15,24 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
+
+  // SEO: Enhanced metadata
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content: 'payment processing, fintech, payment facilitator, PayFac, merchant onboarding, payment gateway, PCI compliance, payment systems, senior engineer, learning guide',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'Payments Mastery',
+      },
+    },
+  ],
 
   i18n: {
     defaultLocale: 'en',
@@ -41,13 +59,20 @@ const config: Config = {
           editUrl: 'https://github.com/luzan/payment-space/tree/main/',
           sidebarCollapsible: true,
           sidebarCollapsed: true,
-          // Enable after initial commit to show accurate git dates
-          // showLastUpdateTime: true,
-          // showLastUpdateAuthor: true,
+          // SEO: Enable git-based last update information
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog: false, // Disable blog
         theme: {
           customCss: './src/css/custom.css',
+        },
+        // SEO: Enable sitemap generation
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
@@ -67,6 +92,15 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // SEO: Enhanced metadata for social sharing
+    metadata: [
+      {name: 'keywords', content: 'payment processing, fintech, PayFac, senior engineer, learning guide, payment systems'},
+      {name: 'og:type', content: 'website'},
+      {name: 'og:site_name', content: 'Payments Mastery'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
+    // SEO: Open Graph image (add og-image.png to static/img/)
+    image: 'img/og-image.png',
     docs: {
       sidebar: {
         hideable: true,
