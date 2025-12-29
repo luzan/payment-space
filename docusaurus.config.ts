@@ -74,6 +74,12 @@ const config: Config = {
           ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
         },
+        // ANALYTICS: Google Analytics 4
+        // Replace 'G-XXXXXXXXXX' with your actual GA4 measurement ID
+        gtag: {
+          trackingID: 'G-YJ16429K67',
+          anonymizeIP: true, // Privacy-friendly option
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -89,6 +95,16 @@ const config: Config = {
         docsRouteBasePath: '/',
       },
     ],
+    // ANALYTICS: Plausible Analytics (privacy-friendly alternative to GA)
+    // Uncomment and install plugin if you prefer Plausible: npm install docusaurus-plugin-plausible
+    // [
+    //   'docusaurus-plugin-plausible',
+    //   {
+    //     domain: 'paymentsmastery.com',
+    //     // Optional: Use custom domain for Plausible script
+    //     // customDomain: 'plausible.yourdomain.com',
+    //   },
+    // ],
   ],
 
   themeConfig: {
