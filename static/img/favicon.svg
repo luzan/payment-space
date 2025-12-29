@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card -->
+  <rect x="2" y="7" width="28" height="18" rx="3" fill="url(#grad)"/>
+
+  <!-- Chip -->
+  <rect x="5" y="11" width="8" height="6" rx="1" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Contactless waves -->
+  <g fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.9">
+    <path d="M 21 12 A 3 3 0 0 1 21 18"/>
+    <path d="M 24 10 A 5 5 0 0 1 24 20"/>
+    <path d="M 27 8 A 7 7 0 0 1 27 22"/>
+  </g>
+</svg>
