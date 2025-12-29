@@ -49,6 +49,11 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
+  // Load gtag polyfill before other scripts to prevent race conditions
+  clientModules: [
+    require.resolve('./src/clientModules/gtagPolyfill.js'),
+  ],
+
   presets: [
     [
       'classic',
