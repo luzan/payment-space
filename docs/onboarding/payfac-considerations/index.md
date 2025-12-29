@@ -1,7 +1,6 @@
 ---
 title: "PayFac Considerations"
 description: "Payment Facilitator-specific onboarding requirements and responsibilities"
-sidebar_position: 4
 keywords:
   - PayFac onboarding
   - payment facilitator

@@ -1,7 +1,7 @@
 ---
 title: "PayFac Considerations Quiz"
 description: "Test your understanding of sponsor delegation, portfolio risk, network requirements, and PayFac-specific operations"
-sidebar_position: 7
+sidebar_position: 6
 sidebar_label: "Quiz"
 keywords:
   - PayFac quiz
@@ -159,7 +159,7 @@ keywords:
 
 ### Question 5: Chargeback Ratio Calculation
 
-**Your PayFac processed 500,000 transactions last month with 4,500 chargebacks. Calculate the chargeback ratio and determine which network programs are triggered.**
+**Your PayFac processed 500,000 transactions last month with 3,000 chargebacks. Calculate the chargeback ratio and determine which network programs are triggered.**
 
 <details>
 <summary>Answer</summary>
@@ -167,25 +167,33 @@ keywords:
 **Calculation:**
 ```
 Chargeback Ratio = Chargebacks / Transactions
-= 4,500 / 500,000
-= 0.9%
+= 3,000 / 500,000
+= 0.60%
 ```
 
 **Network Programs Triggered:**
 
-**Visa VAMP:**
-- At 0.9%, you are at the **Early Warning** threshold
-- Not yet in Standard (requires 0.9% + 500 disputes)
-- Not in Excessive (1.8%)
-- Action: Monthly monitoring, prepare remediation plan
+**Visa VAMP (Acquirer Level):**
+- At 0.60%, the PayFac **exceeds the 0.50% Excessive threshold**
+- This triggers VAMP at the acquirer/portfolio level
+- Monthly fines of $25,000 - $100,000+
+- 60-90 day remediation period required
+- Action: Immediate remediation plan required
 
-**Mastercard ECP:**
-- At 0.9% with 4,500 chargebacks, you exceed ECMP threshold (1.0% OR 100 chargebacks)
-- ECMP is triggered due to volume (4,500 > 100)
-- Monthly assessments apply
+**Mastercard ECP (Merchant Level):**
+- At 0.60% portfolio aggregate, ECP is NOT triggered (ECP applies to individual merchants)
+- ECM threshold is 1.5% + 100 chargebacks (OR logic)
+- HECM threshold is 3.0% + 300 chargebacks
+- PayFac must audit individual sub-merchant CBRs to identify any ECM triggers
+- Individual high-CBR merchants may trigger ECM even if portfolio aggregate seems acceptable
+
+**Key Distinction:**
+- VAMP applies at **acquirer/portfolio level** (0.50% threshold for PayFacs)
+- ECP applies at **individual merchant level** (1.5%/3.0% thresholds)
 
 **Required Actions:**
 - Identify top 20 merchants by chargeback volume
+- Target portfolio below 0.40% for safety margin
 - Tighten underwriting for new sub-merchants
 - Implement enhanced fraud tools
 - Communicate proactively with sponsor bank
@@ -271,21 +279,21 @@ Chargeback Ratio = Chargebacks / Transactions
 
 | Aspect | Visa VAMP | Mastercard ECP |
 |--------|-----------|----------------|
-| **Application Level** | Acquirer/Portfolio | Merchant level (aggregated for PayFacs) |
-| **Early Warning** | 0.9% dispute ratio | 1.0% + 100 chargebacks (ECMP) |
-| **Excessive** | 1.8% dispute ratio | 1.5% + 300 chargebacks (HECM) |
-| **Fines** | $10,000-$25,000+/month | $1,000-$200,000 depending on tier |
-| **Remediation Period** | 60-90 days | Varies by tier |
-| **2026 Changes** | Standard tightening to 0.9% | No announced changes |
+| **Application Level** | Acquirer/Portfolio (0.50% for PayFacs) | Merchant level (ECM at 1.5%, HECM at 3.0%) |
+| **Threshold Logic** | AND logic (ratio + count) | OR logic (ratio OR count) |
+| **Excessive Threshold** | 0.50% (acquirer level) | ECM: 1.5% OR 100 CBs; HECM: 3.0% OR 300 CBs |
+| **Fines** | $25,000-$100,000+/month | $1,000-$200,000 depending on tier |
+| **Remediation Period** | 60-90 days | 4 months with milestones |
+| **2026 Changes** | Merchant-level tightening to 0.9% | No announced changes |
 
 **Key Differences for PayFacs:**
 
-1. **VAMP is portfolio-wide:** If your aggregate portfolio exceeds thresholds, entire PayFac is affected
-2. **ECP targets merchants:** Individual high-CBR merchants trigger program, but PayFac must manage them
-3. **VAMP fines are higher:** Portfolio-level violations carry larger penalties
-4. **Different calculation bases:** VAMP uses dispute ratio (disputes/transactions), ECP uses chargebacks
+1. **VAMP is portfolio-wide:** PayFacs are monitored at the acquirer level with 0.50% threshold - much stricter than individual merchant thresholds
+2. **ECP targets merchants:** Individual high-CBR merchants trigger ECM/HECM, but PayFac must manage them
+3. **VAMP fines are higher:** Portfolio-level violations carry larger penalties ($25k+ vs starting at $1k)
+4. **Different threshold logic:** VAMP uses AND logic (ratio + count), ECP uses OR logic (ratio OR count)
 
-**Practical Impact:** A PayFac at 0.95% CBR is in VAMP early warning but may have individual merchants at 3% CBR triggering ECP separately.
+**Practical Impact:** A PayFac at 0.55% portfolio CBR is in VAMP Excessive tier and facing $25k+ monthly fines, even if no individual merchant exceeds 1.5%.
 </details>
 
 ---

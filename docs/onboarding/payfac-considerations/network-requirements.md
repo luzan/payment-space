@@ -1,7 +1,7 @@
 ---
 title: "Network Requirements"
 description: "Card network registration and compliance requirements for Payment Facilitators"
-sidebar_position: 4
+sidebar_position: 3
 sidebar_label: "Network Requirements"
 keywords:
   - visa payfac
@@ -83,24 +83,28 @@ Visa's dispute management system that PayFacs must use:
 ### Visa VAMP (Acquirer Monitoring Program)
 
 :::warning Time-Sensitive Information
-Visa is tightening VAMP thresholds in 2026. Standard threshold will move from current levels to 0.9%. PayFacs should plan to operate well below this threshold.
+Visa significantly restructured VAMP effective April 2025. PayFacs are now monitored at the **acquirer level** with much stricter thresholds (0.50%) than merchant-level thresholds.
 :::
 
-**Current Thresholds (2025):**
+**Acquirer-Level Thresholds (For PayFacs - Effective April 2025):**
 
-| Tier | Dispute Ratio | Dispute Count | Monthly Fines |
-|------|---------------|---------------|---------------|
-| **Early Warning** | 0.9% | 450 | Warning, no fines |
-| **Standard** | 0.9% | 500 | $10,000 - $25,000 |
-| **Excessive** | 1.8% | 1,000 | $25,000 - $100,000+ |
+| Tier | Dispute Ratio | Effective Date | Monthly Fines |
+|------|---------------|----------------|---------------|
+| **Excessive** | 0.50% (50 bps) | April 1, 2025 | $25,000 - $100,000+ |
+| **Above Standard** | 0.30% - 0.50% | January 1, 2026 | $10,000 - $25,000 |
 
-**2026 Changes:**
-- Standard threshold tightening to **0.9%** as new baseline
-- Early warning may be eliminated or moved to 0.65%
-- Fines expected to increase
+**Merchant-Level Thresholds (For Individual Sub-Merchants):**
+
+| Tier | Dispute Ratio | Effective Date | Region |
+|------|---------------|----------------|--------|
+| **Excessive** | 1.5% | June 1, 2025 | All regions |
+| **Excessive** | 0.9% | April 1, 2026 | NA, EU, APAC only |
+
+**Key Distinction:** PayFacs are monitored at the **acquirer portfolio level** (0.50% threshold), which is much stricter than individual merchant thresholds (0.9-1.5%). A PayFac portfolio exceeding 0.50% aggregate dispute ratio triggers VAMP, even if no individual sub-merchant exceeds 0.9%.
 
 **Portfolio Impact:**
 - VAMP applies at the **acquirer level** (entire PayFac portfolio)
+- Target portfolio dispute ratio: below 0.40% for safety margin
 - All sub-merchants contribute to aggregate ratio
 - Single high-CBR sub-merchant affects entire portfolio
 
@@ -144,7 +148,8 @@ Visa is tightening VAMP thresholds in 2026. Standard threshold will move from cu
 - Document all search results
 
 **Reporting Obligations:**
-- Report terminated sub-merchants within 24-48 hours
+- Report terminated sub-merchants within **5 business days**
+- For fraud-related terminations: Report within 24-48 hours
 - Use correct reason codes (14 total)
 - Include required data elements
 
@@ -173,8 +178,12 @@ Visa is tightening VAMP thresholds in 2026. Standard threshold will move from cu
 
 | Tier | Chargeback Ratio | Chargeback Count | Assessment |
 |------|------------------|------------------|------------|
-| **ECMP** (Excessive Chargeback Merchant) | 1.0% | 100 | $1,000 - $25,000/month |
-| **HECM** (High Excessive Chargeback) | 1.5% | 300 | $25,000 - $200,000/month |
+| **ECM** (Excessive Chargeback Merchant) | 1.5% | 100 | $1,000 - $25,000/month |
+| **HECM** (High Excessive Chargeback Merchant) | 3.0% | 300 | $25,000 - $200,000/month |
+
+:::info Threshold Logic
+Mastercard ECP uses **OR** logic: merchants trigger the program if they exceed EITHER the ratio threshold OR the count threshold (not both). A merchant with 0.5% CBR but 150 chargebacks still enters ECM.
+:::
 
 **Key Difference from Visa:**
 - ECP applies at **merchant level** (individual sub-merchants)
@@ -205,8 +214,12 @@ VIRP governs high-risk merchant categories requiring enhanced oversight and regi
 | 5967 | Direct Selling (Nutraceuticals, supplements) |
 | 7995 | Gambling |
 | 7273 | Dating/Escort Services |
-| 5122 | Pharmaceutical (certain types) |
-| 5912 | Drug Stores (CBD, certain products) |
+| 5122 | Drugs, Drug Proprietaries, Druggist Sundries |
+| 5912 | Drug Stores, Pharmacies |
+
+:::info NABP Exemption
+MCCs 5122 and 5912 are **exempt** from VIRP Tier 1 fees if accredited by the National Association of Boards of Pharmacy (NABP). Verify accreditation before onboarding pharmacy merchants.
+:::
 
 **Tier 2 (Elevated Risk):**
 

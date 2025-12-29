@@ -1,7 +1,7 @@
 ---
 title: "Sub-Merchant Management"
 description: "MID structure, identification, and lifecycle management for PayFac sub-merchants"
-sidebar_position: 5
+sidebar_position: 4
 sidebar_label: "Sub-Merchant Management"
 keywords:
   - sub-merchant

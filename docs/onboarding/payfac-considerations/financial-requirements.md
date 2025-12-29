@@ -1,7 +1,7 @@
 ---
 title: "Financial Requirements"
 description: "Capital, insurance, and reserve requirements for Payment Facilitators"
-sidebar_position: 6
+sidebar_position: 5
 sidebar_label: "Financial Requirements"
 keywords:
   - payfac capital

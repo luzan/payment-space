@@ -66,11 +66,19 @@ Portfolio Chargeback Ratio = Total Chargebacks / Total Transactions
 ```
 
 Compare to network thresholds:
-- Visa: &lt;0.9% (early warning at 0.9%, excessive at 1.8%)
-- Mastercard: &lt;1.0% (early warning at 1.0%, excessive at 1.5%)
+
+**Visa VAMP (Acquirer Level - applies to PayFacs):**
+- Below 0.30%: Safe zone
+- 0.30% - 0.50%: Above Standard (2026 threshold)
+- Above 0.50%: Excessive - significant fines and remediation
+
+**Mastercard ECP (Merchant Level):**
+- Below 1.5%: Safe zone
+- 1.5% + 100 chargebacks: ECM (Excessive Chargeback Merchant)
+- 3.0% + 300 chargebacks: HECM (High Excessive)
 
 :::warning Time-Sensitive Information
-Visa VAMP thresholds are tightening in 2026. The standard threshold will move from 1.5% to 0.9%. PayFacs should plan accordingly.
+Visa significantly restructured VAMP effective April 2025. PayFacs are now monitored at the **acquirer level** with a 0.50% threshold (50 basis points), much stricter than merchant-level thresholds. Individual merchant thresholds are being phased down to 0.9% by April 2026.
 :::
 
 **Fraud Rate:**
@@ -207,17 +215,22 @@ Understanding network monitoring programs is critical - breaching thresholds can
 
 VAMP monitors acquirers (and PayFacs through their sponsors) for excessive chargeback ratios.
 
-**Current Thresholds (2025):**
+**Acquirer-Level Thresholds (For PayFacs - Effective April 2025):**
 
-| Tier | Threshold | Monthly Fines | Notes |
-|------|-----------|---------------|-------|
-| **Early Warning** | 0.9% dispute ratio OR 450 disputes | None | Warning notification only |
-| **Standard** | 0.9% + 500 disputes | $10,000-$25,000/month | 60-90 day remediation period |
-| **Excessive** | 1.8% + 1,000 disputes | $25,000+/month | Enhanced remediation, potential termination |
+| Tier | Dispute Ratio | Effective Date | Monthly Fines |
+|------|---------------|----------------|---------------|
+| **Excessive** | 0.50% (50 bps) | April 1, 2025 | $25,000 - $100,000+ |
+| **Above Standard** | 0.30% - 0.50% | January 1, 2026 | $10,000 - $25,000 |
 
-**2026 Changes:**
-:::danger Upcoming Threshold Change
-Effective April 2026, Visa VAMP Standard threshold tightens from 1.5% to 0.9%. PayFacs currently between 0.9-1.5% must remediate before this date.
+**Merchant-Level Thresholds (Individual Sub-Merchants):**
+
+| Tier | Dispute Ratio | Effective Date | Region |
+|------|---------------|----------------|--------|
+| **Excessive** | 1.5% | June 1, 2025 | All regions |
+| **Excessive** | 0.9% | April 1, 2026 | NA, EU, APAC only |
+
+:::danger Critical Distinction
+PayFacs are monitored at the **acquirer portfolio level** (0.50% threshold), which is much stricter than individual merchant thresholds. A PayFac portfolio exceeding 0.50% aggregate dispute ratio triggers VAMP, even if no individual sub-merchant exceeds 0.9%. Target portfolio below 0.40% for safety margin.
 :::
 
 **Portfolio Impact:**
@@ -236,14 +249,15 @@ Effective April 2026, Visa VAMP Standard threshold tightens from 1.5% to 0.9%. P
 ```
 PayFac with 500 sub-merchants processing $50M/month:
 - Total monthly transactions: 2,000,000
-- Total monthly disputes: 20,000
-- Chargeback ratio: 1.0%
+- Total monthly disputes: 12,000
+- Chargeback ratio: 0.60%
 
-Result: Enters VAMP Standard tier
-- Monthly fines: $15,000
+Result: Enters VAMP Excessive tier (above 0.50%)
+- Monthly fines: $25,000+
 - Sponsor requires immediate remediation plan
-- Must reduce CBR below 0.9% within 90 days
-- New onboarding frozen until remediated
+- Must reduce portfolio CBR below 0.50% within 90 days
+- Target: 0.40% for safety margin
+- New onboarding likely frozen until remediated
 ```
 
 #### Mastercard ECP (Excessive Chargeback Program)
@@ -254,8 +268,12 @@ ECP monitors individual merchants but aggregates at portfolio level for PayFacs.
 
 | Program | Threshold | Assessments | Notes |
 |---------|-----------|-------------|-------|
-| **ECMP** (Excessive Chargeback Merchant Program) | 1.0% + 100 chargebacks | $1,000-$10,000/month per merchant | Applied to individual merchants |
-| **HECM** (High Excessive Chargeback Merchant) | 1.5% + 300 chargebacks | $25,000-$200,000/month per merchant | Severe tier |
+| **ECM** (Excessive Chargeback Merchant) | 1.5% + 100 chargebacks | $1,000-$25,000/month per merchant | Applied to individual merchants |
+| **HECM** (High Excessive Chargeback Merchant) | 3.0% + 300 chargebacks | $25,000-$200,000/month per merchant | Severe tier |
+
+:::info Threshold Logic
+Mastercard ECP uses **OR** logic: merchants trigger the program if they exceed EITHER the ratio threshold OR the count threshold (not both). A merchant with 0.5% CBR but 150 chargebacks still enters ECM.
+:::
 
 **Key Difference from Visa:**
 - Mastercard programs apply at the **merchant level** (each sub-merchant tracked individually)
@@ -298,12 +316,12 @@ Sub-merchant at 3% CBR processing $10k/month:
 
 | Aspect | Visa VAMP | Mastercard ECP |
 |--------|-----------|----------------|
-| **Application Level** | Acquirer/Portfolio aggregate | Individual merchant (aggregated for PayFacs) |
-| **Threshold (Standard)** | 0.9% + 500 disputes | 1.0% + 100 chargebacks |
-| **Fines** | $10,000-$25,000/month | $1,000-$200,000/month (per merchant) |
+| **Application Level** | Acquirer/Portfolio aggregate (0.50% for PayFacs) | Individual merchant (ECM at 1.5%, HECM at 3.0%) |
+| **Threshold Logic** | AND logic (ratio + count) | OR logic (ratio OR count) |
+| **Fines** | $25,000-$100,000+/month | $1,000-$200,000/month (per merchant) |
 | **Remediation Period** | 60-90 days | 4 months (with milestones) |
 | **Portfolio Impact** | Direct portfolio metric | Indirect (count of merchants in program) |
-| **PayFac Concern** | Aggregate CBR must stay below threshold | Minimize count of individual merchants entering |
+| **PayFac Concern** | Aggregate CBR must stay below 0.50% | Minimize count of individual merchants entering ECM/HECM |
 
 ### Reserves and Portfolio Risk
 
@@ -492,35 +510,37 @@ Regular portfolio reports to sponsor:
 ## Self-Assessment Questions
 
 ### Question 1: Network Program Triggers
-**A PayFac has 500 sub-merchants processing $50M/month with aggregate 1.2% chargeback ratio. What network programs are triggered, and what are the consequences?**
+**A PayFac has 500 sub-merchants processing $50M/month with aggregate 0.65% chargeback ratio. What network programs are triggered, and what are the consequences?**
 
 <details>
 <summary>View Answer</summary>
 
 **Programs Triggered:**
 
-**Visa VAMP:**
-- At 1.2%, the PayFac is in **Standard** tier (above 0.9% threshold)
-- Not yet in Excessive (1.8%)
-- Monthly fines of $10,000-$25,000
+**Visa VAMP (Acquirer Level):**
+- At 0.65%, the PayFac **exceeds the 0.50% Excessive threshold**
+- This is a serious violation at the acquirer/portfolio level
+- Monthly fines of $25,000 - $100,000+
 - 60-90 day remediation period
-- Must submit action plan to sponsor bank
+- Must submit action plan to sponsor bank immediately
 
 **Mastercard ECP:**
-- At 1.2%, depends on total dispute count
-- If >100 chargebacks: triggers ECMP
-- Monthly assessments apply
-- Remediation required
+- Individual sub-merchants above 1.5% trigger ECM
+- Portfolio-level 0.65% alone doesn't trigger ECP (ECP is merchant-level)
+- BUT PayFac must audit individual merchant CBRs to identify any ECM triggers
+- High aggregate often indicates multiple individual merchants with problems
 
 **Consequences:**
-1. Immediate notification to sponsor bank
+1. Immediate notification from sponsor bank
 2. Mandatory remediation plan within 30 days
-3. Monthly fines until ratio drops below threshold
-4. Potential onboarding freeze if not remediated
-5. Enhanced monitoring and reporting to sponsor
+3. Monthly fines ($25,000+) until ratio drops below 0.50%
+4. Likely onboarding freeze until remediated
+5. Enhanced weekly reporting to sponsor
+6. Risk of sponsor relationship damage
 
 **Required Actions:**
 - Identify and terminate highest CBR sub-merchants
+- Target portfolio below 0.40% for safety margin
 - Tighten underwriting for new sub-merchants
 - Implement enhanced fraud tools
 - Increase reserves on existing high-risk merchants
@@ -653,16 +673,16 @@ Despite the high 5% individual CBR:
 </details>
 
 ### Question 5: Portfolio Trend Response
-**Portfolio chargeback ratio is trending from 0.8% to 1.1% over 3 months. What preventive actions should a PayFac take?**
+**Portfolio chargeback ratio is trending from 0.35% to 0.55% over 3 months. What preventive actions should a PayFac take?**
 
 <details>
 <summary>View Answer</summary>
 
 **Trend Analysis:**
-- 0.8% → 0.9% → 1.0% → 1.1% over 3 months
-- Crossing VAMP early warning threshold (0.9%)
-- Approaching ECMP threshold (1.0%)
-- On trajectory to exceed excessive threshold within 2-3 months
+- 0.35% → 0.42% → 0.48% → 0.55% over 3 months
+- **Already exceeds VAMP Excessive threshold (0.50%)**
+- PayFac is in violation and facing fines
+- On trajectory to worsen if no action taken
 
 **Immediate Actions (Week 1):**
 
@@ -704,8 +724,9 @@ Despite the high 5% individual CBR:
 
 **Expected Outcome:**
 - Stabilize within 30 days
-- Decline below 0.9% within 60-90 days
-- Avoid network program entry or minimize duration
+- Decline below 0.50% within 60-90 days
+- Target 0.40% for safety margin
+- Minimize VAMP fine duration and avoid escalation
 
 </details>
 
