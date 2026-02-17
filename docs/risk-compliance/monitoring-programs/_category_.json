@@ -1,0 +1,10 @@
+{
+  "label": "Network Monitoring",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/monitoring-programs/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

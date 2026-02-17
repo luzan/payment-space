@@ -1,0 +1,10 @@
+{
+  "label": "Chargeback Management",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/chargebacks/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

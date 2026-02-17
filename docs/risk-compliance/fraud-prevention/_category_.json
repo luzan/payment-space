@@ -1,0 +1,10 @@
+{
+  "label": "Fraud Prevention",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/fraud-prevention/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}
