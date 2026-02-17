@@ -1,10 +1,12 @@
 ---
-title: "The Four-Party Model"
-description: "Understanding the foundational structure of card payment networks"
+title: "Four-Party Payment Model Explained | Card Payment Ecosystem Guide"
+description: "Master the four-party payment model for engineers. Learn issuer-acquirer dynamics, interchange economics, and transaction routing. Visual diagrams included."
 sidebar_position: 1
 sidebar_label: "Four-Party Model"
 keywords:
   - four-party model
+  - four-party payment model
+  - card payment ecosystem
   - card networks
   - interchange
   - acquiring
@@ -18,11 +20,11 @@ keywords:
 >
 > **Status:** Complete
 
-The Four-Party Model (also known as the Four-Corner Model) is the foundational structure of modern card payment networks. Understanding this model is essential for anyone building payment systems.
+The **four-party payment model** (also called the four-corner model) is the foundational structure of the modern card payment ecosystem. Every credit and debit card transaction involves four parties: the **cardholder**, **issuing bank** (issuer), **acquiring bank** (acquirer), and **merchant** — all connected through **card networks** like Visa and Mastercard. Understanding how these parties interact, how [interchange fees](/ecosystem/fundamentals/four-party-model/fee-breakdown) flow, and how [transactions are authorized and settled](/ecosystem/fundamentals/four-party-model/transaction-flows) is essential for anyone building payment platforms or [PayFac systems](/ecosystem/fundamentals/four-party-model/payfac).
 
 ---
 
-## Overview
+## What Is the Four-Party Payment Model?
 
 The Four-Party Model consists of four main participants in every card transaction:
 
@@ -73,9 +75,48 @@ The **[Card Network](/ecosystem/fundamentals/card-network-role)** (Visa, Masterc
           └─────────────────┘             └─────────────────┘
 ```
 
+### Real-World Example: $5 Coffee Purchase
+
+Let's trace a real transaction through the four-party model:
+
+```mermaid
+sequenceDiagram
+    participant C as You (Cardholder)
+    participant M as Starbucks (Merchant)
+    participant A as Wells Fargo (Acquirer)
+    participant N as Visa Network
+    participant I as Chase (Issuer)
+
+    C->>M: Tap card for $5.00
+    M->>A: Authorization request
+    A->>N: Route to issuer
+    N->>I: Verify funds & approve
+    I->>N: Approved (Code: 00)
+    N->>A: Authorization approved
+    A->>M: Approval code
+    M->>C: Transaction complete
+
+    Note over I,A: T+1: Settlement
+    I->>A: $5.00 - $0.09 interchange
+    A->>M: $5.00 - $0.12 total fees
+    M-->>M: Receives $4.88
+```
+
+**Money flow:**
+- Customer pays: $5.00
+- [Interchange](/ecosystem/fundamentals/four-party-model/fee-breakdown) to Chase (issuer): $0.09
+- Assessment to Visa: $0.01
+- Acquirer markup to Wells Fargo: $0.02
+- Merchant receives: $4.88
+
+**Time:**
+- [Authorization](/ecosystem/fundamentals/four-party-model/transaction-flows): 800ms
+- Settlement: T+1 (next business day)
+- Funding to merchant: T+2
+
 ---
 
-## Four-Party vs Three-Party Model
+## Four-Party vs Three-Party Model: Key Differences
 
 Before diving deeper, it's important to understand that not all card networks use the Four-Party Model.
 
@@ -118,10 +159,10 @@ American Express and Discover originally operated as **Three-Party** networks:
 
 **Modern Reality:** Today, AmEx and Discover also license third-party issuers, making them quasi-four-party networks. But they still have proprietary acquiring arms.
 
-**Why it matters for PayFac:**
+**Why it matters for [PayFac](/ecosystem/fundamentals/four-party-model/payfac):**
 
-- AmEx OptBlue program allows PayFacs to accept AmEx through their existing acquirer
-- Different fee structures and chargeback rules apply for each network
+- AmEx OptBlue program allows [PayFacs](/ecosystem/fundamentals/four-party-model/payfac) to accept AmEx through their existing acquirer
+- Different [fee structures](/ecosystem/fundamentals/four-party-model/fee-breakdown) and chargeback rules apply for each network
 
 ---
 
@@ -147,7 +188,7 @@ The merchant is the business that:
 - Pays fees (Merchant Discount Rate) to accept cards
 - Bears responsibility for valid transactions and fraud prevention
 
-**Key Point:** The merchant receives the transaction amount MINUS fees, typically 1.5% - 3.5% of the sale.
+**Key Point:** The merchant receives the transaction amount MINUS [fees](/ecosystem/fundamentals/four-party-model/fee-breakdown), typically 1.5% - 3.5% of the sale.
 
 ### 3. Issuing Bank (Issuer)
 
@@ -156,8 +197,8 @@ The issuer is a financial institution that:
 - Issues credit/debit cards to consumers
 - Sets credit limits and terms
 - Bears the **credit risk** (if cardholder doesn't pay)
-- Approves or declines transactions in real-time
-- Receives **interchange fees** on every transaction
+- [Approves or declines transactions](/ecosystem/fundamentals/four-party-model/transaction-flows) in real-time
+- Receives **[interchange fees](/ecosystem/fundamentals/four-party-model/fee-breakdown)** on every transaction
 
 **Examples:** Chase, Bank of America, Capital One, Citi
 
@@ -165,7 +206,7 @@ The issuer is a financial institution that:
 
 - Interest on unpaid balances
 - Annual fees
-- Interchange fees (paid by the acquirer)
+- [Interchange fees](/ecosystem/fundamentals/four-party-model/fee-breakdown) (paid by the acquirer)
 
 ### 4. Acquiring Bank (Acquirer)
 
@@ -173,9 +214,9 @@ The acquirer is a financial institution that:
 
 - Enables merchants to accept card payments
 - Bears the **merchant risk** (chargebacks, fraud, merchant bankruptcy)
-- Pays interchange fees to the issuer
+- Pays [interchange fees](/ecosystem/fundamentals/four-party-model/fee-breakdown) to the issuer
 - Funds the merchant (after deducting fees)
-- Manages merchant underwriting and compliance
+- Manages [merchant underwriting](/glossary#underwriting) and compliance
 
 **Examples:** Chase Paymentech, Wells Fargo Merchant Services, Worldpay, Fiserv (see [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) and [Payment Processors](/ecosystem/industry-players/payment-processors) for detailed coverage)
 
@@ -183,12 +224,12 @@ The acquirer is a financial institution that:
 
 ### 5. [Card Network](/ecosystem/fundamentals/card-network-role) (The "Fifth" Party)
 
-Though called the "Four-Party Model," the network is essential:
+Though called the "Four-Party Model," the [card network](/ecosystem/fundamentals/card-network-role) is essential:
 
 - **Routes messages** between issuers and acquirers
 - **Sets rules** all parties must follow
-- **Calculates net positions** for settlement
-- **Collects assessment fees** for network usage
+- **Calculates net positions** for [settlement](/ecosystem/fundamentals/four-party-model/transaction-flows)
+- **Collects [assessment fees](/ecosystem/fundamentals/four-party-model/fee-breakdown)** for network usage
 - **Manages disputes** and arbitration
 
 **Key Clarification:** Networks facilitate the exchange of funds and calculate net positions, but they don't hold merchant or cardholder funds. They instruct banks on how much to transfer.
@@ -253,32 +294,32 @@ A critical network rule that affects merchants:
 
 | Term | Definition |
 |------|------------|
-| **Issuer / Issuing Bank** | Financial institution that issues credit or debit cards to cardholders. Responsible for authorizing transactions and extending credit. |
-| **Acquirer / Acquiring Bank** | Financial institution that enables merchants to accept card payments. Bears risk if merchant defaults on chargebacks. |
-| **Interchange Fee** | Fee paid by acquiring bank to issuing bank on each transaction. Set by card networks. Ranges from 0.05% + $0.22 (regulated debit) to 3.3%+ (premium credit). |
-| **Assessment Fee** | Fee charged by card networks (Visa, Mastercard) for using their infrastructure. Includes percentage and fixed components. Typically 0.13%-0.15% + per-transaction fees. |
-| **Merchant Discount Rate (MDR)** | Total percentage fee charged to merchants. Includes interchange + assessment + acquirer markup. |
-| **BIN/IIN** | Bank/Issuer Identification Number. First 6-8 digits of card number identifying the issuing institution. Industry transitioned to 8-digit IINs in 2022. |
-| **Authorization** | Real-time approval from issuer to proceed with transaction. Places hold on funds. |
-| **Capture** | Merchant's request to collect authorized funds. Can be same day or later. |
-| **Settlement** | Actual movement of funds between banks. Typically T+1 to T+3. See [Transaction Lifecycle](/ecosystem/fundamentals/transaction-lifecycle/overview). |
-| **Chargeback** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. See [Transaction Lifecycle - Chargebacks](/ecosystem/fundamentals/transaction-lifecycle/detailed-flows#chargebacks--disputes). |
+| **[Issuer](/glossary#issuer) / Issuing Bank** | Financial institution that issues credit or debit cards to cardholders. Responsible for authorizing transactions and extending credit. |
+| **[Acquirer](/glossary#acquirer) / Acquiring Bank** | Financial institution that enables merchants to accept card payments. Bears risk if merchant defaults on chargebacks. |
+| **[Interchange Fee](/glossary#interchange-fee)** | Fee paid by acquiring bank to issuing bank on each transaction. Set by card networks. Ranges from 0.05% + $0.22 (regulated debit) to 3.3%+ (premium credit). See [Fee Breakdown](/ecosystem/fundamentals/four-party-model/fee-breakdown) for details. |
+| **[Assessment Fee](/glossary#assessment-fee)** | Fee charged by card networks (Visa, Mastercard) for using their infrastructure. Includes percentage and fixed components. Typically 0.13%-0.15% + per-transaction fees. |
+| **[Merchant Discount Rate (MDR)](/glossary#mdr)** | Total percentage fee charged to merchants. Includes interchange + assessment + acquirer markup. See [Fee Breakdown](/ecosystem/fundamentals/four-party-model/fee-breakdown). |
+| **[BIN/IIN](/glossary#bin)** | Bank/Issuer Identification Number. First 6-8 digits of card number identifying the issuing institution. Industry transitioned to 8-digit IINs in 2022. |
+| **[Authorization](/glossary#authorization)** | Real-time approval from issuer to proceed with transaction. Places hold on funds. See [Transaction Flows](/ecosystem/fundamentals/four-party-model/transaction-flows). |
+| **[Capture](/glossary#capture)** | Merchant's request to collect authorized funds. Can be same day or later. See [Transaction Flows](/ecosystem/fundamentals/four-party-model/transaction-flows). |
+| **[Settlement](/glossary#settlement)** | Actual movement of funds between banks. Typically T+1 to T+3. See [Transaction Lifecycle](/ecosystem/fundamentals/transaction-lifecycle/overview). |
+| **[Chargeback](/glossary#chargeback)** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. See [Transaction Lifecycle - Chargebacks](/ecosystem/fundamentals/transaction-lifecycle/detailed-flows#chargebacks--disputes). |
 
 ---
 
 ## Key Takeaways
 
-1. **Four parties, four relationships**: Cardholder → Issuer, Merchant → Acquirer, both connected through the Network
+1. **Four parties, four relationships**: Cardholder → Issuer, Merchant → Acquirer, both connected through the [Card Network](/ecosystem/fundamentals/card-network-role)
 
-2. **Money flows opposite to goods**: Customer gets product, merchant gets money (minus fees)
+2. **Money flows opposite to goods**: Customer gets product, merchant gets money (minus [fees](/ecosystem/fundamentals/four-party-model/fee-breakdown))
 
 3. **Risk is distributed**: Issuer bears credit risk, Acquirer bears merchant risk
 
-4. **Interchange is king**: It's the largest fee component (1.4%-3.3% for credit) and drives industry economics
+4. **[Interchange](/ecosystem/fundamentals/four-party-model/fee-breakdown) is king**: It's the largest fee component (1.4%-3.3% for credit) and drives industry economics
 
-5. **Networks facilitate, not hold**: Visa/Mastercard route messages and calculate positions but don't hold funds
+5. **Networks facilitate, not hold**: [Visa/Mastercard](/ecosystem/fundamentals/card-network-role) route messages and calculate positions but don't hold funds
 
-6. **Durbin caps debit**: Large banks' debit interchange capped at $0.22 + 0.05%
+6. **Durbin caps debit**: Large banks' debit [interchange](/ecosystem/fundamentals/four-party-model/fee-breakdown) capped at $0.22 + 0.05%
 
 7. **Honor All Cards**: Merchants accepting Visa must accept ALL Visa cards, including premium
 

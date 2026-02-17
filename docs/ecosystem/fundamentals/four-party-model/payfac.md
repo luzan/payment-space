@@ -1,33 +1,78 @@
 ---
-title: "PayFac Position in the Four-Party Model"
-description: "Understanding how Payment Facilitators fit into the four-party model structure"
+title: "Payment Facilitator Model Explained | PayFac vs Traditional Acquiring"
+description: "PayFac model explained: instant sub-merchant onboarding via master MID, sponsor bank relationships, first-line chargeback liability. Capital requirements and risk management guide."
 sidebar_position: 5
 sidebar_label: "PayFac Position"
 slug: payfac
 keywords:
   - payment facilitator
-  - payfac
+  - payfac model
+  - payment facilitator vs ISO
+  - sub-merchant onboarding
   - sponsor bank
-  - sub-merchant
   - master merchant account
 ---
 
-# PayFac Position in the Four-Party Model
+# What Is a PayFac? Payment Facilitator Model Explained
 
 > **Last Updated:** 2025-12-18
 >
 > **Status:** Complete
->
-> This document explains how Payment Facilitators (PayFacs) fit into the traditional four-party model.
+
+**What is a payment facilitator (PayFac)?** A payment facilitator is a company that acts as a master merchant, enabling **sub-merchants** to accept card payments without obtaining individual merchant accounts. Instead of each business applying directly to an acquiring bank (1-4 week process), the PayFac onboards sub-merchants **instantly** under its **master merchant account (MID)** through a **sponsor bank relationship**. The PayFac assumes **first-line chargeback liability** for all sub-merchants and handles underwriting, compliance, and risk management.
+
+**How PayFacs work:**
+1. **Sponsor bank** provides the master merchant account and regulatory licenses
+2. **PayFac** onboards sub-merchants using simplified underwriting
+3. **Sub-merchants** process payments under PayFac's master MID
+4. **PayFac** splits settlement to sub-merchant bank accounts
+5. **PayFac** bears risk if sub-merchants default on chargebacks
+
+**Example PayFacs:** Stripe, Square, PayPal, Shopify Payments
+
+**Key requirements:**
+- $500K - $5M in capital reserves
+- Sponsor bank partnership
+- PCI DSS Level 1 compliance
+- State money transmitter licenses (varies)
+- Card network registration (Visa, Mastercard)
+
+---
+
+## PayFac vs Traditional Merchant Acquiring: Quick Comparison
+
+| Aspect | Traditional Acquiring | Payment Facilitator (PayFac) |
+|--------|---------------------|---------------------------|
+| **Onboarding time** | 1-4 weeks per merchant | Minutes to hours |
+| **Who underwrites** | Acquiring bank | PayFac (simplified) |
+| **Merchant account** | Individual MID per merchant | Master MID + sub-merchant IDs |
+| **Application process** | Extensive documentation | Minimal (name, EIN, bank account) |
+| **Chargeback liability** | Direct to merchant → acquirer | Sub-merchant → PayFac → sponsor bank |
+| **Monthly fees** | $10-$50 per merchant | Often $0 (volume-based pricing) |
+| **Setup fees** | $0-$500 per merchant | $0 (PayFac absorbs) |
+| **Risk reserves** | Merchant holds reserves | PayFac holds portfolio reserves |
+| **Compliance burden** | Merchant responsible | PayFac responsible |
+| **Capital requirements** | Minimal for merchant | $500K-$5M for PayFac |
+| **Best for** | Established businesses, high volume | Small businesses, marketplaces, SaaS platforms |
+| **Pricing** | Interchange-plus (transparent) | Often flat rate (simple but higher) |
+| **Control** | Merchant has direct bank relationship | PayFac controls relationship |
+
+**When to use PayFac model:**
+- ✅ Onboarding hundreds/thousands of small merchants
+- ✅ Software platform with embedded payments
+- ✅ Marketplace with many sellers
+- ✅ Need instant merchant activation
+- ❌ Small number of high-volume merchants (traditional better)
+- ❌ Can't meet capital requirements ($500K+)
 
 ---
 
 ## Why This Model Matters for PayFac
 
-Understanding the Four-Party Model is critical for Payment Facilitators because:
+Understanding the [Four-Party Model](./index.md) is critical for Payment Facilitators because:
 
 1. **Risk Position**: PayFacs sit in the acquirer's position, inheriting merchant risk
-2. **Fee Economics**: PayFacs must understand interchange to price their services
+2. **Fee Economics**: PayFacs must understand [interchange](./fee-breakdown.md) to price their services
 3. **Liability Chain**: When sub-merchants have chargebacks, the PayFac is liable
 4. **Network Rules**: All parties must comply with Visa/Mastercard rules
 
@@ -282,8 +327,12 @@ PayFacs must perform underwriting, typically including:
 | **Prohibited business** | Screen against restricted MCCs |
 | **Credit check** | Assess financial stability (optional) |
 | **Watchlist screening** | OFAC, PEP, sanctioned entities |
-| **Identity verification** | Owner KYC/KYB |
+| **Identity verification** | Owner KYC/KYB (see [Onboarding module](/onboarding/kyc-kyb/kyc-requirements) when available) |
 | **Bank account verification** | Micro-deposits or instant verification |
+
+:::info Learn More
+For detailed sub-merchant underwriting processes, see the [Merchant Onboarding module](/onboarding/underwriting/fundamentals) (coming soon).
+:::
 
 ### Sub-Merchant Risk Tiers
 
@@ -302,7 +351,7 @@ PayFacs often categorize sub-merchants by risk:
 
 ### Fee Structure
 
-PayFacs layer fees on top of interchange:
+PayFacs layer fees on top of interchange (for deeper fee analysis, see [Fee Breakdown](./fee-breakdown.md)):
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -432,6 +481,38 @@ Rolling reserve:
 
 ---
 
+## PayFac Success Metrics: What Sponsor Banks Track
+
+Your sponsor bank monitors these key performance indicators continuously:
+
+### Critical Risk Metrics
+
+| Metric | Acceptable Range | Warning Level | Termination Risk |
+|--------|-----------------|---------------|------------------|
+| **Portfolio chargeback rate** | &lt;0.50% | 0.50%-0.75% | &gt;1.0% |
+| **Individual sub-merchant CB rate** | &lt;1.0% | 1.0%-1.5% | &gt;2.0% |
+| **Fraud rate** | &lt;0.25% | 0.25%-0.50% | &gt;0.75% |
+| **Excessive credits rate** | &lt;5% of volume | 5%-10% | &gt;15% |
+| **Refund rate** | &lt;10% | 10%-20% | &gt;30% |
+| **Reserve coverage** | 5-10% of monthly volume | Below 5% | Below 3% |
+
+### Financial Health Metrics
+
+| Metric | Minimum | Preferred |
+|--------|---------|-----------|
+| **Capital reserves** | $500K | $2M+ |
+| **Months of runway** | 12 months | 24+ months |
+| **Debt-to-equity ratio** | &lt;3:1 | &lt;1:1 |
+| **Revenue concentration** | &lt;20% from single sub-merchant | &lt;10% |
+
+**Common reasons PayFacs lose sponsor relationships:**
+- Excessive fraud or chargebacks (most common)
+- Prohibited business activity by sub-merchants
+- Capital depletion or bankruptcy
+- Regulatory violations (AML/KYC failures)
+
+---
+
 ## Compliance Requirements
 
 PayFacs must maintain comprehensive compliance programs:
@@ -446,6 +527,11 @@ PayFacs must maintain comprehensive compliance programs:
 | **OFAC** | Sanctions screening |
 | **State MTL** | Money transmitter licenses (varies by state) |
 | **Network rules** | Visa/Mastercard compliance |
+
+:::tip Related Topics
+- Fraud Prevention - Detecting and preventing fraudulent transactions (coming soon)
+- Chargeback Management - Managing disputes and representment (coming soon)
+:::
 
 ### Ongoing Monitoring
 
@@ -487,17 +573,17 @@ PayFacs must continuously monitor:
 ## Related Topics
 
 **Four-Party Model Series:**
-- **[Four-Party Model Overview](/ecosystem/fundamentals/four-party-model/)** - Core concepts and party roles
-- **[Transaction Flows](/ecosystem/fundamentals/four-party-model/transaction-flows)** - Authorization, capture, settlement
-- **[Fee Breakdown](/ecosystem/fundamentals/four-party-model/fee-breakdown)** - Where fees go and why
-- **[Interchange Optimization](/ecosystem/fundamentals/four-party-model/optimization)** - Reducing costs through data
-- **[Self-Assessment Quiz](/ecosystem/fundamentals/four-party-model/quiz)** - Test your understanding
+- **[Four-Party Model Overview](./index.md)** - Core concepts and party roles
+- **[Transaction Flows](./transaction-flows.md)** - Authorization, capture, settlement
+- **[Fee Breakdown](./fee-breakdown.md)** - Where fees go and why (essential for PayFac pricing)
+- **[Interchange Optimization](./optimization.md)** - Reducing costs through data
+- **[Self-Assessment Quiz](./quiz.md)** - Test your understanding
 
-**Deep Dives:**
-- **Merchant Onboarding** (Coming soon) - KYC/KYB processes for PayFacs
-- **Risk & Compliance** (Coming soon) - Chargeback management, fraud prevention
-- **Platform Architecture** (Coming soon) - Building PayFac infrastructure
+**Deep Dives (Coming Soon):**
+- **Merchant Onboarding** - KYC/KYB processes and underwriting for PayFacs
+- **Risk & Compliance** - Chargeback management, fraud prevention, AML/BSA
+- **Platform Architecture** - Building PayFac infrastructure and ledger systems
 
 ---
 
-*Continue reading: [Self-Assessment Quiz](/ecosystem/fundamentals/four-party-model/quiz)*
+*Continue reading: [Self-Assessment Quiz](./quiz.md)*

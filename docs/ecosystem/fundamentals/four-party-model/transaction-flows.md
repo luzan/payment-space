@@ -1,24 +1,27 @@
 ---
-title: "Transaction Flows in the Four-Party Model"
-description: "Detailed authorization, capture, settlement flows and response codes"
+title: "Payment Authorization and Settlement Flow | Transaction Lifecycle Explained"
+description: "Payment authorization (300-800ms) vs settlement (T+1 to T+3) explained. Complete transaction flow with response codes, batch timing, and real-world examples."
 sidebar_position: 2
 sidebar_label: "Transaction Flows"
 slug: transaction-flows
 keywords:
-  - authorization
-  - settlement
-  - capture
-  - clearing
-  - response codes
+  - payment authorization
+  - settlement flow
+  - transaction lifecycle
+  - authorization vs settlement
+  - decline codes
+  - batch settlement
 ---
 
-# Transaction Flows in the Four-Party Model
+# Payment Authorization and Settlement Flow Explained
 
 > **Last Updated:** 2025-12-18
 >
 > **Status:** Complete
 >
 > This document details the technical flows of transactions through the four-party model.
+
+**What is the difference between authorization and settlement?** **Authorization** is the real-time approval of a transaction (300-800ms), where the issuing bank places a hold on funds. **Settlement** is the actual movement of money between banks (T+1 to T+3 days later), when the merchant receives funds. Between these two events are **capture** (merchant claiming the authorized amount) and **clearing** (card networks calculating net positions). Understanding this four-stage transaction lifecycle—authorization → capture → clearing → settlement—is critical for building payment platforms that handle timing, reconciliation, and customer experience correctly.
 
 ---
 
@@ -56,6 +59,25 @@ keywords:
 
 ---
 
+## Quick Comparison: Authorization vs Capture vs Settlement
+
+| Aspect | Authorization | Capture | Clearing | Settlement |
+|--------|--------------|---------|----------|------------|
+| **Timing** | Real-time (300-800ms) | Same day or later | End of day | T+1 to T+3 |
+| **What happens** | Hold placed on funds | Merchant claims amount | Network calculates positions | Money moves between banks |
+| **Who initiates** | Merchant POS/gateway | Merchant system | Automatic batch process | Card networks + banks |
+| **Money moves?** | ❌ No (hold only) | ❌ No | ❌ No | ✅ Yes |
+| **Can be reversed?** | ✅ Yes (void) | ✅ Yes (before settlement) | ⚠️ Rare | ❌ No (chargeback only) |
+| **Amount flexibility** | Fixed | Can be less than auth | Final amount locked | Exact capture amount |
+| **Failure impact** | Transaction declined | Authorization expires | None (retry next cycle) | Merchant not funded |
+
+**Example Timeline:**
+- **Monday 2:00 PM**: Authorization (customer taps card)
+- **Monday 6:00 PM**: Capture (merchant closes batch)
+- **Monday 11:59 PM**: Clearing (network processes batch)
+- **Tuesday 9:00 AM**: Settlement (money moves)
+- **Tuesday 3:00 PM**: Funding (merchant receives money)
+
 ## Authorization vs Capture vs Settlement
 
 Many transactions involve multiple steps that are often confused:
@@ -80,7 +102,7 @@ Many transactions involve multiple steps that are often confused:
 │  3. CLEARING (End of day)                                                   │
 │     ─────────────────────────                                               │
 │     • Network calculates net positions between banks                        │
-│     • Interchange fees determined                                           │
+│     • Interchange fees determined (see [Fee Breakdown](./fee-breakdown))    │
 │     • Transactions batched for settlement                                   │
 │                                                                             │
 │  4. SETTLEMENT (T+1 to T+3)                                                 │
@@ -101,7 +123,7 @@ Many transactions involve multiple steps that are often confused:
 | **Gas station** | $100 (pre-auth) | $45 (pumped) | Actual amount unknown upfront |
 | **E-commerce** | $100 | $100 | Captured at shipping |
 
-**Key Point:** If a merchant authorizes but never captures, the hold releases after the issuer's timeout period (typically 7-30 days). This can frustrate cardholders who see "pending" charges.
+**Key Point:** If a merchant authorizes but never captures, the hold releases after the issuer's timeout period (typically 7-30 days). This can frustrate cardholders who see "pending" charges. For complete details on the full transaction journey, see [Transaction Lifecycle](../transaction-lifecycle/overview).
 
 ---
 
@@ -140,9 +162,27 @@ Many transactions involve multiple steps that are often confused:
 
 ---
 
-## Authorization Response Codes
+## What Do Payment Decline Codes Mean? Authorization Response Codes Explained
 
 When a transaction is processed, the issuer returns a response code:
+
+### Common Decline Codes Merchants See
+
+| Code | Customer-Friendly Message | What It Means for Merchant |
+|------|-------------------------|--------------------------|
+| **00** | "Payment approved" | Transaction successful |
+| **05** | "Payment declined" | Generic decline - don't retry immediately |
+| **51** | "Insufficient funds" | Card balance too low - suggest alternative payment |
+| **54** | "Card expired" | Update payment method |
+| **57** | "Not permitted" | Card type restricted for your merchant category |
+| **59** | "Fraud suspected" | DO NOT retry - ask for different payment method |
+| **N7** | "Invalid CVV" | Allow customer to re-enter security code |
+
+**Best practices:**
+- Never share actual decline codes with customers (privacy/security)
+- Log all decline codes for fraud pattern analysis
+- Soft declines (51, 61, 65): Retry after 24 hours
+- Hard declines (05, 57, 59): Never retry, request new payment method
 
 ### Common Response Codes
 
@@ -220,7 +260,7 @@ Throughout the lifecycle, a transaction moves through distinct states:
 |-------|-------------|----------------|
 | **Authorized** | Hold placed, awaiting capture | None (hold only) |
 | **Captured** | Merchant claims funds | None yet |
-| **Clearing** | Network calculating positions | None yet |
+| **Clearing** | Network calculating positions (see [Fee Breakdown](./fee-breakdown)) | None yet |
 | **Settled** | Banks transfer funds | Merchant funded |
 | **Completed** | Final state | Complete |
 | **Voided** | Authorization canceled | Hold released |
@@ -251,16 +291,17 @@ Throughout the lifecycle, a transaction moves through distinct states:
 ## Related Topics
 
 **Four-Party Model Series:**
-- **[Four-Party Model Overview](/ecosystem/fundamentals/four-party-model/)** - Core concepts and party roles
-- **[Fee Breakdown & Money Flow](/ecosystem/fundamentals/four-party-model/fee-breakdown)** - Where fees go and why
-- **[Interchange Optimization](/ecosystem/fundamentals/four-party-model/optimization)** - Reducing costs through data
-- **[PayFac Position](/ecosystem/fundamentals/four-party-model/payfac)** - How PayFacs fit into the model
-- **[Self-Assessment Quiz](/ecosystem/fundamentals/four-party-model/quiz)** - Test your understanding
+- **[Four-Party Model Overview](./)** - Core concepts and party roles
+- **[Fee Breakdown & Money Flow](./fee-breakdown)** - Where fees go and why
+- **[Interchange Optimization](./optimization)** - Reducing costs through data
+- **[PayFac Position](./payfac)** - How PayFacs fit into the model
+- **[Self-Assessment Quiz](./quiz)** - Test your understanding
 
 **Deep Dives:**
-- **[Transaction Lifecycle](/ecosystem/fundamentals/transaction-lifecycle/overview)** - Complete transaction journey including disputes
-- **[Card Network Role](/ecosystem/fundamentals/card-network-role)** - Network infrastructure and routing
+- **[Transaction Lifecycle](../transaction-lifecycle/overview)** - Complete transaction journey including disputes
+- **[Card Network Role](../card-network-role)** - Network infrastructure and routing
+- **Risk & Compliance** - Fraud detection and chargeback management (coming soon)
 
 ---
 
-*Continue reading: [Fee Breakdown & Money Flow](/ecosystem/fundamentals/four-party-model/fee-breakdown)*
+*Continue reading: [Fee Breakdown & Money Flow](./fee-breakdown)*

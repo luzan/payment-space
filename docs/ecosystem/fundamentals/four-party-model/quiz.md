@@ -1,19 +1,85 @@
 ---
-title: "Four-Party Model Quiz"
-description: "Self-assessment questions to test your understanding of the four-party model"
+title: "Payment Systems Quiz | Test Your Four-Party Model Knowledge"
+description: "Free payment systems quiz: 15 questions on interchange, authorization, settlement, and PayFac model. Test your knowledge with detailed explanations and scoring guide."
 sidebar_position: 6
 sidebar_label: "Quiz"
 slug: quiz
 keywords:
-  - four-party model quiz
-  - payment systems test
+  - payment systems quiz
   - interchange quiz
-  - payment knowledge check
+  - four-party model test
+  - payment processing questions
+  - payfac quiz
 ---
+
+import FAQSchema from '@site/src/components/FAQSchema';
+
+<FAQSchema items={[
+  {
+    question: "In a credit card transaction, who pays the interchange fee and who receives it?",
+    answer: "The acquiring bank pays the interchange fee, and the issuing bank receives it. This fee is deducted from the transaction amount before the merchant is funded. Example: On a $100 transaction with 1.80% interchange, the issuer receives $1.80."
+  },
+  {
+    question: "What is the difference between authorization and settlement?",
+    answer: "Authorization happens in real-time (milliseconds to seconds) where the issuer approves or declines and places a HOLD on cardholder's funds. Settlement happens later (typically T+1 to T+3 business days) when money actually moves between banks and the merchant receives funds."
+  },
+  {
+    question: "Why does the acquirer bear the 'first line' of risk in merchant acquiring?",
+    answer: "Because if a merchant fails to deliver goods, commits fraud, or goes bankrupt with outstanding chargebacks, the acquirer must pay the issuer for those chargebacks regardless of whether the acquirer can collect from the merchant."
+  },
+  {
+    question: "What are the three main components of a merchant's payment processing fees?",
+    answer: "Interchange fees (70-80% of total) paid to issuing bank, Assessment/Network fees (10-15%) paid to card networks like Visa/Mastercard, and Acquirer markup (10-20%) which is the processor's profit margin."
+  },
+  {
+    question: "Why are 'card-not-present' transactions more expensive than 'card-present' transactions?",
+    answer: "Higher fraud risk. Without physically verifying the card and cardholder, there's greater risk of fraud. This risk is priced into higher interchange rates for CNP transactions (online, phone, mail order)."
+  },
+  {
+    question: "What happens to interchange fees collected on a $100 transaction where the customer later disputes the charge?",
+    answer: "The interchange fee is reversed along with the transaction. The issuer returns the full $100 plus chargeback fees, and the acquirer loses not only the interchange but may also pay additional representment and arbitration fees."
+  },
+  {
+    question: "How does the 'honor all cards' rule affect a merchant's ability to control processing costs?",
+    answer: "Merchants accepting any Visa or Mastercard must accept ALL cards from that network, including premium rewards cards with much higher interchange rates. Merchants cannot selectively refuse expensive card types."
+  },
+  {
+    question: "What is Level 2/Level 3 data and why does providing it reduce interchange costs?",
+    answer: "L2/L3 data includes additional transaction details like tax amount, customer code, item descriptions, etc. Networks offer lower interchange rates when this data is provided because it reduces fraud risk and aids in reconciliation for commercial card transactions."
+  },
+  {
+    question: "Why might a large bank issuer (over $10B in assets) receive lower interchange on debit transactions than a small credit union?",
+    answer: "The Durbin Amendment caps debit interchange for large banks at approximately $0.22 + 0.05% per transaction, while smaller institutions are exempt and can charge higher rates."
+  },
+  {
+    question: "What is the merchant's actual cost breakdown on a $100 Visa Signature card transaction?",
+    answer: "Approximate breakdown: Interchange to issuer ~$2.10 (2.10%), Network assessment to Visa ~$0.13 (0.13%), Acquirer markup ~$0.30 (0.30%). Total MDR: ~$2.53 (2.53%), Merchant receives: ~$97.47."
+  },
+  {
+    question: "In the PayFac model, who bears first-line chargeback liability?",
+    answer: "The PayFac (Payment Facilitator) bears first-line liability for sub-merchant chargebacks. The PayFac is responsible to its sponsor bank regardless of whether it can collect from the sub-merchant. This is a key reason PayFacs require reserves and robust underwriting."
+  },
+  {
+    question: "Why does batch timing affect interchange rates?",
+    answer: "Delayed batching can cause transactions to miss optimal interchange categories. Most processors recommend batching within 24 hours of authorization. Late batches may be downgraded to higher interchange rates as they represent increased risk."
+  },
+  {
+    question: "What is the significance of the BIN (Bank Identification Number) in routing transactions?",
+    answer: "The BIN (first 6-8 digits of the card number) identifies the issuing bank and card type. This determines which network routes the transaction, what interchange category applies, and whether special program rates (like Durbin-exempt) apply."
+  },
+  {
+    question: "How do cross-border transactions affect interchange costs?",
+    answer: "Cross-border transactions (where merchant and issuer are in different countries) typically incur additional fees: higher interchange rates (1-2% more), international service assessment fees, and currency conversion fees, significantly increasing the total cost."
+  },
+  {
+    question: "Why might a merchant choose to not accept American Express despite having a profitable card-present business?",
+    answer: "American Express typically charges higher merchant fees (2.5-3.5%) compared to Visa/Mastercard (~1.5-2.5%) because AmEx is both the network AND issuer (three-party model), keeping all fees rather than sharing with separate issuers."
+  }
+]} />
 
 # Four-Party Model: Self-Assessment Quiz
 
-> **Last Updated:** 2025-12-18
+> **Last Updated:** 2025-12-29
 >
 > **Status:** Complete
 >
@@ -21,9 +87,54 @@ keywords:
 
 ---
 
+## What This Quiz Covers
+
+This comprehensive payment systems quiz tests your knowledge across five critical areas:
+
+**1. Fee Economics (Questions 1, 4, 6, 15)**
+- Interchange fee flow and breakdown
+- Merchant Discount Rate (MDR) components
+- Negotiable vs non-negotiable fees
+- Premium card pricing
+
+**2. Transaction Lifecycle (Questions 2, 5, 12)**
+- Authorization vs settlement timing
+- Decline message flow
+- Batch timing impact on fees
+
+**3. Risk & Liability (Questions 3, 11)**
+- Acquirer risk position
+- PayFac chargeback liability
+
+**4. Optimization Tactics (Questions 8, 13, 14)**
+- Level 2/3 data benefits
+- Durbin Amendment impact
+- Cross-border fee structures
+
+**5. Network Rules (Questions 7, 9, 10)**
+- Card-present vs card-not-present rates
+- Honor All Cards rule
+- Decline code handling
+
+### Scoring Guide
+
+- **13-15 correct (87%+):** Expert level - Ready to build payment platforms
+- **10-12 correct (67-80%):** Proficient - Solid foundational understanding
+- **7-9 correct (47-60%):** Intermediate - Review specific topics
+- **0-6 correct (&lt;47%):** Beginner - Start with fundamentals
+
+**Time to complete:** 15-20 minutes
+**Format:** Multiple choice with detailed explanations
+
+---
+
 ## How to Use This Quiz
 
 Work through each question before reading the answer. These questions are derived from the four-party model documentation and test critical concepts you'll need to understand payment systems.
+
+:::tip Interactive Version Coming Soon
+We're building an interactive version of this quiz with instant scoring, progress tracking, and personalized learning paths. For now, work through each question below and check your answers against the detailed explanations.
+:::
 
 ---
 
@@ -47,6 +158,8 @@ The **acquiring bank pays** the interchange fee, and the **issuing bank receives
 - Issuer receives: $1.80
 - This is deducted from what the acquirer pays to the merchant
 - Merchant receives: $97.50 (after all fees)
+
+For complete fee breakdown, see [Fee Breakdown & Money Flow](./fee-breakdown).
 
 </details>
 
@@ -72,6 +185,8 @@ The acquiring bank takes on risk because:
 4. **Contractual Position**: The acquirer's agreement with the card network makes them responsible for their merchants' behavior.
 
 This is why acquirers perform underwriting and require reserves from high-risk merchants.
+
+Learn more: [Transaction Flows](./transaction-flows)
 
 </details>
 
@@ -169,6 +284,8 @@ The merchant never knows the exact reason, just a generic code, to protect cardh
 2. Capture (same day or later): Merchant claims funds
 3. Clearing (end of day): Network calculates positions
 4. Settlement (T+1 to T+3): Money moves between banks
+
+Learn more: [Transaction Flows](./transaction-flows)
 
 </details>
 
@@ -276,6 +393,8 @@ Level 2 and Level 3 data provide additional transaction details that qualify for
 - **Savings:** $50 per transaction, $5,000/year on 100 transactions
 
 **Best for:** B2B merchants, government contractors, corporate sales
+
+For detailed implementation guide, see [Interchange Optimization](./optimization#level-2-and-level-3-data).
 
 </details>
 
@@ -390,6 +509,8 @@ The **PayFac absorbs the chargeback losses first**, not the sponsor bank.
 - At 0.3% margin, PayFac needs $167M in legitimate volume to recover
 
 **Key takeaway:** PayFacs inherit acquirer-level risk while typically having less capital than traditional banks.
+
+Full details: [PayFac Position in the Model](./payfac)
 
 </details>
 
@@ -603,6 +724,50 @@ Process:
 - **10-12 correct**: Proficient - You grasp the key concepts
 - **7-9 correct**: Intermediate - Review the detailed documentation
 - **0-6 correct**: Beginner - Start with the overview and work through each section
+
+---
+
+## Common Misconceptions Revealed by This Quiz
+
+Based on patterns in how engineers first learning payments answer these questions:
+
+### Misconception 1: "Merchants can negotiate interchange rates"
+
+**Reality:** Interchange is set by card networks (Visa/Mastercard) and is the same for all acquirers. Only the acquirer markup (typically 20-25% of total fees) is negotiable.
+
+**Why this matters:** Merchants comparing "rates" need to ask for "interchange-plus pricing" to see true costs.
+
+---
+
+### Misconception 2: "Authorization means the merchant got paid"
+
+**Reality:** Authorization is just a promise to pay (hold placed). Actual money doesn't move until settlement (T+1 to T+3). Many payment platform bugs stem from assuming authorization = payment.
+
+**Why this matters:** Never fulfill/ship goods until CAPTURE event, not authorization event.
+
+---
+
+### Misconception 3: "PayFacs have lower risk than traditional acquirers"
+
+**Reality:** PayFacs have HIGHER risk concentration because all sub-merchants are under one master MID. One fraudulent sub-merchant can jeopardize the entire portfolio.
+
+**Why this matters:** PayFac underwriting and fraud monitoring must be more rigorous than traditional acquiring, not less.
+
+---
+
+### Misconception 4: "Level 2/3 data benefits all merchants equally"
+
+**Reality:** Level 2/3 data only reduces interchange for COMMERCIAL and GOVERNMENT cards (typically &lt;20% of transactions for most merchants). Consumer cards see no benefit.
+
+**Why this matters:** Implement Level 2/3 data only if you process significant B2B or government volume (&gt;$100K/month corporate cards).
+
+---
+
+### Misconception 5: "Decline code '05' means insufficient funds"
+
+**Reality:** Code 05 ("Do not honor") is a generic decline used for multiple reasons: suspected fraud, account closed, issuer policy, or the issuer just doesn't want to reveal the specific reason.
+
+**Why this matters:** Never build retry logic based on decline codes alone. Only retry soft declines (51, 61, 65) after 24 hours.
 
 ---
 
