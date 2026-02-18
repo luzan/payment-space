@@ -1,6 +1,7 @@
 ---
-title: "Risk & Compliance | Payments Mastery"
+title: "Risk & Compliance"
 description: "Master payment risk management: chargebacks, fraud prevention, PCI-DSS, AML/BSA compliance, and network monitoring programs for PayFac platforms."
+image: /img/og-image.png
 sidebar_position: 1
 sidebar_label: "Overview"
 keywords:
