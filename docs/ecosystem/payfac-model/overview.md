@@ -22,11 +22,13 @@ Payment Facilitators (PayFacs) revolutionized merchant acquiring by introducing 
 
 :::info Prerequisites
 This module builds on:
-- The Four-Party Model (see week-01-02 notes)
-- Acquiring Banks (see industry-players notes)
-- ISOs (see industry-players notes)
+- [The Four-Party Model](/ecosystem/fundamentals/four-party-model/) - Core payment ecosystem structure
+- [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) - Sponsor bank relationships
+- [ISOs](/ecosystem/industry-players/isos) - Independent Sales Organizations
 
 Understanding these foundations is essential for grasping how PayFacs fit into the payment ecosystem.
+
+**Related:** For PayFac risk management, see [Risk & Compliance](/risk-compliance/) covering chargebacks, fraud prevention, and network monitoring programs.
 :::
 
 ## Quick Reference Card
@@ -360,6 +362,10 @@ STRIPE / BRIDGE (October 2024)
 3. **B2B Payment Modernization**: B2B payments historically lagging consumer, now accelerating
 4. **Healthcare PayFac Growth**: 30.6% CAGR through 2030 driven by telemedicine and EHR integration
 5. **Consolidation**: Major processors acquiring PayFac infrastructure to compete with Stripe/Adyen
+
+:::warning Critical for SaaS PayFacs
+Network monitoring programs (VAMP, ECP) can trigger fines of $25K-$100K/month for excessive chargebacks. SaaS PayFacs must implement robust sub-merchant monitoring. See [Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs) for thresholds and compliance strategies.
+:::
 
 ## Next Steps
 

@@ -559,4 +559,4 @@ function monitorSettlement(settlementFile) {
 
 - [ISO 8583 Standard](https://www.iso.org/standard/31628.html) - International standard for payment card messages
 - [Visa Settlement Services](https://usa.visa.com/products/visa-settlement-service.html) - Overview of Visa settlement process
-- [Mastercard Settlement Guidelines](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Settlement file specifications
+- [Mastercard Settlement Guidelines](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Settlement file specifications

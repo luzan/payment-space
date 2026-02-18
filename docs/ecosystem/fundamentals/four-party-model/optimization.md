@@ -445,8 +445,8 @@ Use this checklist to maximize interchange qualification:
 
 ### Official Documentation
 
-- [Visa Level 2/Level 3 Data Requirements](https://usa.visa.com/support/merchant/library/repository/merchant-data-standards.html)
-- [Mastercard Enhanced Data Specifications](https://www.mastercard.us/en-us/business/overview/support/merchant-data-standards.html)
+- [Visa Level 2/Level 3 Data Requirements](https://usa.visa.com/dam/VCOM/download/merchants/visa-merchant-data-standards-manual.pdf)
+- [Mastercard Enhanced Data Specifications](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/transaction-processing-rules.pdf)
 
 ---
 

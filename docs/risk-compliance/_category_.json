@@ -1,0 +1,10 @@
+{
+  "label": "Risk & Compliance",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

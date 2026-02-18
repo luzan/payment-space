@@ -1375,8 +1375,8 @@ class ContinuousMonitoringService {
 ### Industry Standards
 
 - [PCI DSS](https://www.pcisecuritystandards.org/) - Payment Card Industry Data Security Standard
-- [Visa Global Acquirer Risk Standards](https://usa.visa.com/support/small-business/security-compliance.html)
-- [Mastercard Security Rules and Procedures](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations.html)
+- [Visa Global Acquirer Risk Standards](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Security Rules and Procedures](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/SPME-Manual.pdf)
 
 ### Credit Data & Scoring
 

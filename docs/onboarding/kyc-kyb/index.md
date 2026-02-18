@@ -202,4 +202,11 @@ Effective KYC/KYB verification:
 
 ---
 
+## Related Modules
+
+- **[AML/BSA Compliance](/risk-compliance/aml-bsa/)** - KYC data feeds into ongoing AML monitoring
+- **[Fraud Prevention](/risk-compliance/fraud-prevention/)** - How identity verification prevents fraud
+
+---
+
 > **Next:** Begin with [KYC Requirements](./kyc-requirements.md) to learn individual identity verification processes, or continue to [Underwriting & Risk Assessment](/onboarding/underwriting/) after completing this module.

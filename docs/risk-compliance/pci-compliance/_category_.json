@@ -1,0 +1,10 @@
+{
+  "label": "PCI-DSS Compliance",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/pci-compliance/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

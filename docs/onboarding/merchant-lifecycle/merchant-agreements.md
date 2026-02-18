@@ -1151,17 +1151,18 @@ When evaluating reserves:
 - [Risk Assessment](../underwriting/risk-scoring.md) - How risk scores determine reserve levels
 - [Payment Facilitator Model](/ecosystem/payfac-model/overview.md) - PayFac structure and economics
 
-**Coming Soon:**
+## Related Modules
 
-- Chargeback Management - Understanding Code 04 MATCH trigger
-- Monitoring Programs - VDMP/ECP/VAMP thresholds
+- **[Reserve Management](/risk-compliance/monitoring-programs/reserve-management)** - Risk-compliance perspective on reserve strategies
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs)** - VAMP/ECP thresholds that trigger MATCH listing (Code 04)
+- **[Chargeback Management](/risk-compliance/chargebacks/)** - Understanding Code 04 MATCH trigger (excessive chargebacks)
 
 ## References
 
 ### Official Documentation
 
-- [Mastercard MATCH Reference Guide](https://www.mastercard.us/en-us/business/overview/safety-and-security/match.html) - Official MATCH list documentation
-- [Visa Acquirer Monitoring Program (VAMP)](https://usa.visa.com/support/small-business/security-compliance.html) - Visa chargeback monitoring
+- [Mastercard MATCH Reference Guide](https://developer.mastercard.com/match/documentation/) - Official MATCH system documentation
+- [Visa Acquirer Monitoring Program (VAMP)](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - Visa chargeback monitoring
 - [PCI SSC Documentation](https://www.pcisecuritystandards.org/) - PCI compliance requirements (Code 12)
 
 ### Industry Resources

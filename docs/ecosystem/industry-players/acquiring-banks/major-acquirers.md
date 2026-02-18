@@ -646,8 +646,8 @@ See Four-Party Model <!-- (/ecosystem/core-concepts/four-party-model not yet mig
 ### Regulatory and Compliance
 
 - [Federal Reserve Regulation II](https://www.federalreserve.gov/paymentsystems/regii-about.htm) - Debit interchange rules
-- [Visa Core Rules](https://usa.visa.com/support/merchant/visa-rules.html) - Network operating regulations
-- [Mastercard Rules](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Network standards
+- [Visa Core Rules](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - Network operating regulations
+- [Mastercard Rules](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Network standards
 
 ### Recent M&A and News
 

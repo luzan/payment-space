@@ -410,5 +410,5 @@ If Tuesday were a Friday, the merchant would receive funds the following Tuesday
 
 ## References
 
-- [Visa Interchange Rates](https://usa.visa.com/support/merchant/library/visa-merchant-data-standards.html) - Official Visa interchange schedules
-- [Mastercard Assessment Fees](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Current assessment fee structures
+- [Visa Interchange Rates](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf) - Official Visa interchange schedules
+- [Mastercard Assessment Fees](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Current assessment fee structures

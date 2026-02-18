@@ -213,6 +213,11 @@ After completing this module, you should be able to:
 
 Track your progress through this module by completing the quiz in each category and the comprehensive questions in the Study Guide section.
 
+## Related Modules
+
+- **[Payment Ecosystem](/ecosystem/)** - Foundation for understanding four-party model and PayFac position
+- **[Risk & Compliance](/risk-compliance/)** - How onboarding decisions affect risk outcomes (chargebacks, fraud, monitoring)
+
 ---
 
 > **Next Steps:** Start with [KYC & KYB Verification](/onboarding/kyc-kyb/) to understand identity and business verification requirements.

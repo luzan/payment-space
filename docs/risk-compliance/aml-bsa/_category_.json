@@ -1,0 +1,10 @@
+{
+  "label": "AML & BSA",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/aml-bsa/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

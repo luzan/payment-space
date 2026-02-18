@@ -217,7 +217,7 @@ As a PayFac, you assume acquirer-like responsibilities:
 | **Compliance monitoring** | Ensuring sub-merchants follow network rules |
 | **Fraud prevention** | Detecting and preventing fraudulent transactions |
 
-**Key Point:** If a sub-merchant processes fraudulent transactions and disappears, the PayFac (not the sponsor bank) absorbs the chargeback losses first.
+**Key Point:** If a sub-merchant processes fraudulent transactions and disappears, the PayFac (not the sponsor bank) absorbs the chargeback losses first. See [Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle) for the detailed dispute process.
 
 ### Responsibility Flow
 
@@ -243,6 +243,8 @@ As a PayFac, you assume acquirer-like responsibilities:
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+For detailed reserve strategies that protect against this cascade, see [Reserve Management](/risk-compliance/monitoring-programs/reserve-management).
 
 ---
 
@@ -529,8 +531,10 @@ PayFacs must maintain comprehensive compliance programs:
 | **Network rules** | Visa/Mastercard compliance |
 
 :::tip Related Topics
-- Fraud Prevention - Detecting and preventing fraudulent transactions (coming soon)
-- Chargeback Management - Managing disputes and representment (coming soon)
+- **[Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle)** - Understanding the dispute process PayFacs must manage
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs)** - VAMP, ECP thresholds that trigger fines
+- **[Reserve Management](/risk-compliance/monitoring-programs/reserve-management)** - How reserves protect against chargeback losses
+- **[Fraud Prevention](/risk-compliance/fraud-prevention/)** - Detecting and preventing fraudulent transactions
 :::
 
 ### Ongoing Monitoring
@@ -579,9 +583,14 @@ PayFacs must continuously monitor:
 - **[Interchange Optimization](./optimization.md)** - Reducing costs through data
 - **[Self-Assessment Quiz](./quiz.md)** - Test your understanding
 
-**Deep Dives (Coming Soon):**
+**Risk & Compliance Module:**
+- **[Chargeback Management](/risk-compliance/chargebacks/)** - Lifecycle, representment, prevention
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/)** - VAMP, ECP, fines and thresholds
+- **[Fraud Prevention](/risk-compliance/fraud-prevention/)** - Detection strategies and tools
+- **[AML/BSA Compliance](/risk-compliance/aml-bsa/)** - Anti-money laundering requirements
+
+**Coming Soon:**
 - **Merchant Onboarding** - KYC/KYB processes and underwriting for PayFacs
-- **Risk & Compliance** - Chargeback management, fraud prevention, AML/BSA
 - **Platform Architecture** - Building PayFac infrastructure and ledger systems
 
 ---

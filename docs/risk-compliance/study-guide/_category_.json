@@ -1,0 +1,10 @@
+{
+  "label": "Study Guide",
+  "position": 8,
+  "link": {
+    "type": "doc",
+    "id": "risk-compliance/study-guide/index"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

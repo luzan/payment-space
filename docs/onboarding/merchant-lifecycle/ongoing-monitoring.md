@@ -1878,14 +1878,20 @@ Use this data to refine trigger thresholds and reduce unnecessary investigations
 - [Underwriting Fundamentals](../underwriting/fundamentals.md) - Initial KYC/KYB and underwriting processes
 - [Payment Ecosystem Overview](/ecosystem/index.md) - Understanding industry players and their monitoring responsibilities
 
+## Related Modules
+
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs)** - Deep dive into VAMP/ECP thresholds and enforcement
+- **[Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle)** - Complete dispute flow from initiation to resolution
+- **[AML/BSA Compliance](/risk-compliance/aml-bsa/)** - Ongoing AML monitoring requirements
+
 ---
 
 ## References
 
 **Network Monitoring Programs:**
-- [Visa Acquirer Monitoring Program (VAMP) - April 2025](https://usa.visa.com/support/consumer/security-faq.html)
-- [Mastercard Excessive Chargeback Program](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/excessive-chargeback-merchant-program.html)
-- [Mastercard Excessive Fraud Merchant Program](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/excessive-fraud-merchant-program.html)
+- [Visa Acquirer Monitoring Program (VAMP)](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - See Visa Rules for VAMP thresholds
+- [Mastercard Excessive Chargeback Program](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/SPME-Manual.pdf) - See SPME Manual Chapter 8
+- [Mastercard Excessive Fraud Merchant Program](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/SPME-Manual.pdf) - See SPME Manual Chapter 8
 
 **AML/KYC Regulations:**
 - [FinCEN Customer Due Diligence (CDD) Rule](https://www.fincen.gov/resources/statutes-regulations/guidance/customer-due-diligence-requirements-financial-institutions)

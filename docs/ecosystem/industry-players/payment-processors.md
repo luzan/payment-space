@@ -913,8 +913,8 @@ This is why Stripe can onboard merchants instantly - they ARE the PayFac, not ju
 
 ### Network Requirements
 
-- [Visa Core Rules](https://usa.visa.com/support/merchant/visa-rules.html) - Official Visa rulebook
-- [Mastercard Rules](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Mastercard standards
+- [Visa Core Rules](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - Official Visa rulebook
+- [Mastercard Rules](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Mastercard standards
 
 ---
 

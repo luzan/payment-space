@@ -1042,3 +1042,6 @@ That's a 5-10x increase in revenue per merchant, with lower churn and higher lif
 | [Payment Gateways](/ecosystem/industry-players/payment-gateways/overview) | Gateway integration patterns |
 | [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) | Sponsor banks for PayFac ISVs |
 | [ISOs](/ecosystem/industry-players/isos) | ISO vs ISV comparison |
+| [ISO & ISV Risk Perspectives](/risk-compliance/iso-isv-perspectives/) | Risk and compliance by integration model |
+| [Compliance Obligations](/risk-compliance/iso-isv-perspectives/compliance-obligations) | PCI scope for ISVs by model |
+| [Portfolio Risk Management](/risk-compliance/iso-isv-perspectives/portfolio-risk-management) | Vertical compliance for ISVs |

@@ -303,7 +303,7 @@ A critical network rule that affects merchants:
 | **[Authorization](/glossary#authorization)** | Real-time approval from issuer to proceed with transaction. Places hold on funds. See [Transaction Flows](/ecosystem/fundamentals/four-party-model/transaction-flows). |
 | **[Capture](/glossary#capture)** | Merchant's request to collect authorized funds. Can be same day or later. See [Transaction Flows](/ecosystem/fundamentals/four-party-model/transaction-flows). |
 | **[Settlement](/glossary#settlement)** | Actual movement of funds between banks. Typically T+1 to T+3. See [Transaction Lifecycle](/ecosystem/fundamentals/transaction-lifecycle/overview). |
-| **[Chargeback](/glossary#chargeback)** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. See [Transaction Lifecycle - Chargebacks](/ecosystem/fundamentals/transaction-lifecycle/detailed-flows#chargebacks--disputes). |
+| **[Chargeback](/glossary#chargeback)** | Cardholder dispute that reverses a transaction. Merchant must prove transaction was valid. See [Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle) for the complete process. |
 
 ---
 
@@ -346,22 +346,25 @@ A critical network rule that affects merchants:
 - **[ISOs](/ecosystem/industry-players/isos)** - Independent Sales Organizations and merchant acquisition
 - **[ISVs](/ecosystem/industry-players/isvs)** - Software vendors with embedded payments
 
+**Related Modules:**
+- **[Risk & Compliance](/risk-compliance/)** - Chargebacks, fraud prevention, network monitoring programs
+
 ---
 
 ## References
 
 ### Official Interchange Rate Documentation
 
-- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/support/merchant/library/repository/merchant-fees.html) - Official Visa interchange rate portal
-- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/en-us/business/overview/support/merchant-rates-2024.html) - Official Mastercard interchange schedules
+- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf) - Official Visa interchange rates
+- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Official Mastercard rates (see interchange section)
 - [Visa Merchant Regulations & Fees](https://usa.visa.com/support/small-business/regulations-fees.html) - Visa merchant fee overview
 
 *Note: Interchange rates change periodically. Always verify current rates at official network portals.*
 
 ### Network Rules & Standards
 
-- [Visa Core Rules and Visa Product and Service Rules](https://usa.visa.com/support/merchant/visa-rules.html) - Complete Visa rulebook
-- [Mastercard Rules](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Mastercard network standards
+- [Visa Core Rules and Visa Product and Service Rules](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - Complete Visa rulebook
+- [Mastercard Rules](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Mastercard network standards
 
 ### Regulatory Resources
 
