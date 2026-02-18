@@ -1,6 +1,6 @@
 ---
 title: "Self-Assessment Questions | Risk & Compliance | Payments Mastery"
-description: "41 self-assessment questions covering chargebacks, fraud, PCI-DSS, AML/BSA, and incident response for payment platforms."
+description: "49 self-assessment questions covering chargebacks, fraud, PCI-DSS, AML/BSA, incident response, and ISO/ISV perspectives for payment platforms."
 sidebar_position: 2
 sidebar_label: "Questions"
 keywords:
@@ -175,6 +175,34 @@ How should an incident response team be structured for a payment facilitator?
 
 ---
 
+## ISO & ISV Perspectives
+
+### Question 42
+Why do ISOs have zero direct chargeback liability in the standard model? What exceptions might create liability?
+
+### Question 43
+An ISV integrates payments using a PFaaS provider in "Standard" mode. Who bears chargeback liability, and why?
+
+### Question 44
+What determines whether an ISO or ISV needs an AML/BSA compliance program?
+
+### Question 45
+How does VAMP monitoring apply differently to ISOs versus PayFacs?
+
+### Question 46
+A Master ISO is onboarding a new Sub-ISO. What due diligence should be performed?
+
+### Question 47
+An ISV serves the healthcare vertical with embedded payments. What compliance frameworks must they address beyond PCI?
+
+### Question 48
+**Scenario:** A PayFac partners with an ISO whose referred merchants consistently have 2x the average chargeback rate. What contractual and operational changes should the PayFac implement?
+
+### Question 49
+Can an ISO principal be listed on MATCH? Under what circumstances, and what are the consequences?
+
+---
+
 ## Answer Key Location
 
 Detailed answers for these questions can be found in the section-specific quizzes:
@@ -185,6 +213,7 @@ Detailed answers for these questions can be found in the section-specific quizze
 - [PCI Compliance Quiz](../pci-compliance/quiz.md) - Questions 11-16, 23, 26
 - [AML/BSA Quiz](../aml-bsa/quiz.md) - Questions 17-20, 22
 - [Incident Response Quiz](../incident-response/quiz.md) - Questions 37-41
+- [ISO & ISV Perspectives Quiz](../iso-isv-perspectives/quiz.md) - Questions 42-49
 
 ## Related Topics
 

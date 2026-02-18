@@ -1202,3 +1202,6 @@ MERCHANT/SUB-MERCHANT
 | [Payment Gateways](/ecosystem/industry-players/payment-gateways/overview) | Gateway solutions ISOs resell |
 | [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) | Sponsor banks for ISO registration |
 | [ISVs](/ecosystem/industry-players/isvs) | PayFac model that competes with ISOs |
+| [ISO & ISV Risk Perspectives](/risk-compliance/iso-isv-perspectives/) | Risk and compliance responsibilities for ISOs |
+| [Liability Structures](/risk-compliance/iso-isv-perspectives/liability-structures) | Why ISOs have zero chargeback liability |
+| [Network Program Applicability](/risk-compliance/iso-isv-perspectives/network-program-applicability) | VAMP, ECP, MATCH for ISOs |

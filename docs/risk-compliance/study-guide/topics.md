@@ -259,6 +259,53 @@ This guide outlines the key topics covered in the Risk & Compliance module. Use 
 
 ---
 
+## ISO & ISV Perspectives
+
+### Liability Structures
+
+**Topics:**
+- [ ] ISO vs ISV vs PayFac liability spectrum
+- [ ] Chargeback liability by entity type
+- [ ] Reserve requirements by model
+- [ ] Sub-agent liability cascading
+- [ ] Contractual risk allocation
+
+**Key Terms:**
+- First-line liability
+- Pass-through liability
+- PFaaS (PayFac-as-a-Service)
+- Sub-agent
+- Residual clawback
+
+### Compliance Obligations
+
+**Topics:**
+- [ ] PCI scope by integration model (ISO, ISV, PayFac)
+- [ ] AML/BSA applicability (MSB determination)
+- [ ] Network registration requirements (Third-Party Agent)
+- [ ] Money transmitter licensing considerations
+- [ ] Vertical-specific compliance (HIPAA, IOLTA)
+
+### Network Program Applicability
+
+**Topics:**
+- [ ] VAMP applicability by entity type
+- [ ] ECP/EFM monitoring for ISOs vs PayFacs
+- [ ] MATCH listing implications by entity
+- [ ] Indirect program exposure for ISOs
+- [ ] Program responsibility allocation
+
+### Portfolio Risk Management
+
+**Topics:**
+- [ ] Sub-agent due diligence requirements
+- [ ] KYC/KYB delegation vs ownership
+- [ ] ISO portfolio monitoring best practices
+- [ ] ISV user verification responsibilities
+- [ ] Termination authority by entity type
+
+---
+
 ## Completion Checklist
 
 After completing this module, you should be able to:

@@ -47,11 +47,17 @@ flowchart TB
         IR[Incident Response]
     end
 
+    subgraph Perspectives["Entity Perspectives"]
+        ISO[ISO/ISV Risk]
+    end
+
     CB --> MON
     FR --> MON
     MON --> PCI
     PCI --> IR
     AML --> IR
+    MON --> ISO
+    PCI --> ISO
 ```
 
 ## Learning Objectives
@@ -142,7 +148,17 @@ Security incident and data breach management:
 - **[Breach Notification](./incident-response/breach-notification.md)** - Timelines and procedures
 - **[Quiz](./incident-response/quiz.md)** - Test your understanding
 
-### [7. Study Guide](./study-guide/topics.md)
+### [7. ISO & ISV Perspectives](./iso-isv-perspectives/index.md)
+
+Risk and compliance responsibilities for ISOs and ISVs compared to PayFacs:
+
+- **[Liability Structures](./iso-isv-perspectives/liability-structures.md)** - Chargeback, fraud, and reserve liability by entity
+- **[Compliance Obligations](./iso-isv-perspectives/compliance-obligations.md)** - PCI, AML, network registration by model
+- **[Network Program Applicability](./iso-isv-perspectives/network-program-applicability.md)** - VAMP, ECP, MATCH by entity
+- **[Portfolio Risk Management](./iso-isv-perspectives/portfolio-risk-management.md)** - Sub-agent and vertical compliance
+- **[Quiz](./iso-isv-perspectives/quiz.md)** - Test your understanding
+
+### [8. Study Guide](./study-guide/topics.md)
 
 Learning resources and self-assessment:
 

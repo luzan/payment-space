@@ -262,8 +262,17 @@ flowchart TB
 |-----------|----------|
 | "My CB ratio is low" | Explain forward-looking risk |
 | "I need cash flow" | Offer alternative (lower rate, longer hold) |
-| "Competitors don't hold" | Explain PayFac vs. ISO differences |
+| "Competitors don't hold" | Explain PayFac vs. ISO differences (see below) |
 | "Release early" | Require collateral or guarantee |
+
+:::info ISO vs PayFac Reserve Differences
+When merchants compare PayFac reserve requirements to ISOs, explain the fundamental model difference:
+
+- **ISOs:** Merchants have individual MIDs with acquirers. Reserves (if any) are held by the acquirer based on individual merchant risk
+- **PayFacs:** Sub-merchants share the PayFac's master MID. PayFac bears first-line liability, requiring reserves for protection
+
+ISOs don't hold reserves from merchants because they don't bear chargeback liability. See [ISO & ISV Perspectives](../iso-isv-perspectives/index.md) for detailed comparison.
+:::
 
 ### Dispute Resolution Process
 
@@ -331,6 +340,8 @@ flowchart TB
 - [Network Programs](./network-programs.md) - Reserve triggers from monitoring
 - [Merchant Monitoring](./merchant-monitoring.md) - Risk indicators
 - [Chargeback Management](../chargebacks/index.md) - Reserve usage for CBs
+- [ISO & ISV Perspectives](../iso-isv-perspectives/index.md) - Reserve requirements by entity type
+- [Liability Structures](../iso-isv-perspectives/liability-structures.md) - Why ISOs don't hold reserves
 
 **Onboarding Context:**
 - [Merchant Agreements & Reserves](/onboarding/merchant-lifecycle/merchant-agreements) - Reserve setup during onboarding
