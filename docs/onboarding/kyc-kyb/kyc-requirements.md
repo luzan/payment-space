@@ -214,8 +214,8 @@ See [Implementation Guide](./kyc/implementation.md) for SAR procedures.
 
 ### Card Network Resources
 
-- [Visa PayFac Program Requirements](https://usa.visa.com/run-your-business/small-business-tools/retail-business-services/payment-facilitator.html)
-- [Mastercard MATCH System](https://www.mastercard.us/en-us/business/overview/safety-and-security/match.html)
+- [Visa PayFac Program Requirements](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - See PayFac section
+- [Mastercard MATCH System](https://developer.mastercard.com/match/documentation/) - Official MATCH documentation
 
 ---
 

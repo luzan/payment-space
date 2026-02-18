@@ -1417,6 +1417,12 @@ Reserves can be reduced or removed if merchant demonstrates:
 - [Ongoing Monitoring](../merchant-lifecycle/ongoing-monitoring.md) - Post-approval surveillance
 - [Portfolio Risk Management](../payfac-considerations/portfolio-risk.md) - PayFac aggregate risk management
 
+## Related Modules
+
+- **[Chargeback Management](/risk-compliance/chargebacks/)** - Risk factors predict chargeback likelihood; see how chargebacks are managed
+- **[Fraud Prevention](/risk-compliance/fraud-prevention/)** - Fraud indicators from underwriting feed into fraud prevention systems
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs)** - VAMP/ECP thresholds referenced in risk factors
+
 ## References
 
 **Card Network Resources:**

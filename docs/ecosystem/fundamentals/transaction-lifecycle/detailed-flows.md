@@ -345,7 +345,7 @@ CHALLENGES:
 ### Chargebacks & Disputes
 
 - [Visa Claims Resolution (VCR)](https://usa.visa.com/supporting-info/visa-claims-resolution.html) - Visa dispute process
-- [Mastercard Chargeback Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Mastercard dispute procedures
+- [Mastercard Chargeback Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Mastercard dispute procedures
 - [Visa Dispute Management Guidelines for Merchants (PDF)](https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf) - Official Visa merchant chargeback best practices
 
 ### Industry Resources

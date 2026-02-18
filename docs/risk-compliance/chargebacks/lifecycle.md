@@ -349,7 +349,11 @@ flowchart LR
 - [Representment](./representment.md) - Building winning cases
 - [Network Programs](../monitoring-programs/network-programs.md) - Consequences of excessive chargebacks
 
+**Ecosystem Context:**
+- [PayFac Position](/ecosystem/fundamentals/four-party-model/payfac) - Why PayFacs have first-line chargeback liability
+- [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) - Acquirer's role in the liability chain
+
 ## References
 
-- [Visa Claims Resolution (VCR) User Guide](https://usa.visa.com/support/merchant/library/visa-rules.html)
-- [Mastercard Dispute Resolution Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Claims Resolution (VCR) User Guide](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Dispute Resolution Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)

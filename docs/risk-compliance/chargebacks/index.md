@@ -202,8 +202,16 @@ flowchart TB
 - [Reserve Management](../monitoring-programs/reserve-management.md) - Using reserves to cover chargebacks
 - [Fraud Prevention](../fraud-prevention/index.md) - Preventing chargebacks at the source
 
+**Ecosystem Context:**
+- [Four-Party Model](/ecosystem/fundamentals/four-party-model/) - Why acquirers bear chargeback risk
+- [PayFac Position](/ecosystem/fundamentals/four-party-model/payfac) - PayFac first-line liability explained
+
+**Onboarding Context:**
+- [Risk Factors](/onboarding/underwriting/risk-factors) - Chargeback prevention starts with proper underwriting
+- [Ongoing Monitoring](/onboarding/merchant-lifecycle/ongoing-monitoring) - Continuous chargeback ratio monitoring
+
 ## References
 
-- [Visa Claims Resolution (VCR) User Guide](https://usa.visa.com/support/merchant/library/visa-rules.html)
-- [Mastercard Chargeback Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Claims Resolution (VCR) User Guide](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Chargeback Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [Chargebacks911 Industry Benchmarks](https://chargebacks911.com/)

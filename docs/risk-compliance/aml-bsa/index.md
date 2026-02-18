@@ -210,6 +210,10 @@ Learn more: [Money Laundering Patterns](./money-laundering.md)
 - [Fraud Prevention](../fraud-prevention/index.md) - Fraud vs. AML monitoring
 - [Incident Response](../incident-response/index.md) - Reporting requirements
 
+**Onboarding Context:**
+- [KYC/KYB Requirements](/onboarding/kyc-kyb/) - Due diligence starts at onboarding with identity verification
+- [Beneficial Ownership](/onboarding/kyc-kyb/beneficial-ownership) - UBO identification for AML compliance
+
 ## References
 
 - [FinCEN - Financial Crimes Enforcement Network](https://www.fincen.gov/)

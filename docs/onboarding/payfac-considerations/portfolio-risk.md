@@ -736,6 +736,12 @@ Despite the high 5% individual CBR:
 - [Ongoing Monitoring](../merchant-lifecycle/ongoing-monitoring.md) - Individual merchant monitoring
 - [Risk Factors](../underwriting/risk-factors.md) - Understanding sub-merchant risk
 
+## Related Modules
+
+- **[Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs)** - Deep dive into VAMP/ECP thresholds and enforcement
+- **[Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle)** - How chargebacks flow and impact portfolio metrics
+- **[Reserve Management](/risk-compliance/monitoring-programs/reserve-management)** - Reserve strategies for portfolio risk mitigation
+
 ## References
 
 - Visa Payment Facilitator Portfolio Monitoring Guidelines

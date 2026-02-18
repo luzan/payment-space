@@ -649,7 +649,7 @@ CHARGEBACK PREVENTION CHECKLIST
 ## References
 
 - [Visa Claims Resolution (VCR)](https://usa.visa.com/supporting-info/visa-claims-resolution.html) - Official Visa dispute process
-- [Mastercard Chargeback Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html) - Mastercard dispute procedures
+- [Mastercard Chargeback Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Mastercard dispute procedures
 - [Visa Dispute Management Guidelines for Merchants (PDF)](https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf) - Best practices and evidence requirements
 - [Verifi CDRN](https://www.verifi.com/solutions/prevent/) - Chargeback prevention network
 - [Ethoca Alerts](https://ethoca.com/solutions/alerts/) - Pre-chargeback notification service

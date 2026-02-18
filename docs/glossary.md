@@ -18,7 +18,7 @@ A comprehensive glossary of payment industry terms and definitions.
 
 > Sources: [Jupico Documentation](https://docs.jupico.com/docs/glossary) and additional terms from course notes
 
-[A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w)
+[A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w)
 
 ---
 
@@ -69,6 +69,18 @@ A failed ACH transaction.
 **Assessment Fees**
 Fees charged by card networks (Visa, Mastercard) for using their network infrastructure, typically 0.13-0.15% of transaction value.
 
+**AOC (Attestation of Compliance)**
+A formal declaration that an organization has completed a PCI DSS assessment and met all applicable requirements. Signed by the organization and QSA (if applicable).
+
+**Arbitration**
+The final, binding stage of the chargeback dispute process where the card network reviews all evidence and makes a definitive decision. Network fees for arbitration typically range from $250-$500.
+
+**ASV (Approved Scanning Vendor)**
+A company qualified by the PCI Security Standards Council to conduct external vulnerability scans of merchant and service provider networks as required for PCI DSS compliance.
+
+**ATO (Account Takeover)**
+A type of fraud where a criminal gains unauthorized access to a legitimate user's account to make fraudulent purchases, change account details, or steal stored payment credentials.
+
 ---
 
 ## B
@@ -105,6 +117,9 @@ Any transaction or scenario where one business sends money to another business.
 
 **Business-to-Consumer (B2C)**
 Any transaction or scenario where a business sends money to a consumer.
+
+**Behavioral Analytics**
+Fraud detection technology that establishes baseline user behavior patterns (login times, device usage, purchase habits) and flags deviations that may indicate account compromise or fraud.
 
 ---
 
@@ -176,6 +191,15 @@ The act of safeguarding and administering clients' investments or assets.
 **Customer Due Diligence**
 Policies, practices, and procedures enabling a financial institution to predict the types of transactions a customer is likely to engage in.
 
+**Card Testing**
+A fraud technique where criminals make small transactions (often $1 or less) to verify that stolen card numbers are valid before making larger fraudulent purchases.
+
+**CDE (Cardholder Data Environment)**
+The people, processes, and technologies that store, process, or transmit cardholder data or sensitive authentication data. Defining and minimizing the CDE is critical for PCI DSS compliance.
+
+**CNP Fraud (Card-Not-Present Fraud)**
+Fraud occurring in transactions where the physical card is not present, such as online, phone, or mail orders. CNP fraud rates are significantly higher than card-present fraud.
+
 ---
 
 ## D
@@ -200,6 +224,9 @@ Fees paid to the card network for use of their credit card and processing transa
 
 **Dynamic Currency Conversion (DCC)**
 A service allowing customers to pay in their home currency when making a purchase in a foreign country, typically offered by payment processors or acquiring banks.
+
+**Device Fingerprinting**
+Technology that identifies and tracks devices based on unique characteristics (browser settings, installed fonts, screen resolution, hardware identifiers) to detect fraud across sessions.
 
 ---
 
@@ -232,6 +259,15 @@ The integration of payment processing as an integral part of a business offering
 **EMV**
 Europay, Mastercard, Visa - the global standard for chip-based payment cards. EMV chips generate unique cryptograms for each transaction, preventing counterfeit fraud.
 
+**ECP (Excessive Chargeback Program)**
+Mastercard's monitoring program that tracks merchants exceeding chargeback thresholds. Merchants enter at ECM tier (100+ chargebacks and >1% ratio) or HECM tier (300+ chargebacks and >1.5% ratio).
+
+**ECM (Excessive Chargeback Merchant)**
+The standard tier of Mastercard's Excessive Chargeback Program. Triggered when a merchant exceeds 100 chargebacks AND a 1% chargeback ratio in a calendar month.
+
+**EFM (Excessive Fraud Merchant)**
+Mastercard's monitoring program targeting merchants with high fraud rates. Thresholds include fraud amounts exceeding $50,000 and fraud ratios above 0.50% in a calendar month.
+
 **Equipment Fees**
 Charges imposed on merchants for leasing or maintenance of payment processing equipment.
 
@@ -256,6 +292,12 @@ A lump sum deposited upfront and held throughout the merchant processing relatio
 
 **Four-Party Model**
 The foundational card payment structure involving four parties: Cardholder, Merchant, Issuing Bank, and Acquiring Bank, connected by the Card Network.
+
+**First-Party Fraud**
+Fraud committed by the legitimate cardholder or account holder, including friendly fraud, chargeback abuse, and identity manipulation. Distinct from third-party fraud where an external criminal compromises an account.
+
+**Friendly Fraud**
+A type of first-party fraud where a cardholder makes a legitimate purchase but then disputes the charge with their bank, falsely claiming the transaction was unauthorized or goods were not received.
 
 **Front-End Processor**
 A processor that handles real-time authorization requests, routing transactions to the appropriate card network and returning approve/decline decisions.
@@ -288,6 +330,9 @@ A secure connection allowing payment transaction messages to be transmitted betw
 
 **Hosted Payment Page (HPP)**
 A payment page hosted by a gateway/processor where customers are redirected to enter card details, reducing the merchant's PCI compliance scope.
+
+**HECM (High Excessive Chargeback Merchant)**
+The severe tier of Mastercard's Excessive Chargeback Program. Triggered when a merchant exceeds 300 chargebacks AND a 1.5% chargeback ratio. Carries higher fines than ECM tier.
 
 ---
 
@@ -325,6 +370,9 @@ The issuing bank that issues a credit or debit card on a card network.
 
 **Issuing Processor**
 An entity directly connected to card networks that transmits authorization, clearing, and settlement messages between acquirers and issuers.
+
+**Integration (AML Stage)**
+The third and final stage of money laundering where "cleaned" funds are reintroduced into the legitimate economy through investments, luxury purchases, real estate, or business ventures.
 
 ---
 
@@ -423,6 +471,9 @@ A fee charged to process and track transactions reversed due to insufficient acc
 **Notice of Change (NOC)**
 A notice generated by a Receiving Depository Financial Institution (RDFI) informing the Originating Depository Financial Institution (ODFI) of bank account changes.
 
+**Network Segmentation**
+A security practice of isolating the Cardholder Data Environment (CDE) from other networks to reduce PCI DSS scope and limit the spread of potential breaches.
+
 ---
 
 ## O
@@ -482,14 +533,27 @@ Fees charged by payment gateways for authorization, capture, and transaction pro
 **Payment Processor**
 Software or technology processing transactions between merchants, issuing banks, and acquiring banks.
 
+**PFI (PCI Forensic Investigator)**
+A specialist qualified by the PCI Security Standards Council to conduct forensic examinations following a suspected or confirmed data breach involving payment card data.
+
 **Placement**
 The act of laundering proceeds from illegal activity and placing them into the financial system.
 
 **Predicate Crimes**
 Crimes whose proceeds, if involved in transactions, can give rise to money laundering prosecution.
 
+**Pre-Arbitration**
+The second review stage in the chargeback process where the acquirer/merchant can challenge an issuer's initial chargeback decision with additional evidence before escalating to final arbitration.
+
 **Push-to-Card (P2C)**
 A real-time payments standard allowing individuals or businesses to instantly transmit funds to specific cards on card networks, with funds generally available immediately.
+
+---
+
+## Q
+
+**QSA (Qualified Security Assessor)**
+An individual or company certified by the PCI Security Standards Council to perform on-site PCI DSS assessments for merchants and service providers requiring Level 1 validation.
 
 ---
 
@@ -497,6 +561,9 @@ A real-time payments standard allowing individuals or businesses to instantly tr
 
 **Receiving Depository Financial Institution (RDFI)**
 A qualified institution that can receive ACH entries.
+
+**Reason Code**
+A specific alphanumeric code assigned by card networks to categorize the cause of a chargeback (e.g., "10.4" for Visa fraud, "4837" for Mastercard no cardholder authorization).
 
 **Reconciliation**
 The process of matching transactions processed by the payment processor with transactions recorded by the merchant.
@@ -506,6 +573,9 @@ The level and type of risk an organization is willing to accept in pursuit of bu
 
 **Risk Score**
 Numerical assessment (typically 0-100) representing the likelihood of merchant-related losses during underwriting. Higher scores indicate higher risk.
+
+**ROC (Report on Compliance)**
+A detailed document produced by a QSA after completing a PCI DSS assessment, documenting the merchant or service provider's compliance status with all applicable requirements.
 
 **Rolling Reserve**
 A percentage of each transaction withheld and held for a specified period (30-180 days) before automatic release on a rolling basis. Common reserve type for moderate to high-risk merchants.
@@ -538,6 +608,9 @@ An assessment of risks associated with different business types, clients, accoun
 **SAR (Suspicious Activity Report)**
 A government filing required when suspicious or potentially illegal activity is detected, including potential money laundering, fraud, or sanctions violations.
 
+**SAQ (Self-Assessment Questionnaire)**
+A PCI DSS validation tool for merchants and service providers to self-evaluate their compliance. Different SAQ types (A, A-EP, B, C, D) apply based on how card data is handled.
+
 **SDN List (Specially Designated Nationals List)**
 OFAC-maintained list of individuals and entities with whom U.S. persons are generally prohibited from doing business. Updated frequently and subject to strict liability.
 
@@ -546,6 +619,9 @@ A debit transaction processed like a credit card (without PIN), routed through V
 
 **Single-Message Processing**
 A transaction flow where authorization and clearing happen in a single message. Typical for PIN debit transactions where funds move immediately.
+
+**Smurfing**
+A money laundering technique using multiple individuals ("smurfs") to make structured deposits or transactions to avoid reporting thresholds and detection.
 
 **SMID (Sub-Merchant ID)**
 Unique identifier assigned to each sub-merchant under a PayFac's master MID, used for internal routing, network reporting, and chargeback allocation.
@@ -561,6 +637,9 @@ Applications that are approved or declined automatically by algorithms without h
 
 **Strict Liability**
 Legal standard where a party is liable regardless of fault or intent. OFAC sanctions violations carry strict liability - "we didn't know" is not a defense.
+
+**Structuring**
+Deliberately breaking financial transactions into smaller amounts to avoid regulatory reporting thresholds (e.g., multiple $9,000 deposits to avoid $10,000 CTR requirement). A federal crime under 31 U.S.C. § 5324.
 
 **Sub-Merchant**
 A merchant that processes payments under a PayFac's master merchant account, rather than having their own direct acquiring relationship.
@@ -627,6 +706,15 @@ The process of evaluating merchant risk and determining approval or decline for 
 ---
 
 ## V
+
+**VAMP (Visa Acquirer Monitoring Program)**
+Visa's consolidated monitoring program that replaced VDMP and VFMP in April 2025. Monitors acquirers and their merchants for excessive disputes and fraud using combined thresholds.
+
+**VDMP (Visa Dispute Monitoring Program)**
+Visa's former program monitoring merchants with excessive chargebacks. Retired April 2025 and consolidated into VAMP. Had Early Warning (0.65%) and Standard (0.9%) thresholds.
+
+**VFMP (Visa Fraud Monitoring Program)**
+Visa's former program monitoring merchants with excessive fraud rates. Retired April 2025 and consolidated into VAMP. Tracked TC40 fraud reports against thresholds.
 
 **VIRP (Visa Integrity Risk Program)**
 Visa's tiered risk framework introduced May 2023 (replacing GBPP) for classifying high-risk merchants. Tier 1 requires Visa approval and Integrity Risk Fees; Tier 2/3 have lower requirements.

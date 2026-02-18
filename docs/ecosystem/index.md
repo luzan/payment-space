@@ -96,3 +96,8 @@ After completing this module, explaining the complete journey of a credit card t
 ## Progress Tracking
 
 Track your progress through the module using the study guide questions. Each major topic includes self-assessment exercises to validate understanding.
+
+## Related Modules
+
+- **[Merchant Onboarding](/onboarding/)** - KYC/KYB verification, underwriting, and risk assessment
+- **[Risk & Compliance](/risk-compliance/)** - Chargeback management, fraud prevention, and network monitoring programs

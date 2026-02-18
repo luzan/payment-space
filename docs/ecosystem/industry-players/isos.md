@@ -1168,8 +1168,8 @@ MERCHANT/SUB-MERCHANT
 
 ### Regulatory & Compliance
 
-- [Visa Agent Rules](https://usa.visa.com/support/merchant/visa-rules.html) - Third-party agent registration requirements
-- [Mastercard Third-Party Processor Registration](https://www.mastercard.us/en-us/business/overview/support/rules.html) - TPP requirements
+- [Visa Agent Rules](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - Third-party agent registration requirements
+- [Mastercard Third-Party Processor Registration](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - TPP requirements
 - [PCI Security Standards Council](https://www.pcisecuritystandards.org/) - PCI DSS 4.0 requirements (April 2025 enforcement)
 
 ### PayFac vs ISO Comparison

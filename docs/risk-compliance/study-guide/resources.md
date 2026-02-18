@@ -30,7 +30,7 @@ Curated resources for deepening your understanding of risk and compliance in pay
 | **Visa VAMP Program Guide** | Thresholds, remediation, fine schedules |
 | **Visa Secure Documentation** | 3D Secure implementation |
 
-**Access:** [usa.visa.com/support/merchant/library/visa-rules.html](https://usa.visa.com/support/merchant/library/visa-rules.html)
+**Access:** [Visa Core Rules PDF](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
 
 ### Mastercard
 
@@ -40,7 +40,7 @@ Curated resources for deepening your understanding of risk and compliance in pay
 | **Mastercard ECP/EFM Programs** | Thresholds, requirements |
 | **Mastercard Identity Check** | 3D Secure implementation |
 
-**Access:** [mastercard.us/en-us/business/overview/support/rules.html](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+**Access:** [Mastercard Rules PDF](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 
 ---
 

@@ -366,8 +366,8 @@ Not all transactions qualify for the lowest interchange rate. Qualification depe
 
 ### Official Interchange Rate Documentation
 
-- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/support/merchant/library/repository/merchant-fees.html) - Official Visa interchange rate portal
-- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/en-us/business/overview/support/merchant-rates-2024.html) - Official Mastercard interchange schedules
+- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf) - Official Visa interchange rates
+- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Official Mastercard interchange schedules
 
 *Note: Interchange rates change in April and October. Always verify current rates at official network portals.*
 

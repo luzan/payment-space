@@ -367,7 +367,7 @@ The card network rules place **ultimate liability on the acquirer**. When a merc
 3. The acquirer is contractually obligated to make the issuer/network whole
 4. If the merchant can't pay, the acquirer absorbs the loss
 
-This is why underwriting, monitoring, and reserves exist: they protect the acquirer from catastrophic losses.
+This is why underwriting, monitoring, and reserves exist: they protect the acquirer from catastrophic losses. For the complete dispute process, see [Chargeback Lifecycle](/risk-compliance/chargebacks/lifecycle).
 
 ### 4. Reserve Management
 
@@ -437,6 +437,8 @@ RESERVE RELEASE:
 +------------------------------------------------------------------------------+
 ```
 
+For PayFac-specific reserve strategies, see [Reserve Management](/risk-compliance/monitoring-programs/reserve-management).
+
 ### 5. Network Compliance
 
 Acquirers must maintain card network memberships and enforce rules:
@@ -454,6 +456,8 @@ Acquirers must maintain card network memberships and enforce rules:
 - Fines from networks ($5,000 - $100,000+ per violation)
 - Increased monitoring and audits
 - Potential loss of network membership (catastrophic for business)
+
+For detailed coverage of Visa VAMP and Mastercard ECP programs, see [Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs).
 
 ---
 
@@ -838,6 +842,10 @@ Acquirers must participate in network risk monitoring programs. Understanding th
 - One bad sub-merchant at 5% chargeback rate can push aggregate ratio over threshold
 - Sponsor banks monitor these programs closely; violations can trigger reserve increases or sponsorship termination
 - PayFacs must implement robust sub-merchant monitoring to catch problems early
+
+:::tip Deep Dive
+For comprehensive coverage of network monitoring programs including the new Visa VAMP program (which replaced VDMP/VFMP in April 2025), see [Network Monitoring Programs](/risk-compliance/monitoring-programs/network-programs).
+:::
 
 ---
 

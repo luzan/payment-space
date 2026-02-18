@@ -172,15 +172,15 @@ As a Payment Facilitator, you face unique risk challenges:
 
 ## Related Modules
 
-- **[Payment Ecosystem](/docs/ecosystem/index.md)** - Foundation for understanding transaction flows
-- **Merchant Onboarding** (coming soon) - Underwriting that prevents risk
+- **[Payment Ecosystem](/ecosystem/)** - Foundation for understanding transaction flows
+- **[Merchant Onboarding](/onboarding/)** - Underwriting that prevents risk, ongoing monitoring
 - **Transaction Processing** (coming soon) - Transaction data that enables monitoring
 - **Platform Architecture** (coming soon) - Architecture supporting compliance
 
 ## References
 
-- [Visa Core Rules and Product Program Guide](https://usa.visa.com/support/merchant/library/visa-rules.html)
-- [Mastercard Rules Manual](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Core Rules and Product Program Guide](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Rules Manual](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [PCI Security Standards Council](https://www.pcisecuritystandards.org/)
 - [FinCEN - Financial Crimes Enforcement Network](https://www.fincen.gov/)
 - [FFIEC BSA/AML Examination Manual](https://bsaaml.ffiec.gov/manual)

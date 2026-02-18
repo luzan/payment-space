@@ -332,6 +332,10 @@ flowchart TB
 - [Merchant Monitoring](./merchant-monitoring.md) - Risk indicators
 - [Chargeback Management](../chargebacks/index.md) - Reserve usage for CBs
 
+**Onboarding Context:**
+- [Merchant Agreements & Reserves](/onboarding/merchant-lifecycle/merchant-agreements) - Reserve setup during onboarding
+- [Risk Factors](/onboarding/underwriting/risk-factors) - Risk-based reserve determination
+
 ## References
 
 - [Merchant Maverick - Rolling Reserves](https://www.merchantmaverick.com/rolling-reserve/)

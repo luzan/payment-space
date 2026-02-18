@@ -1084,7 +1084,7 @@ The PayFac should adjust LCR logic to balance cost and approval rate:
 ### Network Interchange Rates
 
 - [Visa USA Interchange Reimbursement Fees (PDF)](https://usa.visa.com/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf) - Official Visa debit rates
-- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/en-us/business/overview/support/merchant-rates-2024.html) - Official Mastercard debit rates
+- [Mastercard Interchange Programs and Rates](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Official Mastercard debit rates
 
 ### Industry Analysis
 

@@ -208,21 +208,21 @@ flowchart TB
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  PORTFOLIO OVERVIEW                              [Live] ⚡  │
-├─────────────┬─────────────┬─────────────┬─────────────────┤
-│ Merchants   │ CB Ratio    │ Fraud Rate  │ At Risk        │
-│ 2,847       │ 0.42%       │ 0.38%       │ 23             │
-│ ↑ 12 today  │ ↓ 0.02%     │ → stable    │ ↑ 3            │
-├─────────────┴─────────────┴─────────────┴─────────────────┤
-│  ALERTS (12 active)                                        │
-│  ⚠️ MID-12345: CB ratio 0.95% - Critical                   │
-│  ⚠️ MID-67890: Volume spike 4.2x - Elevated                │
-│  ⚠️ MID-11111: Health score 62 - Concerning                │
-├───────────────────────────────────────────────────────────┤
-│  TRENDING ISSUES                                           │
-│  📈 Fraud up 15% WoW across electronics category          │
-│  📉 CB down 8% after 3DS rollout                          │
-└───────────────────────────────────────────────────────────┘
+│  PORTFOLIO OVERVIEW                              [Live] ⚡   │
+├─────────────┬─────────────┬─────────────┬───────────────────┤
+│ Merchants   │ CB Ratio    │ Fraud Rate  │ At Risk           │
+│ 2,847       │ 0.42%       │ 0.38%       │ 23                │
+│ ↑ 12 today  │ ↓ 0.02%     │ → stable    │ ↑ 3               │
+├─────────────┴─────────────┴─────────────┴───────────────────┤
+│  ALERTS (12 active)                                         │
+│  ⚠️ MID-12345: CB ratio 0.95% - Critical                    │
+│  ⚠️ MID-67890: Volume spike 4.2x - Elevated                 │
+│  ⚠️ MID-11111: Health score 62 - Concerning                 │
+├─────────────────────────────────────────────────────────────┤
+│  TRENDING ISSUES                                            │
+│  📈 Fraud up 15% WoW across electronics category            │
+│  📉 CB down 8% after 3DS rollout                            │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ### Merchant Detail View
@@ -241,15 +241,15 @@ flowchart TB
 ├─────────────────────────────────────────────────────────────┤
 │  CHARGEBACK TREND                                           │
 │        ▲                                                    │
-│  1.0%  │            ╱──●                                   │
-│  0.8%  │      ●───●╱                                       │
-│  0.6%  │  ●──●                                             │
+│  1.0%  │            ╱──●                                    │
+│  0.8%  │      ●───●╱                                        │
+│  0.6%  │  ●──●                                              │
 │  0.4%  │●                                                   │
-│        └────────────────────────────────▶                  │
-│          W1   W2   W3   W4   Now                           │
+│        └────────────────────────────────▶                   │
+│          W1   W2   W3   W4   Now                            │
 ├─────────────────────────────────────────────────────────────┤
 │  ACTIONS                                                    │
-│  [Request Documentation] [Increase Reserve] [Suspend]      │
+│  [Request Documentation] [Increase Reserve] [Suspend]       │
 └─────────────────────────────────────────────────────────────┘
 ```
 

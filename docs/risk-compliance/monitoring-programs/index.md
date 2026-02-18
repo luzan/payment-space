@@ -194,8 +194,16 @@ flowchart LR
 - [Fraud Prevention](../fraud-prevention/index.md) - Reducing fraud rates
 - [PCI Compliance](../pci-compliance/index.md) - Data security
 
+**Ecosystem Context:**
+- [Card Network Role](/ecosystem/fundamentals/card-network-role) - Why networks enforce monitoring programs
+- [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) - Acquirer monitoring obligations
+
+**Onboarding Context:**
+- [Ongoing Monitoring](/onboarding/merchant-lifecycle/ongoing-monitoring) - Merchant lifecycle monitoring practices
+- [Portfolio Risk](/onboarding/payfac-considerations/portfolio-risk) - PayFac aggregate monitoring
+
 ## References
 
-- [Visa Acquirer Monitoring Program](https://corporate.visa.com/)
-- [Mastercard Chargeback Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Acquirer Monitoring Program](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Chargeback Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [Merchant Risk Council](https://merchantriskcouncil.org/)

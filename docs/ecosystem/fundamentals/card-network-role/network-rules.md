@@ -495,8 +495,8 @@ The MATCH list is the payment industry's blacklist for terminated merchants.
 
 ### Monitoring Programs
 
-- [Visa Integrity Risk Program](https://usa.visa.com/support/consumer/security.html)
-- [Mastercard Excessive Chargeback Program](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations.html)
+- [Visa Integrity Risk Program](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf) - See Section on Risk Programs
+- [Mastercard Excessive Chargeback Program](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/SPME-Manual.pdf) - See SPME Manual
 
 ---
 

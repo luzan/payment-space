@@ -397,6 +397,6 @@ sequenceDiagram
 
 ## References
 
-- [Visa Claims Resolution Manual](https://usa.visa.com/support/merchant/library/visa-rules.html)
-- [Mastercard Dispute Resolution Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Claims Resolution Manual](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Dispute Resolution Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [Chargebacks911 Best Practices](https://chargebacks911.com/)

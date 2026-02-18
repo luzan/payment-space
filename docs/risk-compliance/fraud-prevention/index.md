@@ -215,6 +215,10 @@ flowchart TB
 - [Chargeback Management](../chargebacks/index.md) - Handling fraud chargebacks
 - [PCI Compliance](../pci-compliance/index.md) - Protecting cardholder data
 
+**Onboarding Context:**
+- [Risk Factors](/onboarding/underwriting/risk-factors) - Fraud indicators identified during underwriting
+- [Ongoing Monitoring](/onboarding/merchant-lifecycle/ongoing-monitoring) - Continuous fraud monitoring post-approval
+
 ## References
 
 - [EMVCo 3D Secure Specifications](https://www.emvco.com/emv-technologies/3d-secure/)

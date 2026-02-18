@@ -274,6 +274,6 @@ When working with multiple processors, it's helpful to understand code equivalen
 
 ## References
 
-- [Visa Dispute Management Guidelines](https://usa.visa.com/support/merchant/library/visa-rules.html)
-- [Mastercard Chargeback Guide](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa Dispute Management Guidelines](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Chargeback Guide](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [Chargebacks911 Reason Code Reference](https://chargebacks911.com/chargeback-reason-codes/)

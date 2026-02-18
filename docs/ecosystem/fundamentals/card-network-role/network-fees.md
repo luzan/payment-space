@@ -448,8 +448,8 @@ Total charged:          $2.90
 
 ### Official Network Fee Schedules
 
-- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/support/merchant/library/visa-usa-interchange-reimbursement-fees.html) - Includes assessment fee updates
-- [Mastercard Interchange Rates](https://www.mastercard.us/en-us/business/overview/support/interchange-rates.html) - Assessment fees listed separately
+- [Visa USA Interchange Reimbursement Fees](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf) - Includes assessment fee updates
+- [Mastercard Interchange Rates](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf) - Assessment fees listed separately
 
 ### Industry Analysis
 

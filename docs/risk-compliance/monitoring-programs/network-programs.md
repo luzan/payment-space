@@ -348,9 +348,18 @@ flowchart TB
 - [Reserve Management](./reserve-management.md) - Financial protection
 - [Chargeback Management](../chargebacks/index.md) - Reducing chargebacks
 
+**Ecosystem Context:**
+- [PayFac Model](/ecosystem/payfac-model/overview) - PayFac risk management overview
+- [Acquiring Banks](/ecosystem/industry-players/acquiring-banks/overview) - Acquirer compliance obligations
+- [Card Network Role](/ecosystem/fundamentals/card-network-role) - Network rule enforcement
+
+**Onboarding Context:**
+- [Merchant Agreements](/onboarding/merchant-lifecycle/merchant-agreements) - MATCH listing and termination procedures
+- [Ongoing Monitoring](/onboarding/merchant-lifecycle/ongoing-monitoring) - Preventing program entry through monitoring
+
 ## References
 
-- [Visa VAMP Program Guide](https://corporate.visa.com/)
-- [Mastercard Rules Manual](https://www.mastercard.us/en-us/business/overview/support/rules.html)
+- [Visa VAMP Program Guide](https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf)
+- [Mastercard Rules Manual](https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf)
 - [Chargeback Gurus VAMP Guide](https://www.chargebackgurus.com/visa-acquirer-monitoring-program-vamp)
 - [Merchant Risk Council](https://merchantriskcouncil.org/)
