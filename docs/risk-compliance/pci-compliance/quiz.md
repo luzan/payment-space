@@ -1,5 +1,5 @@
 ---
-title: "PCI-DSS Quiz | Self-Assessment | Payments Mastery"
+title: "PCI-DSS Quiz | Self-Assessment"
 description: "Test your understanding of PCI-DSS: requirements, scope management, tokenization, and compliance levels."
 sidebar_position: 5
 sidebar_label: "Quiz"

@@ -1,5 +1,5 @@
 ---
-title: "Network Monitoring Programs | Risk & Compliance | Payments Mastery"
+title: "Network Monitoring Programs | Risk & Compliance"
 description: "Complete guide to card network monitoring programs: Visa VAMP, Mastercard ECP/EFM, MATCH list, and merchant monitoring best practices."
 sidebar_position: 1
 sidebar_label: "Overview"

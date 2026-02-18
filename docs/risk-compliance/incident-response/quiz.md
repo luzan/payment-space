@@ -1,5 +1,5 @@
 ---
-title: "Incident Response Quiz | Self-Assessment | Payments Mastery"
+title: "Incident Response Quiz | Self-Assessment"
 description: "Test your understanding of incident response: breach notification, response procedures, and compliance requirements."
 sidebar_position: 3
 sidebar_label: "Quiz"

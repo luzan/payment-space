@@ -1,5 +1,5 @@
 ---
-title: "AML Transaction Monitoring | Detection Systems | Payments Mastery"
+title: "AML Transaction Monitoring | Detection Systems"
 description: "Guide to AML transaction monitoring systems: rules-based detection, alert investigation, and suspicious activity identification for payment platforms."
 sidebar_position: 4
 sidebar_label: "Transaction Monitoring"

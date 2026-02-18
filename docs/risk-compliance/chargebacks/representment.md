@@ -1,5 +1,5 @@
 ---
-title: "Chargeback Representment | Fighting Disputes | Payments Mastery"
+title: "Chargeback Representment | Fighting Disputes"
 description: "Complete guide to chargeback representment: building compelling evidence cases, win rate optimization, and automated representment strategies."
 sidebar_position: 4
 sidebar_label: "Representment"

@@ -1,5 +1,5 @@
 ---
-title: "Study Guide | Risk & Compliance | Payments Mastery"
+title: "Study Guide | Risk & Compliance"
 description: "Learning resources for mastering risk and compliance: study topics, self-assessment questions, and reading materials."
 sidebar_position: 0
 sidebar_label: "Overview"

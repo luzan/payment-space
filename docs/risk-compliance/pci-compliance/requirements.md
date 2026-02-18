@@ -1,5 +1,5 @@
 ---
-title: "PCI-DSS Requirements | 12 Requirements Overview | Payments Mastery"
+title: "PCI-DSS Requirements | 12 Requirements Overview"
 description: "Complete guide to the 12 PCI-DSS requirements, v4.0 changes, and service provider-specific obligations."
 sidebar_position: 2
 sidebar_label: "Requirements"

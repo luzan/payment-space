@@ -1,5 +1,5 @@
 ---
-title: "Chargeback Management | Risk & Compliance | Payments Mastery"
+title: "Chargeback Management | Risk & Compliance"
 description: "Complete guide to chargeback management for PayFac platforms: lifecycle, reason codes, representment strategies, and dispute resolution."
 sidebar_position: 1
 sidebar_label: "Overview"

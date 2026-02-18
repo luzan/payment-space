@@ -1,5 +1,5 @@
 ---
-title: "Quiz | ISO & ISV Risk Perspectives | Payments Mastery"
+title: "Quiz | ISO & ISV Risk Perspectives"
 description: "Test your knowledge: ISO vs ISV vs PayFac risk, liability, compliance, PCI scope, AML, VAMP, ECP, and MATCH. 15 questions with detailed answers."
 sidebar_position: 6
 sidebar_label: "Quiz"

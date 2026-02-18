@@ -1,5 +1,5 @@
 ---
-title: "Chargeback Management Quiz | Self-Assessment | Payments Mastery"
+title: "Chargeback Management Quiz | Self-Assessment"
 description: "Test your understanding of chargeback management: lifecycle, reason codes, representment strategies, and dispute resolution."
 sidebar_position: 5
 sidebar_label: "Quiz"

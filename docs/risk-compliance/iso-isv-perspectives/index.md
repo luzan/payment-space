@@ -1,5 +1,5 @@
 ---
-title: "ISO & ISV Risk Perspectives | Payments Mastery"
+title: "ISO & ISV Risk Perspectives"
 description: "Compare risk and compliance for ISOs vs ISVs vs PayFacs. Learn liability structures, PCI scope, AML requirements, and network program exposure."
 sidebar_position: 1
 sidebar_label: "Overview"

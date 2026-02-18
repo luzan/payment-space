@@ -1,5 +1,5 @@
 ---
-title: "Chargeback Lifecycle | Disputes | Risk & Compliance | Payments Mastery"
+title: "Chargeback Lifecycle | Disputes | Risk & Compliance"
 description: "Complete guide to the chargeback lifecycle: initiation, first chargeback, representment, pre-arbitration, and arbitration with timeframes and deadlines."
 sidebar_position: 2
 sidebar_label: "Lifecycle"

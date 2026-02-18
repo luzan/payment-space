@@ -1,5 +1,5 @@
 ---
-title: "SAR Reporting | Filing Requirements | Payments Mastery"
+title: "SAR Reporting | Filing Requirements"
 description: "Complete guide to Suspicious Activity Report (SAR) filing: thresholds, deadlines, procedures, and CTR requirements for payment platforms."
 sidebar_position: 3
 sidebar_label: "SAR Reporting"

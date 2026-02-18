@@ -1,5 +1,5 @@
 ---
-title: "AML & BSA Compliance | Risk & Compliance | Payments Mastery"
+title: "AML & BSA Compliance | Risk & Compliance"
 description: "Complete guide to Anti-Money Laundering and Bank Secrecy Act compliance for PayFac platforms: SAR reporting, transaction monitoring, and AML programs."
 sidebar_position: 1
 sidebar_label: "Overview"

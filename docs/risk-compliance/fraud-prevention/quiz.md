@@ -1,5 +1,5 @@
 ---
-title: "Fraud Prevention Quiz | Self-Assessment | Payments Mastery"
+title: "Fraud Prevention Quiz | Self-Assessment"
 description: "Test your understanding of fraud prevention: detection tools, fraud patterns, 3D Secure, and machine learning scoring."
 sidebar_position: 5
 sidebar_label: "Quiz"

@@ -1,5 +1,5 @@
 ---
-title: "3D Secure | Authentication & Liability Shift | Payments Mastery"
+title: "3D Secure | Authentication & Liability Shift"
 description: "Complete guide to 3D Secure 2.0: authentication flows, liability shift rules, SCA/PSD2 compliance, and implementation strategies for payment platforms."
 sidebar_position: 4
 sidebar_label: "3D Secure"

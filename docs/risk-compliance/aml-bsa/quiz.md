@@ -1,5 +1,5 @@
 ---
-title: "AML/BSA Quiz | Self-Assessment | Payments Mastery"
+title: "AML/BSA Quiz | Self-Assessment"
 description: "Test your understanding of AML/BSA compliance: money laundering stages, SAR requirements, and transaction monitoring."
 sidebar_position: 5
 sidebar_label: "Quiz"

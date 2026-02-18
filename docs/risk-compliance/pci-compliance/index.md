@@ -1,5 +1,5 @@
 ---
-title: "PCI-DSS Compliance | Risk & Compliance | Payments Mastery"
+title: "PCI-DSS Compliance | Risk & Compliance"
 description: "Complete guide to PCI-DSS compliance for PayFac platforms: requirements overview, scope management, tokenization, and compliance levels."
 sidebar_position: 1
 sidebar_label: "Overview"

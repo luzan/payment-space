@@ -1,5 +1,5 @@
 ---
-title: "Compliance Obligations | ISO vs ISV vs PayFac | Payments Mastery"
+title: "Compliance Obligations | ISO vs ISV vs PayFac"
 description: "ISO vs ISV vs PayFac compliance guide: PCI-DSS scope, AML/BSA, network registration, MTL requirements, and sponsor bank agreements."
 sidebar_position: 3
 sidebar_label: "Compliance Obligations"

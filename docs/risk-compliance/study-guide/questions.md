@@ -1,5 +1,5 @@
 ---
-title: "Self-Assessment Questions | Risk & Compliance | Payments Mastery"
+title: "Self-Assessment Questions | Risk & Compliance"
 description: "49 self-assessment questions covering chargebacks, fraud, PCI-DSS, AML/BSA, incident response, and ISO/ISV perspectives for payment platforms."
 sidebar_position: 2
 sidebar_label: "Questions"

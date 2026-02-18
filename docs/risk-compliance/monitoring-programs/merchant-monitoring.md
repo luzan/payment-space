@@ -1,5 +1,5 @@
 ---
-title: "Merchant Monitoring | Dashboards & Alerts | Payments Mastery"
+title: "Merchant Monitoring | Dashboards & Alerts"
 description: "Guide to merchant monitoring systems: real-time dashboards, alert thresholds, health scoring, and automated actions for PayFac platforms."
 sidebar_position: 3
 sidebar_label: "Merchant Monitoring"

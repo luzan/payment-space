@@ -1,5 +1,5 @@
 ---
-title: "Chargeback Reason Codes | Visa & Mastercard | Payments Mastery"
+title: "Chargeback Reason Codes | Visa & Mastercard"
 description: "Complete reference guide to Visa and Mastercard chargeback reason codes, including fraud, authorization, processing errors, and consumer disputes."
 sidebar_position: 3
 sidebar_label: "Reason Codes"

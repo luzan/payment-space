@@ -1,5 +1,5 @@
 ---
-title: "Resources & Reading | Risk & Compliance | Payments Mastery"
+title: "Resources & Reading | Risk & Compliance"
 description: "Curated resources for learning risk and compliance: card network documentation, PCI standards, AML guidance, and industry publications."
 sidebar_position: 3
 sidebar_label: "Resources"

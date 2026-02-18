@@ -1,5 +1,5 @@
 ---
-title: "Fraud Prevention | Risk & Compliance | Payments Mastery"
+title: "Fraud Prevention | Risk & Compliance"
 description: "Complete guide to payment fraud prevention: detection tools, fraud patterns, 3D Secure authentication, and machine learning scoring for PayFac platforms."
 sidebar_position: 1
 sidebar_label: "Overview"

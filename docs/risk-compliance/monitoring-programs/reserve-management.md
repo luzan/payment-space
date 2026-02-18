@@ -1,5 +1,5 @@
 ---
-title: "Reserve Management | Rolling & Fixed Reserves | Payments Mastery"
+title: "Reserve Management | Rolling & Fixed Reserves"
 description: "Complete guide to merchant reserve management: rolling reserves, fixed reserves, calculation methods, and release criteria for PayFac platforms."
 sidebar_position: 4
 sidebar_label: "Reserve Management"

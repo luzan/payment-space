@@ -1,5 +1,5 @@
 ---
-title: "Network Monitoring Programs | VAMP, ECP, EFM, MATCH | Payments Mastery"
+title: "Network Monitoring Programs | VAMP, ECP, EFM, MATCH"
 description: "Complete guide to card network monitoring programs: Visa VAMP thresholds and fines, Mastercard ECP and EFM, and MATCH list criteria."
 sidebar_position: 2
 sidebar_label: "Network Programs"

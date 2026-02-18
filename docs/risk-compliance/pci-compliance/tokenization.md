@@ -1,5 +1,5 @@
 ---
-title: "Tokenization & P2PE | PCI Scope Reduction | Payments Mastery"
+title: "Tokenization & P2PE | PCI Scope Reduction"
 description: "Guide to tokenization and P2PE for PCI scope reduction: token strategies, P2PE validation, and implementation approaches."
 sidebar_position: 4
 sidebar_label: "Tokenization"

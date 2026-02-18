@@ -1,5 +1,5 @@
 ---
-title: "PCI Scope Management | CDE & Segmentation | Payments Mastery"
+title: "PCI Scope Management | CDE & Segmentation"
 description: "Guide to PCI-DSS scope management: cardholder data environment, scope reduction strategies, network segmentation, and compliance optimization."
 sidebar_position: 3
 sidebar_label: "Scope Management"

@@ -1,5 +1,5 @@
 ---
-title: "Incident Response | Risk & Compliance | Payments Mastery"
+title: "Incident Response | Risk & Compliance"
 description: "Guide to security incident and data breach response for PayFac platforms: notification requirements, timelines, and response procedures."
 sidebar_position: 1
 sidebar_label: "Overview"

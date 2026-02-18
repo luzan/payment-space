@@ -1,5 +1,5 @@
 ---
-title: "Fraud Detection Tools | AVS, CVV, ML Scoring | Payments Mastery"
+title: "Fraud Detection Tools | AVS, CVV, ML Scoring"
 description: "Complete guide to fraud detection tools: AVS, CVV verification, device fingerprinting, and machine learning fraud scoring for payment platforms."
 sidebar_position: 3
 sidebar_label: "Detection Tools"

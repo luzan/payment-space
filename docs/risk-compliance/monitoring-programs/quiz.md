@@ -1,5 +1,5 @@
 ---
-title: "Network Monitoring Quiz | Self-Assessment | Payments Mastery"
+title: "Network Monitoring Quiz | Self-Assessment"
 description: "Test your understanding of network monitoring programs: VAMP, ECP, EFM, MATCH, and reserve management."
 sidebar_position: 5
 sidebar_label: "Quiz"

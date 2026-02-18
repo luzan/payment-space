@@ -1,5 +1,5 @@
 ---
-title: "Breach Notification | Timelines & Requirements | Payments Mastery"
+title: "Breach Notification | Timelines & Requirements"
 description: "Complete guide to data breach notification requirements: state laws, card network requirements, and notification procedures for payment platforms."
 sidebar_position: 2
 sidebar_label: "Breach Notification"

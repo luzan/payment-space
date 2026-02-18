@@ -81,25 +81,31 @@ Let's trace a real transaction through the four-party model:
 
 ```mermaid
 sequenceDiagram
-    participant C as You (Cardholder)
-    participant M as Starbucks (Merchant)
-    participant A as Wells Fargo (Acquirer)
-    participant N as Visa Network
-    participant I as Chase (Issuer)
+    box Consumer Side
+    participant C as 👤 You (Cardholder)
+    participant M as 🏪 Starbucks (Merchant)
+    end
+    box Network
+    participant N as 💳 Visa Network
+    end
+    box Bank Side
+    participant A as 🏦 Wells Fargo (Acquirer)
+    participant I as 🏦 Chase (Issuer)
+    end
 
     C->>M: Tap card for $5.00
     M->>A: Authorization request
     A->>N: Route to issuer
     N->>I: Verify funds & approve
-    I->>N: Approved (Code: 00)
-    N->>A: Authorization approved
-    A->>M: Approval code
-    M->>C: Transaction complete
+    I-->>N: ✅ Approved (Code 00)
+    N-->>A: Authorization approved
+    A-->>M: Approval code
+    M-->>C: ✅ Transaction complete
 
-    Note over I,A: T+1: Settlement
-    I->>A: $5.00 - $0.09 interchange
-    A->>M: $5.00 - $0.12 total fees
-    M-->>M: Receives $4.88
+    Note over I,A: ⏱️ T+1: Settlement
+    I->>A: $5.00 − $0.09 interchange
+    A->>M: $5.00 − $0.12 total fees
+    Note over M: 💵 Receives $4.88
 ```
 
 **Money flow:**

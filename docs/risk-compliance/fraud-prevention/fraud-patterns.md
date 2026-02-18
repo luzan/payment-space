@@ -1,5 +1,5 @@
 ---
-title: "Fraud Patterns | Detection & Prevention | Payments Mastery"
+title: "Fraud Patterns | Detection & Prevention"
 description: "Understand common payment fraud patterns: card testing, friendly fraud, account takeover, and CNP fraud with detection signals and prevention strategies."
 sidebar_position: 2
 sidebar_label: "Fraud Patterns"

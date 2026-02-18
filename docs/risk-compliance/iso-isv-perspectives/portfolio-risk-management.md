@@ -1,5 +1,5 @@
 ---
-title: "Portfolio Risk Management | ISO & ISV Due Diligence | Payments Mastery"
+title: "Portfolio Risk Management | ISO & ISV Due Diligence"
 description: "ISO and ISV portfolio risk: sub-agent due diligence, vertical compliance, KYC/KYB delegation, merchant monitoring, and termination authority."
 sidebar_position: 5
 sidebar_label: "Portfolio Management"

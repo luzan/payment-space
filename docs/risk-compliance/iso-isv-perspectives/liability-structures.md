@@ -1,5 +1,5 @@
 ---
-title: "Liability Structures | ISO vs ISV vs PayFac | Payments Mastery"
+title: "Liability Structures | ISO vs ISV vs PayFac"
 description: "ISO vs ISV vs PayFac liability comparison: chargeback responsibility, fraud exposure, reserve requirements, and risk allocation models."
 sidebar_position: 2
 sidebar_label: "Liability Structures"

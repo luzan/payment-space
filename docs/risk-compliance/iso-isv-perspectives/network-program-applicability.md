@@ -1,5 +1,5 @@
 ---
-title: "Network Program Applicability | VAMP, ECP, MATCH by Entity | Payments Mastery"
+title: "Network Program Applicability | VAMP, ECP, MATCH by Entity"
 description: "VAMP, ECP, EFM, and MATCH applicability for ISOs vs ISVs vs PayFacs. Learn monitoring program exposure, thresholds, and fines by entity type."
 sidebar_position: 4
 sidebar_label: "Network Programs"

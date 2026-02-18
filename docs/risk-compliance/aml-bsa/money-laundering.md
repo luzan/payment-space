@@ -1,5 +1,5 @@
 ---
-title: "Money Laundering | Stages & Patterns | Payments Mastery"
+title: "Money Laundering | Stages & Patterns"
 description: "Understanding money laundering: the three stages, common patterns, red flags, and how payment platforms are exploited by criminals."
 sidebar_position: 2
 sidebar_label: "Money Laundering"

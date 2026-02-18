@@ -1,5 +1,5 @@
 ---
-title: "Topics to Study | Risk & Compliance | Payments Mastery"
+title: "Topics to Study | Risk & Compliance"
 description: "Comprehensive topic list for mastering risk and compliance in payment systems: chargebacks, fraud, PCI-DSS, AML/BSA, and incident response."
 sidebar_position: 1
 sidebar_label: "Topics"
